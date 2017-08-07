@@ -1,0 +1,10 @@
+{
+  "title": "MAC上wireshark找不到网卡",
+  "cells": [
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "sudo chgrp admin /dev/bpf*\nsudo chmod g+rw /dev/bpf*"
+    }
+  ]
+}

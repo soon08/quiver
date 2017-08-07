@@ -1,0 +1,9 @@
+{
+  "title": "测试报告",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>插件</li><ul><li><a href=\"http://adamgruber.github.io/mochawesome/\">http://adamgruber.github.io/mochawesome/</a>&nbsp;一个漂亮的测试报告插件<br></li></ul><li>mocha -R markdown &gt;&nbsp;spec.html</li><li>mocha -R doc &gt; spec.html</li></ul>"
+    }
+  ]
+}

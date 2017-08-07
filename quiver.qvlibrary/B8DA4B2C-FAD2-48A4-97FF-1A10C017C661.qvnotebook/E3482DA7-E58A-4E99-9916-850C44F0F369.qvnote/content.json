@@ -1,0 +1,36 @@
+{
+  "title": "UINavigationController",
+  "cells": [
+    {
+      "type": "text",
+      "data": "NavigationController与其他ViewController的关系<div>其他ViewController与NavigationItem的关系</div><div><ul><li>UINavigationController</li><li>UINavigationBar</li><li>UINavigationItem</li><ul><li>相当于</li></ul><li>UIBarButtonItem</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><div><p style=\"margin: 0px; font-size: 18px; line-height: normal; font-family: Menlo;\"><span style=\"font-variant-ligatures: no-common-ligatures\">AppDelegate</span></p></div></div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "var window: UIWindow?\nvar navigationController: UINavigationController?\n\nfunc application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {\n\t// Override point for customization after application launch.\n\tself.window = UIWindow(frame: UIScreen.mainScreen().bounds)\n\tself.window?.makeKeyAndVisible()\n\t\n\tnavigationController = UINavigationController(rootViewController: ViewController())\n\t\n\tself.window?.rootViewController = navigationController\n\t\n\treturn true\n}"
+    },
+    {
+      "type": "text",
+      "data": "<p style=\"margin: 0px; font-size: 18px; line-height: normal; font-family: Menlo;\"><span style=\"font-variant-ligatures: no-common-ligatures\">ViewController</span></p>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "override func viewDidLoad() {\n\tsuper.viewDidLoad()\n\t// Do any additional setup after loading the view, typically from a nib.\n\tself.view.backgroundColor = UIColor.blueColor()\n\tself.navigationController?.toolbarHidden = false\n\tself.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(addViewDidPress))\n}\n\nfunc addViewDidPress(){\n\tlet userViewController = UserViewController()\n\tuserViewController.navigationItemTitle = \"home\"\n\tuserViewController.controllerValuePassDelegate = self\n\tself.navigationController?.pushViewController(userViewController, animated: true)\n}"
+    },
+    {
+      "type": "text",
+      "data": "<p style=\"margin: 0px; font-size: 18px; line-height: normal; font-family: Menlo;\"><span style=\"font-variant-ligatures: no-common-ligatures\">UserViewController</span></p>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "var navigationItemTitle: String = \"\"\n\noverride func viewDidLoad() {\n    super.viewDidLoad()\n    // Do any additional setup after loading the view.\n\t\n\tself.view.backgroundColor = UIColor.redColor()\n\t\n\tself.navigationItem.title = navigationItemTitle\n\t\n\tself.navigationItem.leftBarButtonItem = UIBarButtonItem(title: \"返回\", style: UIBarButtonItemStyle.Plain, target:self, action: #selector(backButtonDidPress))\n\t\n\tlet backButton = UIButton(frame: CGRect(x: 0, y: 80, width: 320, height: 40))\n\t\n\tbackButton.setTitle(\"返回\", forState: UIControlState.Normal)\n\t\n\tbackButton.addTarget(self, action: #selector(backButtonDidPress), forControlEvents: UIControlEvents.TouchDown)\n\t\n\tself.view.addSubview(backButton)\n}\n\nfunc backButtonDidPress() {\n\tif controllerValuePassDelegate != nil {\n\t\tlet value: Dictionary<String, AnyObject> = [\"username\": \"synder\"];\n\t\tcontrollerValuePassDelegate.passValue(value);\n\t}\n\t\n\tself.navigationController?.popViewControllerAnimated(true)\n}"
+    }
+  ]
+}

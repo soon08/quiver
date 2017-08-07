@@ -1,0 +1,40 @@
+{
+  "title": "IOS多线程",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>特殊规则</b><div><ol><li>必须在主线程更新UI</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>主要的线程技术</b><div><ol><li>NSOperation/NSOperationQueue （在GCD的基础上实现的，比较GCD速度较慢）<br></li><li>GCD</li><li>NSThread</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "GCD"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {\n\t//其他线程的异步操作\n\t\n\tdispatch_async(dispatch_get_main_queue(), {\n\t\t//更新界面\n\t})\n})"
+    },
+    {
+      "type": "text",
+      "data": "NSOPeration"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let operation = NSBlockOperation({\n\t//子线程操作\n})\n\nlet operationQueue = NSOperationQueue()\n\noperationQueue.addOperation(operation)\n"
+    },
+    {
+      "type": "text",
+      "data": "NSThread"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "NSThread.detachNewThreadSelector(\"func\", toTarget: self, withObject: nil)"
+    }
+  ]
+}

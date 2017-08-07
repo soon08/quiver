@@ -1,0 +1,45 @@
+{
+  "title": "关系运算符的坑",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>&gt; &gt;= &lt; &lt;= 的隐式转换</b><div><ul><li>两边都是原始值</li><ul><li>都是数字，直接比较数字大小</li><li>都是字符串，直接比较字符串</li><li>其余情况，两边都转换为数字后比较，如果一个为NaN，结果直接为false</li></ul><li>当一个操作为对象是，先调用valueOf方法，看能否返回一个原始值，否则调用toString转换为字符串，再比较</li></ul></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//两边都是数字\n1 > 0 //true\n\n//两边都是字符串\n'02' > '1' //false\n\n//两边都转换为数字后比较\nnull > 0 //false\nnull < 0 //false\nnull >= 0 //true  null转换为数字为0\nnull >= '0' //true null先转换为数字0，再与'0'比较\n\n[2] > 1 //[2].valueOf() -> [2] [2].toString() -> '2'\n[3,4] > 2 //false[3,4].toString() -> '3,4' 底层是不能转换成数字的(跟parseInt和parseFloat不一样)\n\n\n'22' > 1 // 22 > 1\n'02' > 1 // 2 > 1\n'0xa' > 2 //true  10 > 2 十六进制的比较\n'' <= 0   //true  ''转变为0\n\n//对象与对象比较\nvar a = [1, 2, 3],\n    b = [1, 2, 3],\n    c = [1, 2, 4]\n    \na == b //false\na == c //false\na > c  //false  a.toString() '1,2,3' c.toString() '1,2,4'\na < c  //true   a.toString() '1,2,3' c.toString() '1,2,4'\n\n//对象与数字比较\nvar str = new String('123')\nstr > 1 //true"
+    },
+    {
+      "type": "text",
+      "data": "<b>== &nbsp;=== &nbsp;!= 的比较规则</b><div><ul><li>两个值类型相同</li><ul><li>规则等同于 ===</li></ul><li>两个值类型不同</li><ul><li>如果<font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">一个</font>为null,另外一个为undefined，他们相等</li><li>如果<font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">一个</font>为数字，另一个为字符串，将字符串转换为数字比较</li><li>如果<font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">一个</font>为bool，true转换为1， false转换为0，再进行比较</li><li>如果<font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">一个</font>为对象，将对象转换为原始值再比较，先用valueOf转换，如果不行，再也toString()转换</li><li>其他的不同类型比较就不相等</li></ul></ul></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//一个为null\nnull == 1 //false\nnull == 0 //false\n\n//一个为数字，一个为字符串\n1 == '1' //true\n'0xa' == 10 //true 10 == 10\n0 == ''     //true\n\n//一个为bool\ntrue == 1 //true\nfalse == 0 //true\nfalse == '0' //true\n1 < 2 < 3 //true\n3 < 2 < 1 //true 3 < 2 为false false < 1 为true\n\n//原始值和对象比较\n[2] == 2 //true [2].toString()\n[[[2]]] == 2 //true  [[[2]]].toString()为'2'\n[0] == false //true false转换为0, [0]转换为'0'\n[1] == true //true true转换为1, [1]转换为'1'\n[0] == true //false true转换为1, [0]转换为'0'\n[1,2] == true //false true转换为1, [1,2]转换为'1,2'\n\n//不同类型比较\n[2] == new String(2) //false typeof new String(2) == 'Object'\n[2] == String(2) //true typeof String(2) == 'string'\n"
+    },
+    {
+      "type": "text",
+      "data": "<b>对象与对象永远不相等</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//正则表达式永远不等\nvar a = /abc/\nvar b = /abc/\na == b //false\na === b //false\n\n//数组与数组永远不等\n[] == [] //false\n[1] == [1] //false\n\n//对象与对象永远不等\nvar x = {}\nvar y = {}\nx == y //false\n\nvar x = new String(1)\nvar y = new String(1)\nx == y //false\n\n//日期对象比较\nvar now = Date.now();\n\nvar x = new Date(now);\nvar y = new Date(now);\nx === y //fasle"
+    },
+    {
+      "type": "text",
+      "data": "<b>Switch的规则</b><div><ul><li>switch 使用 === 来匹配值</li></ul></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function check(value) {\n    switch(value) {\n        case 'A':\n          console.log('A');\n          break;\n        case 'B':\n          console.log('B');\n          break;\n        case undefined:\n          console.log('undefined');\n          break;\n        default:\n          console.log('unknown');\n    }\n}\ncheck(new String('A')); //'unknown' typeof new String('A') == 'object'\ncheck(String('A'));     //'A'"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

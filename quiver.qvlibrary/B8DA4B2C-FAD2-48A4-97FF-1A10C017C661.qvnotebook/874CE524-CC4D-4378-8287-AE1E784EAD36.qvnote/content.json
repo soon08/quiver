@@ -1,0 +1,14 @@
+{
+  "title": "UIProgressView",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<span style=\"font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; font-weight: bold; line-height: 26px; widows: 1;\">创建进度条</span><div><span style=\"font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; font-weight: bold; line-height: 26px; widows: 1;\"><img src=\"quiver-image-url/89B59C210508C273C53253B8DE1B95EE.jpg\"><br></span></div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "var progressView = UIProgressView(progressViewStyle:UIProgressViewStyle.Default)\nprogressView.center = self.view.center\nprogressView.progress = 0.5 //默认进度50%\nself.view.addSubview(progressView);\n\nprogressView.setProgress(0.8, animated:true)\n\nprogressView.progressTintColor= UIColor.greenColor()  //已有进度颜色\nprogressView.trackTintColor= UIColor.blueColor()  //剩余进度颜色（即进度槽颜色）"
+    }
+  ]
+}

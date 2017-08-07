@@ -1,0 +1,32 @@
+{
+  "title": "MySQL常识",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>ROOT用户</b><div><ol><li>ROOT账户默认情况下是不允许远程登录的</li></ol></div>"
+    },
+    {
+      "type": "code",
+      "language": "sql",
+      "data": "-- 使Root账户支持远程登录\nmysql> use mysql;\nmysql> update user set host='%' where user='root' and host='localhost';\nmysql> flush privileges;"
+    },
+    {
+      "type": "text",
+      "data": "<b>MYSQL信息</b>"
+    },
+    {
+      "type": "code",
+      "language": "sql",
+      "data": "mysql> status;\n\n-- 查看mysql端口号\nmysql> show global varibles like 'port';"
+    },
+    {
+      "type": "text",
+      "data": "<b>MYSQL配置</b>"
+    },
+    {
+      "type": "code",
+      "language": "sql",
+      "data": "-- 修改my.cnf\n[mysqld]\nport=3306"
+    }
+  ]
+}

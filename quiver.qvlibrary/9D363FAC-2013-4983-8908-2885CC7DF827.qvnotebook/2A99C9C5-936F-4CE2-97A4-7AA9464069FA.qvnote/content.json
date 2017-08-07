@@ -1,0 +1,9 @@
+{
+  "title": "NTP时间",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<p style=\"margin: 0px; padding: 0px; color: rgb(67, 77, 87); line-height: 17.1428px; widows: 1; background-color: rgb(252, 252, 252);\"><font face=\"Arial\">&nbsp; &nbsp; &nbsp; &nbsp; 在计算机的世界里，时间非常地重要，例如对于火箭发射这种科研活动，对时间的统一性和准确性要求就非常地高，是按照 A这台计算机的时间，还是按照B这台计算机的时间？NTP就是用来解决这个问题的，NTP（Network Time Protocol，网络时间协议）是用来使网络中的各个计算机时间同步的一种协议。它的用途是把计算机的时钟同步到世界协调时UTC，其精度在局域网内可 达0.1ms，在互联网上绝大多数的地方其精度可以达到1-50ms。</font><span style=\"font-family: Arial;\">它可以使计算机对其服务器或时钟源（如石英钟，GPS等等）进行时间同步，它可以提供高精准度的时间校正，而且可以使用加密确认的方式来防止恶毒的协议攻击。</span></p>"
+    }
+  ]
+}

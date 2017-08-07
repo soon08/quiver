@@ -1,0 +1,15 @@
+{
+  "title": "xpress",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "/**\n * @author synder\n * @date 16/1/10\n * @desc\n */\nvar Xpress = require('xpress');\nvar config = require('./config');\n\nglobal.config = config;\n\n//---------------------------------------------------------\nvar server = new Xpress({\n    host: null,\n    key: null,\n    cert: null,\n    port: {\n        http: 8010,\n        https: null\n    }\n});\n\n\nXpress.engine.helper('Date', Date);\n\n//---------------------------------------------------------\nserver.conf('x-powered-by', false);\nserver.conf('trust proxy', true);\nserver.conf('views', config.server.view.path);\nserver.conf('view engine', config.server.view.engine);\nserver.conf('view cache', false);\nserver.engine('html', Xpress.engine.__express);\n\n//---------------------------------------------------------\nvar homeRouter = require('./router/home');\n\nserver.get('/api', {v:1, c:1}, function(req, res, next){next()}, function(req, res, next){ res.json({ok:200}); });\n\nserver.get('/', function(req, res, next){ res.render('path'); });\n\nserver.sub('/', homeRouter);\n\n//---------------------------------------------------------\n\nserver.error(404, function (err, req, res, next) {\n    res.status(404).json('not found');\n});\n\nserver.error(500, function (err, req, res, next) {\n    console.error(err.stack);\n    res.status(500).json('server error');\n});\n\n//---------------------------------------------------------\nserver.listen(function (message) {\n    console.log(message);\n});\n\n//---------------------------------------------------------\nmodule.exports = server;\n"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var Router = require('xpress').Router;\nvar homeRouter = new Router();\n\nvar index = require('../../controller/home/index');\n\nhomeRouter.get('/', index.page);\n\nhomeRouter.get('/', {v:1, c:1}, index.api);\n\nmodule.exports = homeRouter;"
+    }
+  ]
+}

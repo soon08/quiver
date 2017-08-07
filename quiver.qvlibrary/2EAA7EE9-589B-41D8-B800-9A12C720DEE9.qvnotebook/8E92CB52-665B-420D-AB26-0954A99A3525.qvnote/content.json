@@ -1,0 +1,10 @@
+{
+  "title": "函数",
+  "cells": [
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "func get() ->(Double, Double, Double) {\n    return (1, 2, 3);\n}\n\nfunc sum(numbers: Int...) -> Int {\n    var sum = 0;\n    for num in numbers {\n        sum += num;\n    }\n    return sum;\n}\n\nfunc add -> (Int... -> Int) {\n    func add(nums : Int...) -> Int {\n        var sum = 0;\n        for num in nums {\n            sum += num;\n        }\n        return sum;\n    }\n    \n    return add;\n}\n\nfunc sort(list: Int[], compare: (Int, Int) -> Bool) {\n    for(var i = 0 ; i < list.count; i++){\n        \n    }\n}\n\nvar numbers = [1,2,3];\n\nnumbers.map({\n    (num : Int) -> Int in\n    ler result = 3 * num;\n    return result;\n});\n"
+    }
+  ]
+}

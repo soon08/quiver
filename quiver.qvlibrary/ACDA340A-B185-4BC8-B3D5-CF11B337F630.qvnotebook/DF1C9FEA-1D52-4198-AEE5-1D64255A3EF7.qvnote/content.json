@@ -1,0 +1,33 @@
+{
+  "title": "data struct",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Heap<div>使用二叉树型结构构造的数据结构，有大顶堆和小顶堆之分，一般使用数组构成的完全二叉树构成</div>"
+    },
+    {
+      "type": "text",
+      "data": "Stack<div>先进后出，常用的操作有push，pop，top</div>"
+    },
+    {
+      "type": "text",
+      "data": "List"
+    },
+    {
+      "type": "text",
+      "data": "Ring"
+    },
+    {
+      "type": "text",
+      "data": "Tree<div><ul><li>二叉树</li><ul><li>完全二叉树</li><li>二叉搜索树</li><li>平衡树</li><li>红黑树</li></ul><li>多叉树</li><ul><li>B-树</li><li>B+树</li><li>B*树</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "二叉树<div><ol><li>每棵树都有一个根节点，根节点没有父节点</li><li>每个节点有0-2个子节点，左边的节点称为左子树，右边的节点称为右子树</li><li>树节点的最大层数称为树的深度</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "完全二叉树<div><ol><li>树中，除了最后一层外，其余的层都是填满的</li><li>最后一层已经填满或者缺少连续若干个节点</li></ol><div><img src=\"quiver-image-url/A2D0F2821092BC2836363068CCF72BD5.jpg\" width=\"789\" height=\"303\"><br></div></div>"
+    }
+  ]
+}

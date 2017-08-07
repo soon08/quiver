@@ -1,0 +1,9 @@
+{
+  "title": "Untitled Note",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "\\# Charles\n\n\\#\\#\\#\\# 常用的抓包工具\n\n- [Wireshark](https://www.wireshark.org/) 功能非常强大的抓包工具，跨平台软件，支持多种协议\n\n- [Fiddler](http://www.telerik.com/fiddler) 功能强大，但只能在windows平台使用\n\n- [Charles](https://www.charlesproxy.com/) 功能强大，但只能在mac平台使用，只支持http协议抓取\n\n\\#\\#\\#\\# Charles功能\n\n- 抓取HTTP网络请求\n\n- 抓取HTTPS网络请求\n\n- 过滤网络请求\n\n- 模拟慢速网络请求\n\n- 修改网络请求内容\n\n- 修改服务器返回内容\n\n - Map请求重定向\n\n - Rewrite请求内容\n\n - Breakpoints断点功能\n\n- 服务器压力测试\n\n\\#\\#\\#\\# Charles安装和设置\n\n下载Charles安装包安装\n\n启动Charles后，charles会要求授予系统管理权限，输入密码进行授权\n\n点击菜单“Proxy”-\\> \"Mac OS Proxy\"来讲Charles设置成系统代理\n\n\\#\\#\\#\\# Charles界面介绍"
+    }
+  ]
+}

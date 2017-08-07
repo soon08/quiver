@@ -1,0 +1,49 @@
+{
+  "title": "centos6.5 搭建elasticsearch",
+  "cells": [
+    {
+      "type": "text",
+      "data": "1. 安装Java<div>&nbsp; &nbsp; Elasticsearch最低要求是Java7，推荐的版本是Oracle的1.8.0_73</div><div>&nbsp; &nbsp; 安装前请确认java版本,已经Java环境变量是否设置</div><div>&nbsp; &nbsp; java -version</div><div>&nbsp; &nbsp; echo $JAVA_HOME</div>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "#下载jdk\nwget http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.rpm?AuthParam=1461125474_5fc56204e1c6124615e358ecb14d02c9\n\nrpm -ivh jdk-8u91-linux-x64.rpm\n\njava -version\n\necho $JAVA_HOME"
+    },
+    {
+      "type": "text",
+      "data": "2. 安装Elasticsearch"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "#下载elasticsearch\nwget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.1/elasticsearch-2.3.1.tar.gz\n\ntar -xvf elasticsearch-2.3.1.tar.gz\n\nmkdir /opt/elasticsearch\n\ncp -R ./elasticsearch-2.3.1/* /opt/elasticsearch\n\n#添加环境变量到 .bash_profile\n\n#测试启动  ./elasticsearch --cluster.name my_cluster_name --node.name my_node_name\n\n#elasticsearch会监听9200端口，作为restfull api的服务端口"
+    },
+    {
+      "type": "text",
+      "data": "3. 安装Plugin"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "#安装中文分词器\nsudo /opt/elasticsearch/bin/plugin install analysis-smartcn\n\n#更多插件查看 https://www.elastic.co/guide/en/elasticsearch/plugins/2.3/index.html"
+    },
+    {
+      "type": "text",
+      "data": "4. 配置Elasticsearch节点"
+    },
+    {
+      "type": "text",
+      "data": "5. 安装<span style=\"color: rgb(68, 68, 68); font-family: 'Open Sans', arial, helvetica, sans-serif; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 27px; widows: 1; background-color: rgb(255, 255, 255);\">Marvel</span>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "#安装依赖\n\nsudo /opt/elasticsearch/bin/plugin install license\nsudo /opt/elasticsearch/bin/plugin install marvel-agent"
+    },
+    {
+      "type": "text",
+      "data": "6. 配置Marvel"
+    }
+  ]
+}

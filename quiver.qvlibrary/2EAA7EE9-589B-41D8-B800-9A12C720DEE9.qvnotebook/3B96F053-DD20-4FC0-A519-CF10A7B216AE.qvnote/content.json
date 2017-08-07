@@ -1,0 +1,27 @@
+{
+  "title": "高级运算符",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>空合运算符 &nbsp;??</li><li>区间运算符 &nbsp;</li><ul><li>闭区间 &nbsp;a...b</li><li>半开区间 &nbsp;a..&lt;b&nbsp;</li></ul></ul>"
+    },
+    {
+      "type": "text",
+      "data": "空合运算符"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "var name : String?;\n\nvar temp = name ?? \"default\";"
+    },
+    {
+      "type": "text",
+      "data": "区间运算符"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "for index in 1...5{\n    println(index)    \n}"
+    }
+  ]
+}

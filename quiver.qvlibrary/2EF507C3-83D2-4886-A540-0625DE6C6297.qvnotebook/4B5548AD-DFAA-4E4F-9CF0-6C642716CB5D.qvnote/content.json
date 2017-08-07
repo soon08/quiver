@@ -1,0 +1,13 @@
+{
+  "title": "SSH的安装与配置",
+  "cells": [
+    {
+      "type": "text",
+      "data": "ssh是一个典型的C/S架构程序<div><br></div><div>centos</div><div><ul><li>yum install openssh-server openssh-clients</li></ul><div>ubuntu</div></div><div><ul><li>apt-get install&nbsp;openssh-server openssh-client</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>SSH的配置</b><div><br></div><div>ssh配置文件位于/etc/ssh目录下面<br><div><ul><li>客户端</li><ul><li>ssh-config</li></ul><li>服务器</li><ul><li>sshd-config</li><ul><li>Port 22 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 指定SSH端口</li><li>Protocol 2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 指定ssh所需要支持的协议版本（2，1）</li><li>ListenAddress 0.0.0.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 监听网卡IP</li><li>PermitRootLogin no &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 是否允许root登入，默认是允许的（真实运维中不允许ssh连接）</li><li>PasswordAuthentication yes &nbsp;是否需要开启密码验证（配置了其他验证方式可以关闭）</li><li>PermitEmptyPasswords no &nbsp; &nbsp;是否允许密码为空</li><li>PrintMotd no &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 显示登陆信息</li><li>PrintLastLog yes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;显示上次登陆信息</li><li>KeepAlive yes &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;发送KeepAlive信息给客户端（解决僵尸进程问题）</li><li>MaxStartups 10 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;允许登入的联机画面数</li><li>DenyUsers * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 禁止用户登陆，*表示所有用户</li><li>AllowUsers * &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;允许用户登陆，*表示所有用户</li></ul></ul></ul></div></div>"
+    }
+  ]
+}

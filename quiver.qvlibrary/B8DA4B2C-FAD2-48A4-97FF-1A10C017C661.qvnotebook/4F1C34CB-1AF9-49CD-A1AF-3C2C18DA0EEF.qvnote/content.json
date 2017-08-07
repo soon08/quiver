@@ -1,0 +1,19 @@
+{
+  "title": "UITextView",
+  "cells": [
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let textview=UITextView(frame:CGRectMake(10,100,200,100))\ntextview.layer.borderWidth=1  //边框粗细\ntextview.layer.borderColor=UIColor.grayColor().CGColor //边框颜色\nself.view.addSubview(textview)\n\ntextview.editable=false //是否可编辑\ntextview.selectable=false //内容是否可选\n\n//给文本加链接\ntextview.dataDetectorTypes = UIDataDetectorTypes.None //都不加链接\ntextview.dataDetectorTypes = UIDataDetectorTypes.PhoneNumber //只有电话加链接\ntextview.dataDetectorTypes = UIDataDetectorTypes.Link //只有网址加链接\ntextview.dataDetectorTypes = UIDataDetectorTypes.All //电话和网址都加"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"outline: 0px; font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: normal; widows: 1; font-weight: bold;\">自定义选择内容后的菜单</span><span style=\"font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: normal; widows: 1;\"></span><div style=\"outline: 0px; font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: normal; widows: 1;\">我们在看新闻或小说的时候，常常在点选文字后会弹出菜单进行选择，复制等操作。我们可以在这个菜单上添加一些其他内容，如加上“邮件”“微信”等按钮选项</div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "import UIKit\n \nclass ViewController: UIViewController {\n     \n    override func viewDidLoad() {\n        super.viewDidLoad()\n         \n        let textview=UITextView(frame:CGRectMake(10,100,200,100))\n        textview.layer.borderWidth=1  //边框粗细\n        textview.layer.borderColor=UIColor.grayColor().CGColor //边框颜色\n        self.view.addSubview(textview)\n         \n        let mail = UIMenuItem(title: \"邮件\", action: \"onMail\")\n        let weixin = UIMenuItem(title: \"微信\", action: \"onWeiXin\")\n        let menu = UIMenuController()\n        menu.menuItems = [mail,weixin]\n    }\n     \n    func onMail(){\n        print(\"mail\")\n    }\n     \n    func onWeiXin(){\n        print(\"weixin\")\n    }\n     \n    override func didReceiveMemoryWarning() {\n        super.didReceiveMemoryWarning()\n    }\n}"
+    }
+  ]
+}

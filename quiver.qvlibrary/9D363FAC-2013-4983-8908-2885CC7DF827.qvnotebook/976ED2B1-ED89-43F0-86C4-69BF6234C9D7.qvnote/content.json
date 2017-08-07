@@ -1,0 +1,9 @@
+{
+  "title": "linux搭建FTP服务器",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ol><li>rpm -qa | grep vsftpd 检测软件是否安装</li><li>yum install vsftpd 安装ftp服务软件</li><li>service vsftpd start 让服务器启动的时候就启动vsftpd</li><li><font color=\"#000000\" face=\"Arial\"><span style=\"line-height: 25px; widows: 1;\">vi&nbsp; /etc/vsftpd/vsftpd.conf &nbsp;</span></font><span style=\"widows: 1; color: rgb(0, 0, 0); font-family: Arial;\">将anonymous_enable=YES 改为 anonymous_enable=NO</span></li><li><span style=\"widows: 1; color: rgb(0, 0, 0); font-family: Arial;\">添加ftp帐号和目录</span></li><ol><li><span style=\"widows: 1; color: rgb(0, 0, 0); font-family: Arial;\">useradd &nbsp; -d /ftp/synder -s /sbin/nologin synder</span></li><li><span style=\"widows: 1; color: rgb(0, 0, 0); font-family: Arial;\">passwd &nbsp;&nbsp;</span><span style=\"color: rgb(0, 0, 0); font-family: Arial; widows: 1;\">synder</span></li><li><span style=\"widows: 1; color: rgb(0, 0, 0); font-family: Arial;\">chmod -R 755&nbsp;</span><span style=\"color: rgb(0, 0, 0); font-family: Arial; widows: 1;\">/ftp/synder</span></li><li><span style=\"widows: 1; color: rgb(0, 0, 0); font-family: Arial;\">chown -R &nbsp;pwftp&nbsp;</span><span style=\"color: rgb(0, 0, 0); font-family: Arial; widows: 1;\">/ftp/synder</span></li><li><span style=\"widows: 1; color: rgb(0, 0, 0); font-family: Arial;\">/etc/rc.d/init.d/vsftpd restart</span></li><li><span style=\"widows: 1; color: rgb(0, 0, 0); font-family: Arial;\">然后用帐号synder密码123456</span></li><li><span style=\"widows: 1; color: rgb(0, 0, 0); font-family: Arial;\">测试下就可以登陆ftp了。目录是</span><span style=\"color: rgb(0, 0, 0); font-family: Arial; widows: 1;\">/ftp/synder</span></li></ol></ol>"
+    }
+  ]
+}

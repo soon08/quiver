@@ -1,0 +1,9 @@
+{
+  "title": "Docker仓库",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(64, 64, 64); font-family: 'Microsoft YaHei', Verdana, sans-serif, SimSun; font-size: 14px; line-height: 25.2px; widows: 1; background-color: rgb(250, 250, 250);\">Docker 仓库用来保存镜像，可以理解为代码控制中的代码仓库。同样的，Docker 仓库也有公有和私有的概念。公有的 Docker 仓库名字是 Docker Hub。Docker Hub 提供了庞大的镜像集合供使用。这些镜像可以是自己创建，或者在别人的镜像基础上创建。Docker 仓库是 Docker 的分发部分。</span>"
+    }
+  ]
+}

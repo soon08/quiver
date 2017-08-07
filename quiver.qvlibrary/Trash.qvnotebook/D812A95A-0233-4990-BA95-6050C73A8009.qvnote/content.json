@@ -1,0 +1,18 @@
+{
+  "title": "192.168.1.195",
+  "cells": [
+    {
+      "type": "text",
+      "data": "服务器用途：预发布环境"
+    },
+    {
+      "type": "text",
+      "data": "node"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -\nyum install -y gcc-c++ make\nyum install -y nodejs"
+    }
+  ]
+}

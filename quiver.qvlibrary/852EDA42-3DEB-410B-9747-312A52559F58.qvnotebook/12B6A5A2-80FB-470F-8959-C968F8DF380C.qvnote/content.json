@@ -1,0 +1,9 @@
+{
+  "title": "常用mac软件总结",
+  "cells": [
+    {
+      "type": "text",
+      "data": "笔记类<div><ul><li>Quiver</li><li>为知笔记</li><li>MindNode &nbsp;思维导图</li></ul><div>编程</div></div><div><ul><li>Webstorm JavaScript编辑器</li><li>Sublime Text &nbsp;文本编辑器</li><li>Intellij &nbsp;IDE Java编辑器</li><li>Justinmind &nbsp;产品原型设计</li><li>wireshark &nbsp; TCP抓包软件</li><li>Dash &nbsp;文档查看</li><li>Paw &nbsp; 请求发送</li><li>Sketch &nbsp; 矢量设计软件</li><li>Core Animator &nbsp;IOS核心动画</li><li>SourceTree &nbsp;图形化git管理工具</li><li>Sip &nbsp; 颜色截取软件</li><li>Virtual Box &nbsp;虚拟机</li><li>ShadowSocksX &nbsp;Socks代理软件</li></ul><div>Terminal</div><div><ul><li>iTerm2 &nbsp;替代系统提供的terminal</li></ul><div><br></div></div><div><br></div></div>"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Http缓存",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Web缓存可以自动保存常见文档副本的HTTP设备，当Web请求到达缓存时，如果本地有缓存的副本，就可以直接从本地存储设备，而不是原始服务器中提取这个文档。缓存有很多优点。<div><ol><li>减少冗余数据传输</li><li>降低对原始服务器的压力</li><li>降低距离延时</li><li>缓解网络瓶颈 比如瞬间网络拥塞（热门新闻访问等）</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>缓存的问题：</b><div><ul><li>缓存有命中率，因为不可能缓存所有的东西</li><li>缓存可能会过期，所以需要定期的向源服务器验证缓存是否过期，称为HTTP再验证（revalidation）</li></ul><div><img src=\"quiver-image-url/314B9075037A446072FD6F3761109A08.jpg\"><br></div></div><div><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>缓存命中率：</b><div><ol><li>按照文档的命中率来度量</li><li>按照字节命中率来度量（有些大文件虽然命中次数不多，但是对流量贡献很大）</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>代理缓存的层次结构：</b><div><img src=\"quiver-image-url/C57C33845ACA6980AEF226DAAA4F8EC9.jpg\"><br></div><div><ul><li>大部分情况下希望在一级缓存命中</li><li>如果一级缓存没有命中，请求就会穿透到二级缓存</li><li>请求每穿越一级缓存都会带来时间损失</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>内容路由器：</b><div><ul><li>根据URL在父缓存和原始服务器之间进行动态选择</li><li>根据URL动态的选择一个特定的父缓存</li><li>前往父缓存之前，搜索已缓存的副本</li><li>允许其他缓存访问自己，但不允许因特网流量通过他们的缓存</li></ul><div><img src=\"quiver-image-url/6726CB015E413A2EB8BA2F8332E2D930.jpg\"><br></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>缓存的处理步骤（GET请求）：</b><div><ol><li>缓存读取到达的报文数据</li><li>对报文进行解析，如URL和各种首部</li><li>查询本地是否有相应副本可用</li><li>缓存检测本地副本是否足够新鲜，如果不是需要询问服务器是否更新</li><li>创建相应响应并回复</li><li>记录日志描述这个事务</li></ol><div><img src=\"quiver-image-url/C408934A26CE5C0F840CEEDD4DC0879E.jpg\"><br></div></div><div><b>新鲜度检测：</b></div><div><img src=\"quiver-image-url/BD4A21A5FBD47AB37F4D22129E11B908.jpg\"><br></div>"
+    }
+  ]
+}

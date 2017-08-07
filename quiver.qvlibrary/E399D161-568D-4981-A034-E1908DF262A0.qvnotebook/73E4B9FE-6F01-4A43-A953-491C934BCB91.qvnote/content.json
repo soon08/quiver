@@ -1,0 +1,15 @@
+{
+  "title": "变量的作用域",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var name = 'World!';\n(function () {\n  if (typeof name === 'undefined') {\n    var name = 'Jack'; //该变量已经声明，但在使用时未初始化\n    console.log('Goodbye ' + name);\n  } else {\n    console.log('Hello ' + name);\n  }\n})(); //Goodbye Jack\n\nvar name = 'World!';\n(function () {\n  if (typeof name === 'undefined') {\n    console.log('Goodbye ' + name);\n  } else {\n    console.log('Hello ' + name);\n  }\n})(); //Hello World!"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "(function(){\n  var x = y = 1;\n})();\nconsole.log(y); //1\nconsole.log(x); //error"
+    }
+  ]
+}

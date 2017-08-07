@@ -1,0 +1,21 @@
+{
+  "title": "iptables介绍",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><b>iptables是什么</b></div><div>&nbsp; &nbsp; &nbsp; &nbsp; 是集成在linux内核中的IP信息报过滤系统，通过iptables可以实现诸如控制数据包，系统防护，数据转发等多种功能。</div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>iptables原理</b><div>&nbsp; &nbsp; &nbsp; &nbsp; iptables是linux防火墙的管理工具，位于/sbin/iptables。真正提供防火墙功能的是netfilter，它是linux内核实现包过滤的主要组件。</div><div><br></div><div>下图为防火墙处理数据的流程</div><div><img src=\"quiver-image-url/4536E6F640E2DFCE1BBBC11579E7F564.jpg\"><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>iptables优缺点</b><div>优点<br><div><ul><li>是有状态的防火墙</li><li>完全非规则控制（最大限度的控制数据包的流向和限制）</li><li>完全免费</li></ul><div>缺点</div></div><div><ul><li>配置复杂</li><li>维护困难</li></ul></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>iptables功能</b><div><ul><li>数据包过滤</li><li>数据包转发（如实现VPN、路由器等）</li><li>对上行下行速率进行限速</li></ul></div>"
+    }
+  ]
+}

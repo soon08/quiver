@@ -1,0 +1,37 @@
+{
+  "title": "TLS/SSL原理",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>TLS/SSL用到三种加密技术：</b><div><ul><li>对称加密（速度快，保密性差，不方便秘钥交换）<br></li><li>非对称加密（速度慢，保密性号，方便秘钥交换）</li><li>散列函数Hash（能对信息形成摘要，解决信息完整性问题</li></ul><div><img src=\"quiver-image-url/BBF4723D818742C065B7616B5D289201.jpg\"><br></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>常见散列函数：</b><div><ul><li>MD5</li><li>SHA1</li><li>SHA256</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>常见对称加密：</b><div><ul><li>AES-CBC</li><li>DES</li><li>3DES</li><li>AES-GCM</li></ul><div>特点是能做 1对1 加密</div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>常见非对称加密（RSA）：</b><div><ul><li>ECC</li><li>DH</li></ul><div>特点是可做 1对N 加密</div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>TLS/SSL要解决的问题：</b><div><ul><li>秘钥交换安全性 （非对称加密解决的问题）</li><li>信息的完整性 （散列函数与非对称加密共同解决）</li><li>信息的不可抵赖性 （证书管理机构解决的问题）</li><li>信息的保密性 （对称加密解决的问题）</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>PKI体系面临的安全风险：</b><div><img src=\"quiver-image-url/5567FA5B0FF69C560A8A78EE252AEE3A.jpg\"><br></div><div>为了解决上诉问题，就需要引入身份验证-CA和证书，确保公钥的获取是合法的，验证服务器身份是合法的。</div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>CA机构：</b><div><b>&nbsp; &nbsp; CA负责审核信息，使用CA的私钥对信息签名，并公开器对应的公钥，客户端使用公钥解开信息，对信息进行验证。</b></div><div><img src=\"quiver-image-url/4350EF1A5A9AEBA0BAEFC33929C6AB1B.jpg\"></div><div><ul><li>申请者向CA提交自己的公钥、个人信息（域名等）、组织信息</li><li>CA通过各种手段验证申请者提供信息的真实性</li><li>如果信息审核通过，CA会向申请者签发证书文件-证书</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>证书原理：</b><div><b><br></b></div><div><b>明文信息：<br></b><div><ol><li>申请者的公钥</li><li>申请者的组织信息和个人信息</li><li>签发机构CA的信息</li><li>有效时间</li><li>证书序号</li></ol><div><b>加密信息：</b></div></div></div><div><ol><li>证书签名 （使用散列函数计算明文信息的信息摘要，用CA的私钥对摘要进行加密，密文即为证书签名）</li></ol><div><b>客户端证书验证：</b></div></div><div><ol><li>客户端向服务器发起请求，服务器返回证书文件</li><li>客户端读取相关的明文信息，采用相同的散列函数计算得到摘要</li><li>利用CA的公钥解密证书签名，与上一步计算的摘要对比</li><li>查看对比结果，就可以确认证书的合法性，从而确认证书中公钥的合法性</li></ol><div><br></div></div><div><b>其他说明：</b></div><div><ul><li><b>&nbsp;</b>申请证书不需要提供申请者的私钥，从而保证了私钥的保密性<br></li><li><span style=\"color: rgb(93, 93, 93); font-family: helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', simsun; font-size: 18px; line-height: 30px; widows: 1; background-color: rgb(255, 255, 255);\">证书 = 公钥 + 申请者与颁发者信息 + 签名</span><br></li></ul></div>"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Http 链接管理",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>内容：</b><div><ol><li>如何使用tcp链接</li><li>Http的优化，包含并行链接、keep-alive、管道化链接</li><li>管理链接时应该注意的问题</li></ol><div><img src=\"quiver-image-url/7BE348472F77B1584ECDDABC9326C94F.jpg\"><br></div></div><div><br></div><div><br></div><div><b>TCP段的IP分组，它承载TCP数据流中的小块数据</b></div><div><img src=\"quiver-image-url/BCE6D057C48357C3EF13AEFB27A2B980.jpg\"><br></div><div><br></div><div><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>利用TCP套接字编程：</b><div><div><img src=\"quiver-image-url/C299B30B74003601F2E558F741DCC891.jpg\"><b><br></b></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>对TCP性能的考虑：</b><div>&nbsp; &nbsp; Http位于TCP上层，所以Http的性能很大程度上取决于TCP的通道的性能。下图是HTTP请求事务的各个环节</div><div><img src=\"quiver-image-url/660435CD44A510D4FFFEF2A65B4B8195.jpg\"><br></div><div><br></div><div><ol><li>客户端首先要根据URL确定服务器的IP地址和端口号。</li><li>客户端会向服务器发送一条TCP链接请求，并等待服务器返回应答请求，建立TCP链接</li><li>一旦建立链接客户端向服务器发送数据</li><li>服务器处理请求</li><li>服务器向客户端发送数据</li></ol><div><b>性能聚焦：</b></div></div><div><ol><li>TCP握手</li><li>TCP慢启动</li><li>数据聚集的Nagle算法</li><li>TCP延迟确认算法</li><li>TIME_WAIT和端口耗尽</li></ol><div>握手过程：</div><div><img src=\"quiver-image-url/C5782ABED23A95900F2B07EA7509A126.jpg\"><br></div></div><div><ol><li>请求TCP链接时，客户端向服务器发送一个TCP分组，里面包含一个SYN的标记，表示这是一个链接请求</li><li>服务器收到请求，会送一个SYN和ACK分组，表示请求被接受</li><li>客户端收到回复，回复一天确认信息，表示链接已经建立，现代TCP允许在这个环节发送数据</li><li>TCP的每个分组都包含一个序列号和完整性校验，接受者收到完好的序列时会会送一个小的确认分组。</li></ol><div>TCP慢启动：</div></div><div><ol><li>TCP一开始传输数据时会限制传输速度，随着传输进行会逐步提高传输速度，HTTP中存在一些可以重用TCP的参数。</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Http链接处理：</b><div><ul><li>Connection&nbsp;</li><ul><li>可用 close来说明发送完一条报文后必须关闭链接</li></ul><li>并行链接</li><li>持久链接</li><ul><li>http/1.0 keep-alive &nbsp;服务器在响应报文中返回 Connection : Keep-Alive，客户端就不会关闭链接</li><li>keep-alive 可以指定参数</li><ul><li><span style=\"font-family: TheSansMonoCondensed; font-size: 8pt; background-color: rgb(255, 255, 255);\">Connection: Keep-Alive</span></li><li><span style=\"font-family: TheSansMonoCondensed; font-size: 8pt; background-color: rgb(255, 255, 255);\">&nbsp;Keep-Alive: max=5, timeout=12</span></li></ul></ul></ul><ul><li>管道化链接</li></ul></div>"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "title": "node.js内存控制",
+  "cells": [
+    {
+      "type": "text",
+      "data": "JavaScript与Java一样，使用垃圾回收的方式来实现自动内存管理"
+    },
+    {
+      "type": "text",
+      "data": "V8的开发者Lars Bak，在开发V8之前，Lars在Sun公司致力于高性能Java虚拟机的开发。"
+    },
+    {
+      "type": "text",
+      "data": "V8的内存限制，导致Node无法操作大内存对象，比如将一个2GB的文件读入内存进行字符串分析处理。<div><br></div><div>老生代内存限制<br><div><ul><li>64位系统下1464MB</li><li>32位系统下732MB</li></ul><div>新生代内存限制</div><div><ul><li>64位系统下32M</li><li>32位系统下16M</li></ul></div><div>可以使用以下参数来接触堆内存的限制</div></div><div><ul><li>node &nbsp;—max-old-space-size=1700 test.js &nbsp;（MB） 设置老生代内存空间容量</li><li>node &nbsp;—max-new-space-size=1024 test.js &nbsp;（KB）设置新生代内存空间容量</li></ul></div></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "process.momeryUsage()\n\n{\n  rss: 14958592,\n  heapTotal: 7195901,  //已经申请到的堆内存\n  heapUsed: 2821496    //已经使用的堆内存\n}"
+    },
+    {
+      "type": "text",
+      "data": "V8垃圾回收机制<div><ul><li>V8垃圾回收算法</li><ul><li>V8内存分代</li><ul><li>新生代内存——存活时间较短的对象</li><li>老生代内存——存活时间较长或常驻内存的对象</li></ul><li>新生代空间回收</li><ul><li>Scavenge算法</li><ul><li>将堆内存一分为二，一个处于使用中（From），一个处于空闲中（To）。分配对象时，先在From中分配。垃圾回收开始时，会检查From空间中的存活对象，存活对象将被复制到To空间中。完成复制后From和To空间的角色对调。</li></ul><li>当一个对象经过多次复制依然存在时，会被判定为老生代对象，这个过程称为晋升。</li></ul><li>老生代空间回收</li><ul><li>采用Mark-Sweep和Mark-Compact</li><li>Mark-Sweep是标记清除（老生代中活的对象比死的对象多）</li><ul><li>标记阶段遍历堆中的所有对象，并标记活着的对象</li><li>清除阶段，只清除没有被标记的对象</li><li>但是标记清除会导致内存碎片，为后续的大对象分配造成问题</li></ul><li>Mark-Compact是在Mark-Sweep之上提出的<br></li><ul><li>在对象标记为死亡后，在整理阶段将活的对象往一端移动</li><li>移动完成后，直接清理掉边界外的内存</li></ul><li>Incremental Marking</li><ul><li>在新生代回收中由于存活对象通常较小，所以采用全停顿的回收方式</li><li>在老生代中空间比较大，不适于全停顿回收，所以采用小步的增量标记和增量回收方式进行回收</li></ul></ul></ul></ul><div><b>从性能对比上来看Scavenge算法最快，Mark-Sweep次之，Mark-Compact最慢，所以V8主要使用了Mark-Sweep，在空间不足以对从新生代中晋升过来的对象进行分配时才使用Mark-Compact。</b></div></div><div><br></div><div><b>新生代到老生代的晋升过程</b></div><div><ul><li>对象从From空间复制到To空间时，会检查它的内存地址来判断这个对象是否经历过一次Scavenge回收，如果已经经历过，将对象从From空间复制到老生代空间，完成对象的晋升</li><li>从From空间复制到To空间时，会检查To空间的内存占比，如果已经超过25%，对象直接复制到老生代空间</li></ul><div><br></div></div><div>V8垃圾回收跟踪</div><div><ul><li>node —trace-gc test.js &nbsp; 查看垃圾回收日志</li><li>node —prof test.js &nbsp; 生成执行日志</li><ul><li>dep/v8/tool/linux-tick-processor 工具用于阅读日志</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "内存泄漏跟踪<div><ul><li>heapdump</li><ul><li>kill -USR2 &nbsp;&lt;pid&gt;</li></ul><li>memwatch</li><li><br></li></ul></div>"
+    }
+  ]
+}

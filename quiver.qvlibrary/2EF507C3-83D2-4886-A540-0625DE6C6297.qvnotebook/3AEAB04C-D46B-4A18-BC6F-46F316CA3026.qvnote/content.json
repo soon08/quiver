@@ -1,0 +1,18 @@
+{
+  "title": "centos6.5 安装配置gitlab",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "yum install curl openssh-server openssh-clients postfix cronie\n\nservice postfix start\n\nchkconfig postfix on\n\nlokkit -s http -s ssh\n\nwget https://mirror.tuna.tsinghua.edu.cn/gitlab-ce/yum/el6/gitlab-ce-8.6.6-ce.0.el6.x86_64.rpm\n\nrpm -ivh gitlab-ce-8.6.6-ce.0.el6.x86_64.rpm\n\ngitlab-ctl reconfigure\n\ngitlab-rake cache:clear RAILS_ENV=production"
+    },
+    {
+      "type": "text",
+      "data": "注意：<div>&nbsp; &nbsp; gitlab自带<font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">Nginx和PostgreSQL、Git</font>服务，所有不需要安装。</div><div>&nbsp; &nbsp; 如果系统占用了80端口，请关闭其他占用80端口的服务，否则需要修改gitlab的配置文件，以监听其他端口</div>"
+    },
+    {
+      "type": "text",
+      "data": "GITLAB配置CI<div><a href=\"https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/install/linux-repository.md\">https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/install/linux-repository.md</a><br></div>"
+    }
+  ]
+}

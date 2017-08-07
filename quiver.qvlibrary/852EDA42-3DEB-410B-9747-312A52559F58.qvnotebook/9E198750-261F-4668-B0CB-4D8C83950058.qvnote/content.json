@@ -1,0 +1,45 @@
+{
+  "title": " 关于营销工具链的制作",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>1.功能说明</div><div><ul><li>制作一篇文案，如何有效分享给理财师</li><li>发动理财师分享给用户</li><li>平台能统计和管理分享并查看分享数据</li><li>理财师能够查看她分享的文章有没有被查看，有没有效果</li><li>分享只能有三个层级 ？</li><ul><li>第一个层级是分享到理财师</li><li>第二个层级是分享到理财师的用户</li><li>理财师用户可以再次分享到用户 ？</li><li>第二层用户不能再分享 ？</li></ul><li>独立于微信之外的网站，不是微信公众号</li><li>面向手机设计，不面向PC设计</li></ul></div><div>2.功能设计</div><div><ul><li><br></li><li><br></li></ul></div><div>3.注意事项</div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><u><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">这些信息如何查询</font></u></div><img src=\"quiver-image-url/84D347032199CD3D3600AB1B8E04AB1E.jpg\">"
+    },
+    {
+      "type": "text",
+      "data": "融资企业的担保人<div><ul><li>可以有多个担保人</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "企业担保方信息 &amp; 企业自身信息<div><ul><li><a href=\"http://zhixing.court.gov.cn/search/\">http://zhixing.court.gov.cn/search</a></li><ul><li>查询被执行人信息</li></ul><li><a href=\"http://shixin.court.gov.cn/\">http://shixin.court.gov.cn</a><br></li><ul><li>查询失信人员信息</li></ul><li><a href=\"http://gsxt.saic.gov.cn/\">http://gsxt.saic.gov.cn</a><br></li><ul><li>企业登记信息</li><li>企业股东信息</li><li>企业变更信息</li><li>企业信用报告</li><li>银行征信信息</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "企业所在区域各种信息 &amp;&nbsp;企业所在政府信息<div><ul><li>人口</li><li>资源</li><li>扮演位置</li><li>年产值</li><li>工业产值</li><li>固定投资</li><li>消费总额</li><li>财政收支</li><li>负载率</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "产品本身信息<div><ul><li>管理人</li><li>交易对手（募集方）</li><li>托管人</li><li>发行规模</li><li>起投金额</li><li>资金运用情况</li><li>产品期限</li><li>收益情况</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "这些信息那些可以被投资者知道，那种方式不会有合规性问题"
+    },
+    {
+      "type": "text",
+      "data": "1.产品信息的展示创新<div>2.用颜色表示不同的角色</div>"
+    },
+    {
+      "type": "text",
+      "data": "决策中遇到的问题<div><ul><li>信息不够全面，导致不足以决策</li><li>信息全但不精，导致决策速度慢</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div>1.微信网站的开发，隐藏掉左上角菜单</div><img src=\"quiver-image-url/575FF665B71B466F324AF202FA2FFB53.jpg\" alt=\"1.pic.jpg\"><div>2.分享按钮移到下方</div><div><br></div><div>3.分享时要求用户填写手机</div>"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Http 代理",
+  "cells": [
+    {
+      "type": "text",
+      "data": "http代理服务器即是服务企也是客户端<div><ul><li>请求代理</li><li>缓存代理</li></ul><div>代理和网关的对比：</div></div><div><ul><li>代理链接的是相同协议的应用程序</li><li>网关链接的是不同协议的端点（扮演的是协议转换器的角色）</li></ul><div><br></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>为什么使用代理：</b><div><ul><li>代理服务器可以接触到所经过的HTTP流量，所以代理可以监视流量，并对其进行修改</li><li>代理服务可以做集中式访问控制</li><li>代理可以用于实现安全防火墙</li><li>代理可以实现web缓存</li><li>代理可以实现反向代理</li><li>代理服务器可以做内容路由器</li><li>代理服务器可以实现匿名访问</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "代理类型：<div><img src=\"quiver-image-url/988B74359F2A80077FCA0DCF827BD662.jpg\"><br></div>"
+    }
+  ]
+}

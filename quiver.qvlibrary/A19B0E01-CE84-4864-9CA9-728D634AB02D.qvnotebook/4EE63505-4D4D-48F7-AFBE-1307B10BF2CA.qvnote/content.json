@@ -1,0 +1,40 @@
+{
+  "title": "常用前端代码",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('#content').on(\"mousewheel DOMMouseScroll\", function (event) { \n    // chrome & ie || // firefox\n    var delta = (event.originalEvent.wheelDelta && (event.originalEvent.wheelDelta > 0 ? 1 : -1)) || (event.originalEvent.detail && (event.originalEvent.detail > 0 ? -1 : 1));  \n    \n    if (delta > 0) { \n        // 向上滚动\n        console.log('mousewheel top');\n    } else if (delta < 0) {\n        // 向下滚动\n        console.log('mousewheel bottom');\n    } \n});"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// 原生js\ndocument.getElementById('btn').addEventListener('click', function (event) {\n    event = event || window.event；\n\n    if (event.preventDefault){\n        // w3c方法 阻止默认行为\n        event.preventDefault();\n    } else{\n        // ie 阻止默认行为\n        event.returnValue = false;\n    }\n}, false);\n\n// jQuery\n$('#btn').on('click', function (event) {\n    event.preventDefault();\n});"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "// 原生js\ndocument.getElementById('btn').addEventListener('click', function (event) {\n    event = event || window.event；\n\n    if (event.stopPropagation){\n        // w3c方法 阻止冒泡\n        event.stopPropagation();\n    } else{\n        // ie 阻止冒泡\n        event.cancelBubble = true;\n    }\n}, false);\n\n// jQuery\n$('#btn').on('click', function (event) {\n    event.stopPropagation();\n});"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//检测浏览器是否支持SVG\nfunction isSupportSVG() { \n    var SVG_NS = 'http://www.w3.org/2000/svg';\n    return !!document.createElementNS &&!!document.createElementNS(SVG_NS, 'svg').createSVGRect; \n} \n\n// 测试\nconsole.log(isSupportSVG());"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//检测浏览器是否支持Cavans\n\nfunction isSupportCanvas() {\n    if(document.createElement('canvas').getContext){\n        return true;\n    }else{\n        return false;\n    }\n}\n\n// 测试，打开谷歌浏览器控制台查看结果\nconsole.log(isSupportCanvas());"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//获取元素位置\n//它返回一个对象，其中包含了left、right、top、bottom四个属性\nvar myDiv = document.getElementById('myDiv');\nvar x = myDiv.getBoundingClientRect().left; \nvar y = myDiv.getBoundingClientRect().top; "
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//全屏代码\n\nfunction fullscreen(element) {\n    if (element.requestFullscreen) {\n        element.requestFullscreen();\n    } else if (element.mozRequestFullScreen) {\n        element.mozRequestFullScreen();\n    } else if (element.webkitRequestFullscreen) {\n        element.webkitRequestFullscreen();\n    } else if (element.msRequestFullscreen) {\n        element.msRequestFullscreen();\n    }\n}\n\nfullscreen(document.documentElement);"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Docker网络",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li><b>Docker网络基础</b></li><li><b>Docker容器互联</b></li><li><b>Docker容器和外部网络互联</b></li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Docker网络基础-docker0</b><div><ul><li>是linux中的虚拟网桥</li><li>相当于拥有一个虚拟的网卡</li><li>可以设置IP地址</li><li>安装网桥管理程序</li><ul><li>apt-get install bridge-utils<br></li><li>brctl show 显示网桥</li></ul><li>也可以自己修改docker的配置</li><ul><li>ifconfig docker0 192.168.200.1 net mask 255.255.255.0</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Docker使用自定义的虚拟网桥</b><div><ul><li>brctl add br0</li><li>ifconfig br0 192.168.100.1 netmask 255.255.255.0</li><li>修改docker服务配置文件</li><ul><li>vim /etc/default /docker</li><li>添加 <font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">DOCKER_OPTS=“-b=br0\"</font></li><li>service docker restart</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>为Docker容器指定端口映射</b><div><ul><li>Docker可以在宿主机上随机选择一个位于49000~49900的端口来映射到docker容器的指定端口</li><li>Docker也可以在宿主机上指定一个具体的端口号来映射到docker容器的指定端口</li><ul><li>docker port &lt;容器ID&gt; &lt;端口号&gt;</li><li>docker run -d -p 80:80 &lt;镜像名称&gt; &lt;command&gt; &lt;args&gt;</li><ul><li>将容器的80端口绑定到宿主机的80端口</li></ul><li>docker run -d -p 127.0.0.1:80:80 &lt;镜像名称&gt; &lt;command&gt; &lt;args&gt;</li><ul><li>将容器的80端口绑定到本地宿主机的127.0.0.1这个IP的80端口上</li><li>-P 可以对外公开的Dockerfile的EXPOSE指令中设置的所有端口</li></ul></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Docker容器间互联-默认情况下同一宿主机下容器可以互联</b><div><ul><li>使用网络连接Docker存在的问题</li><ul><li>docker容器的<font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">IP地址会随着容器的重启而变化</font></li><li>使用IP地址连接，我们不得不在应用中硬编码IP地址</li></ul><li>可以使用Docker提供的容器互联功能</li><ul><li>被连接的容器必须运行在同一个Docker宿主机上</li><li>不同Docker宿主机上运行的容器无法相连</li></ul></ul><ul><li>docker run -it --name&nbsp;redis ubuntu /bin/bash</li><li>docker run -it --name app --link=[容器名:容器别名] ubuntu /bin/bash</li><ul><li>可以在容器中通过别名访问容器</li><li>即使容器重启后（IP地址发生变化），也可以访问</li></ul></ul><div><b>如何拒绝容器间的互联</b></div></div><div><ul><li>启动选项中添加</li><ul><li>--icc=false</li></ul></ul><div><br></div></div><div><b>允许特定容器之间的连接</b></div><div><ul><li>启动选项</li><ul><li>--icc=false</li><li>--iptables=true &nbsp; 允许Docker将配置添加到Linux的iptables</li><li>--link=[容器名:容器别名] &nbsp; 允许访问的容器</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Docker容器与外部通信</b><div><ul><li>ip_forward</li><li>iptables</li><li>允许端口映射访问</li><li>限制IP访问容器</li></ul></div>"
+    }
+  ]
+}

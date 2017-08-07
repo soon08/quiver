@@ -1,0 +1,9 @@
+{
+  "title": "浮动类产品的分析维度",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>管理人</li><ul><li>注册资金</li><li>项目管理经验</li><li>项目管理业绩</li><li>公司历史</li><ul><li>成立时间</li><li>历史奖项</li><li>企业违规情况</li><li>企业口碑（舆情）</li></ul><li>股东背景</li><ul><li>企业股东——考虑企业财力</li><li>自然人股东——考虑个人履历（教育，从业等）</li></ul><li>团队能力</li><ul><li>投资风格</li><li>基金经理</li><ul><li>个人履历</li><ul><li>学历</li><li>工作经验</li></ul><li>历史业绩</li><li>社会地位</li><li>投资专场&nbsp;</li></ul><li>公司业绩</li><ul><li>设计产业</li><li>产品发售数量</li><li>兑付情况</li><li>负面新闻</li></ul></ul></ul><li>投资标的</li><ul><li>融资方</li><li>担保方</li></ul><li>投资行业</li><li>风险控制</li><ul><li>政策风险</li><li>流动性风险</li><ul><li>退出方式</li></ul></ul><li>投资收益</li></ul>"
+    }
+  ]
+}

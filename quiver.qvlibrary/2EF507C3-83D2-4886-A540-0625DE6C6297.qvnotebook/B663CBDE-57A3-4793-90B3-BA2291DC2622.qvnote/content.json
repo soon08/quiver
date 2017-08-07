@@ -1,0 +1,17 @@
+{
+  "title": "iptables实战应用",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>数据包过滤</b><div><ol><li>为只提供WEB服务的服务器编写一条访问规则</li><ol><li>iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT</li><ol><li>如果数据包的状态是&nbsp;RELATED,ESTABLISHED 则允许通过</li></ol><li>iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT</li><li>iptables -A INPUT -i lo -j ACCEPT</li><li>iptables -P INPUT DROP</li><ol><li>将默认的INPUT链设置为丢弃</li></ol></ol></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>SSH防护</b><div><img src=\"quiver-image-url/C09C5F657FEA5D14B74BB92729454402.jpg\"><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>CC攻击防护</b><div><img src=\"quiver-image-url/DDB8DE71A55E97AE791EDFFF68045D62.jpg\"><br></div>"
+    }
+  ]
+}

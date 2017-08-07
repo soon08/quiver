@@ -1,0 +1,41 @@
+{
+  "title": "centos6.5 环境安装脚本",
+  "cells": [
+    {
+      "type": "text",
+      "data": "基础环境安装"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "#查看openssl版本\nopenssl version\n\n#安装EPEL源\nrpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm\n\n#安装gcc\nyum install gcc gcc-c++ glibc-static -y  \n\n#安装wget\nyum install -y wget\n\n#安装curl\nyum install -y curl\n\n#安装openssl\nyum install openssl\n\n##或者简单使用下面命令安装开发工具\nyum -y groupinstall 'Development Tools'"
+    },
+    {
+      "type": "text",
+      "data": "MYSQL生产环境安装"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "#安装依赖库"
+    },
+    {
+      "type": "text",
+      "data": "NODE生产环境安装"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "GITLAB生产环境安装"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": ""
+    }
+  ]
+}

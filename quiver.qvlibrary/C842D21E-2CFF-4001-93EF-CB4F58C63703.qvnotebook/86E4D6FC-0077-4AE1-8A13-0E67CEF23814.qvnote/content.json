@@ -1,0 +1,32 @@
+{
+  "title": "NSUserDefault",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ol><li>NSUserDefault</li><li>NSArray</li><li>NSDictionary</li><li>NSString</li><li>NSURL</li><li>NSNumber</li><li>AnyObject</li></ol>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "var userDefault = NSUserDefaults.standardUserDefaults()\n\n//AnyObject\nuserDefault.setObject(\"hangge.com\", forKey: \"Object\")\nvar objectValue:AnyObject? = userDefault.objectForKey(\"Object\")\n\n//Int类型\nuserDefault.setInteger(12345, forKey: \"Int\")\nvar intValue = userDefault.integerForKey(\"Int\")\n\n//Float类型\nuserDefault.setFloat(3.2, forKey: \"Float\")\nvar floatValue = userDefault.floatForKey(\"Float\")\n\n//Double类型\nuserDefault.setDouble(5.2240, forKey: \"Double\")\nvar doubleValue = userDefault.doubleForKey(\"Double\")\n\n//Bool类型\nuserDefault.setBool(true, forKey: \"Bool\")\nvar boolValue = userDefault.boolForKey(\"Bool\")\n\n//NSURL类型\nuserDefault.setURL(NSURL(string:\"http://hangge.com\")!, forKey: \"NSURL\")\nvar urlValue = userDefault.URLForKey(\"NSURL\")\n\n//NSString类型\nuserDefault.setObject(\"hangge.com\", forKey: \"NSString\")\nvar nsStringValue = userDefault.objectForKey(\"NSString\") as! NSString\n\n//NSNumber类型\nvar number:NSNumber = NSNumber(int:22)\nuserDefault.setObject(number, forKey: \"NSNumber\")\nnumber = userDefault.objectForKey(\"NSNumber\") as! NSNumber\n\n//NSArray类型\nvar array:NSArray = NSArray(array: [\"123\",\"456\"])\nuserDefault.setObject(array, forKey: \"NSArray\")\n\n//NSDictionaryy类型\nvar dictionary:NSDictionary = NSDictionary(dictionary: [\"1\":\"hangge.com\"])\nuserDefault.setObject(dictionary, forKey: \"NSDictionary\")\ndictionary = userDefault.objectForKey(\"NSDictionary\") as! NSDictionary"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; font-weight: bold; line-height: 26px; widows: 1;\">系统对象的存储与读取</span>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "var userDefault = NSUserDefaults.standardUserDefaults()\n \n//UIImage对象存储\n//将对象转换成NSData流\nvar image = UIImage(named: \"apple.png\")\nvar imageData:NSData = NSKeyedArchiver.archivedDataWithRootObject(image!)\n//存储NSData对象\nuserDefault.setObject(imageData, forKey: \"imageData\")\n \n//UIImage对象读取\n//获取NSData\nvar objData:NSData = userDefault.objectForKey(\"imageData\") as! NSData\n//还原对象\nvar myImage = NSKeyedUnarchiver.unarchiveObjectWithData(objData) as! UIImage\nprintln(myImage)"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; font-weight: bold; line-height: 26px; widows: 1;\">自定义对象的存储和读取</span><div><span style=\"font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; font-weight: bold; line-height: 26px; widows: 1;\"><span style=\"font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; font-weight: normal; line-height: normal;\">如果想要存储自己定义的类，首先需要对该类实现NSCoding协议来进行归档和反归档（序列化和反序列化）。即该类内添加func encodeWithCoder(_encoder:NSCoder)方法和init(coder decoder:NSCoder)方法，将属性进行转换。</span><br></span></div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "var userDefault = NSUserDefaults.standardUserDefaults()\n \n//自定义对象存储\nvar model = UserInfo(name: \"航歌\", phone: \"3525\")\n//实例对象转换成NSData\nvar modelData:NSData = NSKeyedArchiver.archivedDataWithRootObject(model)\n//存储NSData对象\nuserDefault.setObject(modelData, forKey: \"myModel\")\n \n//自定义对象读取\nvar myModelData = userDefault.objectForKey(\"myModel\") as! NSData\nvar myModel = NSKeyedUnarchiver.unarchiveObjectWithData(myModelData) as! UserInfo\n \n \n//----- 自定义对象类 -----\nclass UserInfo: NSObject {\n    var name:String\n    var phone:String\n     \n    //构造方法\n    init(name:String=\"\",phone:String=\"\"){\n        self.name = name\n        self.phone = phone\n        super.init()\n    }\n     \n    //从nsobject解析回来\n    init(coder aDecoder:NSCoder!){\n        self.name=aDecoder.decodeObjectForKey(\"Name\") as! String\n        self.phone=aDecoder.decodeObjectForKey(\"Phone\") as! String\n    }\n     \n    //编码成object\n    func encodeWithCoder(aCoder:NSCoder!){\n        aCoder.encodeObject(name,forKey:\"Name\")\n        aCoder.encodeObject(phone,forKey:\"Phone\")\n    }\n}"
+    }
+  ]
+}

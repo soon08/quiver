@@ -1,0 +1,9 @@
+{
+  "title": "Terminal",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<p style=\"margin: 10px auto; color: rgb(0, 0, 0); line-height: 18px; widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\">1、将光标移动到行首： ctrl + a</font></p><p style=\"margin: 10px auto; color: rgb(0, 0, 0); line-height: 18px; widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\">2、将光标移动到行尾： ctrl + e</font></p><p style=\"margin: 10px auto; color: rgb(0, 0, 0); line-height: 18px; widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\">3、清除屏幕： &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ctrl + l</font></p><p style=\"margin: 10px auto; color: rgb(0, 0, 0); line-height: 18px; widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\">4、搜索以前使用命令： ctrl + r</font></p><p style=\"margin: 10px auto; color: rgb(0, 0, 0); line-height: 18px; widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\">5、清除当前行： &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ctrl + u</font></p><p style=\"margin: 10px auto; color: rgb(0, 0, 0); line-height: 18px; widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\">6、清除至当前行尾： &nbsp; &nbsp;ctrl + k</font></p><p style=\"margin: 10px auto; color: rgb(0, 0, 0); line-height: 18px; widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\">7、单词为单位移动： &nbsp; &nbsp;option + 方向键</font></p>"
+    }
+  ]
+}

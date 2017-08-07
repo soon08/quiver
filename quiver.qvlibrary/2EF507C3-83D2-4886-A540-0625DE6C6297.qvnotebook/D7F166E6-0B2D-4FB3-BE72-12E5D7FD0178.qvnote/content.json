@@ -1,0 +1,10 @@
+{
+  "title": "centos6.5 编译安装git",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "yum install libffi-devel\n\nyum install openssl-devel\n\nyum install python-devel\n\nyum install curl-devel \n\nyum install expat-devel \n\nyum install gettext-devel  \n\nyum install zlib-devel  \n\nyum install asciidoc\n\nyum install xmlto\n\nyum install perl-ExtUtils-MakeMaker.x86_64\n\nwget https://www.kernel.org/pub/software/scm/git/git-2.1.0.tar.gz\n\ntar zxvf git-2.1.0\n\ncd git-2.1.0\n\n./configure --prefix=/usr\n\nmake \n\nmake install"
+    }
+  ]
+}

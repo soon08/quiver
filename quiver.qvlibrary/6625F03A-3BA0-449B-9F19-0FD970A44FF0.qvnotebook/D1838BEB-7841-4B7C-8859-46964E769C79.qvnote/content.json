@@ -1,0 +1,9 @@
+{
+  "title": "核心概念",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ol><li>过滤器</li><ol><li>大小写过滤 —— lowercase</li></ol><li>分析器</li><ol><li>多个过滤器组成</li></ol></ol>"
+    }
+  ]
+}

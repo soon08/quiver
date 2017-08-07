@@ -1,0 +1,9 @@
+{
+  "title": "TLS/SSL握手过程",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/6554ACF47B9C45A45284508357E180B6.jpg\"><div><ol><li>客户端发起请求，明文传输以下信息</li><ol><li>支持的最高TSL协议版本号（version）从低到高为：SSLv2 &nbsp;SSLv3 TLSv1 TLSv1.1 TLSv1.2 （现在基本不再使用低于TLSv1的版本）</li><li>客户端支持的加密套件列表（cipher suites），每个加密套件对应TLS原理中的四个功能组合</li><ol><li>认证算法 AU（身份验证）</li><li>秘钥交换算法 key exchange （秘钥协商）</li><li>对称加密算法 Enc &nbsp;（信息加密）</li><li>信息摘要算法 Mac &nbsp;（完整性校验）</li></ol><li>支持的压缩算法 compression methods （信息压缩传输）</li><li>随机数random_c，用于后续秘钥的生成</li><li>扩展字段</li></ol><li>服务器回应客户端请求，明文传输以下信息</li><ol><li>使用协议版本号（version）</li><li>选择的加密套件 （cipher suite）</li><li>选择的压缩算法 （compression method）</li><li>随机数random_s ，用于秘钥协商</li><li>服务端对应的证书链，用于身份验证和秘钥交换</li></ol><li>客户端对证书进行校验</li><ol><li>证书链可信性</li><li>证书是否吊销</li><li>证书是否过期</li><li>证书域名与当前访问域名是否匹配</li></ol><li>证书校验合法后，客户端发起秘钥交换请求</li><ol><li>客户端产生随机数字Pre-master，并用证书公钥加密，发送给服务器</li><li>使用random_c,random_s,pre-master 产生协商秘钥</li><li>通知服务器后续通信都使用协商秘钥和加密算法通信</li><li>结合之前所有的通信参数的hash值与其他相关信息生成一段数据，用协商秘钥加密，发送给服务器</li></ol><li>服务器接收秘钥交换请求</li><ol><li>用服务器私钥解密Pre-master数据，基于之前的两个明文随机数random_c和random_s，计算得到协商秘钥，并和客户端传递过来的协商秘钥</li><li>计算之前所有接收信息的hash值，用服务端计算的协商秘钥解密传递的握手信息，与计算得出的hash值对比，验证数据和秘钥的正确性。</li><li>验证通过后，服务端同样发送change_cipher_spec 告知客户端后续的通信都采用协商秘钥与算法通信</li><li>服务器也结合之前所有的通信参数的hash值与其他相关信息生成一段数据，用协商秘钥加密，发送给客户端</li></ol><li>客户端计算接收的hash值，并用协商秘钥解密<span style=\"color: rgb(93, 93, 93); font-family: helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', simsun; font-size: 18px; line-height: 30px; widows: 1; background-color: rgb(255, 255, 255);\">encrypted_handshake_message，验证服务器发送的数据和秘钥，如果成功握手完成。</span></li><li><span style=\"color: rgb(93, 93, 93); font-family: helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', simsun; font-size: 18px; line-height: 30px; widows: 1; background-color: rgb(255, 255, 255);\">开始使用协商秘钥和算法进行加密通信</span></li></ol></div>"
+    }
+  ]
+}

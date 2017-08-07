@@ -1,0 +1,37 @@
+{
+  "title": "Charles教程",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>常用抓包工具</b><div><ul><li>window</li><ul><li>Wireshark</li><li>fiddler</li></ul><li>linux</li><ul><li>Wireshark</li></ul><li>mac</li><ul><li>Charles</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Charles功能</b><div><ul><li>抓取HTTP网络请求</li><li>抓取HTTPS网络请求</li><li>过滤网络请求</li><li>模拟慢速网络请求</li><li>修改网络请求内容</li><li>修改服务器返回内容</li><li>Map请求重定向</li><li>Rewrite请求内容<br></li><li>Breakpoints断点功能<br></li><li>服务器压力测试<br></li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><b>Charles安装和设置</b></div><div><br></div><div>下载Charles安装包安装</div><div><br></div><div>启动Charles后，charles会要求授予系统管理权限，输入密码进行授权</div><div><br></div><div>点击菜单“Proxy”-\\&gt; \"Mac OS Proxy\"来讲Charles设置成系统代理</div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Charles界面介绍（v4.0）</b><div><b><br></b><div><img src=\"quiver-image-url/34AAD5861ED13E775D38756025705EEF.jpg\"><b><br></b></div></div><div>两者视图模式</div><div><ul><li>Structure &nbsp;将请求按照域名和路径进行分类</li><li>Sequence 将请求按照时间顺序排列</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "过滤网络请求<div><ul><li>Proxy -&gt; Recording Settings &nbsp;选择Include栏，添加要监控的协议、主机、端口号</li></ul><div><img src=\"quiver-image-url/53EA51F3C3408E013EEB7A711B6EF8D6.jpg\"><br></div></div><div><img src=\"quiver-image-url/6B3C23A8FDC4CFDF6EA39842C9683D32.jpg\"><br></div><div><br></div><div><ul><li>在网络请求上点击右键选择“Focus”，之后再Filter栏上选择Focused一项</li></ul><div><img src=\"quiver-image-url/A2143364E3EDEF84FC092285BC8572CC.jpg\"><br></div></div>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

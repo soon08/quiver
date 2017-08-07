@@ -1,0 +1,63 @@
+{
+  "title": "性能优化",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>对象创建</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var array = []\nvar object = {}\nvar string = ''"
+    },
+    {
+      "type": "text",
+      "data": "<b>对象属性</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var human = {\n    username : 'synder',\n    password : 'sam',\n    gender : 1\n}\n\n//必须要删除属性财这么做\ndelete human.username\n\n//非常低效\ndelete human //human = null\n\n//for(var key in obj)真的很慢\nconsole.time('end');\nvar tmp = {};\nfor (var i = 0; i < 1000000; i++) {\n    for (var key in human) {\n        tmp[key] = human[key];\n    }\n}\nconsole.timeEnd('end'); //945ms\n\nconsole.time('end');\nvar tmp = {};\nfor(var i = 0 ; i < 1000000 ; i++) {\n    tmp.username = human.username;\n    tmp.password = human.password;\n    tmp.gender = human.gender;\n}\nconsole.timeEnd('end'); //7ms"
+    },
+    {
+      "type": "text",
+      "data": "<b>字符串处理</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//数字转字符串，不要用toString()\nvar num = 10\nvar str = num + ''\n\n//字符串拼接\nvar str = '';\nfor (var i = 0 ; i < 100000 ; i++){\n str += i;\n}"
+    },
+    {
+      "type": "text",
+      "data": "<b>数组访问</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//push性能真的很差\nconsole.time('end');\nvar x = [];\nfor(var i = 0 ; i < 1000000; i++){\n    x.push(i);\n}\nconsole.timeEnd('end'); //75.919ms\n\nconsole.time('end');\nvar y = [];\nfor(var i = 0 ; i < 1000000; i++){\n    y[i] = i;\n}\nconsole.timeEnd('end'); //26.305ms\n\nconsole.time('end');\nvar y = new Array();\nfor(var i = 0 ; i < 1000000; i++){\n    y[i] = i;\n}\nconsole.timeEnd('end'); //20.944ms\n\nconsole.time('end');\nvar y = new Array(1000000);\nfor(var i = 0 ; i < 1000000; i++){\n    y[i] = i;\n}\nconsole.timeEnd('end'); //5.304ms"
+    },
+    {
+      "type": "text",
+      "data": "<b>错误处理</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//缩小try{}catch(){}的范围\n//不会发生异常的代码不需要包括"
+    },
+    {
+      "type": "text",
+      "data": "<b>同步转异步</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var async = require('async');\nasync.forEach(); //异步循环"
+    },
+    {
+      "type": "text",
+      "data": "<b>慎用正则表达式</b>"
+    }
+  ]
+}

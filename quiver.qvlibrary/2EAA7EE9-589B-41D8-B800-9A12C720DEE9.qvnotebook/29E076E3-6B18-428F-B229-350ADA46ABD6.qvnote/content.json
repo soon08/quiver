@@ -1,0 +1,10 @@
+{
+  "title": "WebView",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "let requestUrl = NSURL(string: url)\nlet request = NSURLReuqest(URL: requestUrl)\nwebView.loadRequest(request)"
+    }
+  ]
+}

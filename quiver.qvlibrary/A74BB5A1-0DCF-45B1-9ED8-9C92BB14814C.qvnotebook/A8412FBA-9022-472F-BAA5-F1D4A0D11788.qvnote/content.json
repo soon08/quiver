@@ -1,0 +1,48 @@
+{
+  "title": "Docker基础",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>Docker的基本概念：</b><div><ul><li>什么事容器技术</li><ul><li>是一种虚拟化方案</li><li>docker依赖于linux的Namespace和Control Group技术（Docker只能运行在类*inux系统上，不能运行在window上）</li></ul><li>虚拟机和容器对比</li><ul><li>虚拟机更加消耗机器性能和资源</li><li>虚拟机需要使用软件的方式模拟硬件</li><li>虚拟机是在系统之上再构建一个操作系统</li><li>容器更加轻量级</li><li>容器依赖于系统内核</li></ul><li>什么是Docker</li><ul><li>能将应用程序自动部署到容器</li><li>基于Apache 2.0 开源授权协议发行</li><li>又dotCloud于2013年初发布</li><li>用google的golang语言开发而成</li></ul><li>Docker的特点</li><ul><li>能轻松快速创建一个容器</li><li>docker容器拥有很高的性能</li><li>docker能将是开发、测试、生产环境的一致性</li><li>docker鼓励使用面向服务的架构</li></ul><li>Docker的使用场景</li><ul><li>使用Docker容器开发、测试、部署服务</li><li>创建隔离的运行环境（创建不同的生产环境）</li><li>搭建测试环境（测试不同系统的测试环境）</li><li>构建多用户的平台即服务的基础设施（PaaS）</li><li>构建软件即服务的应用程序（SasS）</li><li>高性能、超大规模的宿主机部署</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><b>Docker的基本组成：</b><br></div><div><ul><li>Docker Client 客户端<br></li><li>Docker Daemon 守护进程<br></li><li>Docker Image 镜像<br></li><li>Docker Container 容器<br></li><li>Docker Registry 仓库<br></li></ul><div><img src=\"quiver-image-url/03F89902112E32BEE3D94AA608A6B85F.jpg\"><br></div><div><b>客户端/守护进程</b></div></div><div><ul><li>docker是C/S架构的程序</li><li>可以是本地，也可以是远程的</li></ul><div><b>Docker镜像</b></div></div><div><ul><li>Docker的镜像是一个层叠的文件系统</li><li>最底部的镜像称为基础镜像</li></ul><div><b>Docker仓库</b></div></div><div><ul><li>公有仓库</li><li>私有仓库</li><li>Docker Hub（http://index.docker.io）</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Docker 安装教程：</b><div><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Docker基础命令：</b><div><ul><li>docker version &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 查看docker版本</li><li>docker search &lt;镜像名称&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;在index.docker.io上面有很多Docker可用镜像</li><li>docker pull &lt;镜像的完整名称&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 从仓库下载镜像</li><li>docker push &lt;镜像完整名称&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;将镜像保存到仓库中</li><li>docker run&nbsp;&nbsp;&lt;镜像的完整名称&gt; &lt;命令&gt; &nbsp;在容器中运行命令</li><li>docker commit &lt;容器ID&gt; &lt;容器名称&gt; &nbsp; &nbsp;创建或者修改一个新的镜像提交</li><li>docker ps -a &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 查看docker有哪些容器</li><li>docker inspect &lt;容器ID&gt; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 查看docker在运行的命令</li><li>docker images &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 查看所有的镜像</li></ul></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "docker run ubuntu echo \"hello world\""
+    },
+    {
+      "type": "text",
+      "data": "Docker容器：<div>&nbsp; &nbsp; docker容器可以理解为在沙盒中运行的进程。这个沙盒包含该进程所必须的资源，包括文件系统、系统类库、shell环境。但是这个沙盒默认是不会运行任何程序的。你需要在沙盒中运行一个进程来启动某一个容器。这个进程是该容器唯一的进程，所以该进程结束时，容器也完全停止。</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "docker run learn/tutorial echo \"hello word\""
+    },
+    {
+      "type": "text",
+      "data": "&nbsp; &nbsp; 接下来就是在docker容器里面安装一个程序ping，程序安装后，容器就会停止，但是对容器的改动不会丢失"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "docker run learn/tutorial apt-get install -y ping\n\n\n\ndocker run -it ubuntu /bin/bash 运行交互命令环境"
+    },
+    {
+      "type": "text",
+      "data": "<b>Docker容器的相关技术：</b><div><b>linux容器相关概念</b></div><div><ol><li>namespace</li><ol><li>PID &nbsp; &nbsp;进程隔离</li><li>NET &nbsp; 网络接口隔离</li><li>IPC &nbsp; &nbsp;跨进程通信访问</li><li>MNT &nbsp;管理挂载点（文件系统隔离）</li><li>UTS &nbsp; 隔离内核和版本标识</li></ol><li>control groups</li><ol><li>用来分配资源（来源于Google）</li><li>可以对资源进行设置</li><li>可以对优先级进行设置</li><li>可以对资源进行计量</li><li>可以对资源进行控制</li></ol></ol><div><img src=\"quiver-image-url/C9CC80AD1BDE95DCA63437EA7D2877A9.jpg\"><br></div></div>"
+    }
+  ]
+}

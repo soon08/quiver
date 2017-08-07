@@ -1,0 +1,14 @@
+{
+  "title": "UIPageControl",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/73083572A3BBDDBF87C727F857871939.jpg\">"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//\n//  ViewController.swift\n//  ScrollViewDemo\n//\n//  Created by synder on 16/6/11.\n//  Copyright © 2016年 synder. All rights reserved.\n//\n\nimport UIKit\n\nclass ViewController: UIViewController , UIScrollViewDelegate{\n\t@IBOutlet weak var scrollView: UIScrollView!\n\t@IBOutlet weak var pageControl: UIPageControl!\n\t\n\tvar viewWidthTemp: Int = 0\n\tvar viewHeightTemp: Int = 0\n\n\toverride func viewDidLoad() {\n\t\tsuper.viewDidLoad()\n\t\t\n\t\tlet mainScreen = UIScreen.mainScreen()\n\t\tlet viewWidth = mainScreen.bounds.size.width + 8\n\t\tlet viewHeight = mainScreen.bounds.size.height - 20\n\t\t\n\t\tviewWidthTemp = Int(viewWidth)\n\t\tviewHeightTemp = Int(viewHeight)\n\t\t\n\t\tscrollView.delegate = self\n\t\tscrollView.pagingEnabled = true\n\t\tscrollView.showsVerticalScrollIndicator = false\n\t\tscrollView.showsHorizontalScrollIndicator = false\n\t\tscrollView.contentSize = CGSize(width: viewWidth * 4, height:viewHeight)\n\t\t\n\t\tlet aView = UIView(frame: CGRect(x: 0 * viewWidth, y: 0, width: viewWidth, height: viewHeight))\n\t\tlet bView = UIView(frame: CGRect(x: 1 * viewWidth, y: 0, width: viewWidth, height: viewHeight))\n\t\tlet cView = UIView(frame: CGRect(x: 2 * viewWidth, y: 0, width: viewWidth, height: viewHeight))\n\t\tlet dView = UIView(frame: CGRect(x: 3 * viewWidth, y: 0, width: viewWidth, height: viewHeight))\n\t\t\n\t\taView.backgroundColor = UIColor.greenColor()\n\t\tbView.backgroundColor = UIColor.blueColor()\n\t\tcView.backgroundColor = UIColor.redColor()\n\t\tdView.backgroundColor = UIColor.yellowColor()\n\t\t\n\t\tscrollView.addSubview(aView)\n\t\tscrollView.addSubview(bView)\n\t\tscrollView.addSubview(cView)\n\t\tscrollView.addSubview(dView)\n\t}\n\n\toverride func didReceiveMemoryWarning() {\n\t\tsuper.didReceiveMemoryWarning()\n\t}\n\n\tfunc scrollViewDidScroll(scrollView: UIScrollView){\n\t\t//计算当前偏移量\n\t\tlet offsetX = scrollView.contentOffset.x\n\t\tlet page = Int(Int(offsetX) / viewWidthTemp)\n\t\t\n\t\t//设定pageControl页\n\t\tpageControl.currentPage = page\n\t}\n\t\n\t\n\t@IBAction func pageValueChanged(sender: UIPageControl) {\n\t\tlet currentPage = sender.currentPage\n\t\tlet rect = CGRect(x: viewWidthTemp * currentPage, y: 0, width: viewWidthTemp, height: viewHeightTemp)\n\t\tscrollView.scrollRectToVisible(rect, animated: true) //将scroll滑动到指定位置\n\t}\n\n}"
+    }
+  ]
+}

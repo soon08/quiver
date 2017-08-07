@@ -1,0 +1,9 @@
+{
+  "title": "常用库收集",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<a href=\"https://github.com/mwilliamson/mammoth.js\">https://github.com/mwilliamson/mammoth.js</a>&nbsp; 将docx文件转换成html文件<div><a href=\"https://github.com/open-xml-templating/docxtemplater\">https://github.com/open-xml-templating/docxtemplater</a>&nbsp; docx文件模版<br><div><a href=\"https://github.com/SheetJS/js-xlsx\">https://github.com/SheetJS/js-xlsx</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;读取和写入XLSX文件<br></div><div><a href=\"https://github.com/g21589/PPTX2HTML\">https://github.com/g21589/PPTX2HTML</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;将pptx文件转成html<br></div></div><div><a href=\"https://github.com/marcbachmann/node-html-pdf\">https://github.com/marcbachmann/node-html-pdf</a>&nbsp;HTML转PDF<br></div><div><a href=\"https://github.com/mozilla/pdf.js\">https://github.com/mozilla/pdf.js</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;网页显示PDF</div>"
+    }
+  ]
+}

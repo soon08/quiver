@@ -1,0 +1,21 @@
+{
+  "title": "iptables四表五链",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><b>iptables数据包流程</b></div><img src=\"quiver-image-url/4536E6F640E2DFCE1BBBC11579E7F564.jpg\"><br><div><ul><li>数据包进入网卡时，首先进入PREROUTING链，内核根据数据包目的IP判断是否需要转送出去</li><li>如果数据包是进入本机的，它会进入INPUT链，数据包到了INPUT链后任何进程都可以接收它，被LOCALHOST处理。处理完后，数据会流过OUTPUT链，经过POSTROUTING链输出</li><li>如果数据包不是进入本机的，会直接通过FORWARD链到POSTROUTING链输出</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>iptables四个表</b><div><ol><li><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">filter &nbsp;实现包的过滤</font></li><li><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">nat &nbsp; &nbsp;网络地址转换</font></li><li>mangle &nbsp;数据包修改</li><li>raw &nbsp; &nbsp;数据跟踪处理</li></ol><div>规则表之间的优先级：raw &gt; mangle &gt; nat &gt; filter</div></div><div><br></div><div><br></div><div><img src=\"quiver-image-url/93B516C79451531600DDEE6977C18BFA.jpg\"><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>iptables五个链</b><div><ol><li>PREROUTING</li><li>INPUT</li><li>FORWARD</li><li>LOCALHOST</li><li>OUTPUT</li><li>POSTROUTING</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>iptables连接状态</b><div><ol><li>ESTABLISHED : nk墙，那么之后的所有数据包状态都会是ESTABLISHED</li><li>NEW : 每一条连接中的第一个数据包</li><li>RELATED : 被动产生的数据包（web服务产生的数据）</li><li>INVALID : &nbsp;状态不明的数据包，一般被视为恶意数据包而被丢弃</li></ol></div>"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "个人简历",
+  "cells": [
+    {
+      "type": "text",
+      "data": "工作经验"
+    },
+    {
+      "type": "text",
+      "data": "青之软件（软件服务和外包）<div>岗位 实施工程师</div><div>编码、实施、培训、需求收集</div><div><br></div><div><br></div><div>博瑞游戏——博瑞天堂事业部</div><div>node.js主程</div><div>开发基于星座社交软件软件后台</div><div><br></div><div><br></div><div>小虎金融</div><div>node.js 高级开发工程师</div><div>负者2C金融产品 壹财宝的开发</div><div>负者2B金融产品 壹财富重构</div><div>负者小虎集团官网</div><div>负者腾云资产官网</div><div><br></div><div>主要作品</div><div>个人github主页&nbsp;</div><div>基于express扩展的web和api框架xpress，主要解决版本和通道控制，将路由注册自动化，能根据编写api代码自动生成服务API文档，在node.js原声api没有做好的地方扩展了一些功能，主要目的就是加快开发速度，让团队成员不必关心其他复杂细节。</div><div><br></div><div>node-monitor &amp; monitor-agent 实现对node应用的无侵入监控</div><div><br></div><div>精通node.js的运行原理，</div>"
+    }
+  ]
+}

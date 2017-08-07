@@ -1,0 +1,47 @@
+{
+  "title": "Go测试",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>功能测试函数的编写</b>"
+    },
+    {
+      "type": "text",
+      "data": "<ol><li>编写测试函数</li><ol><li>函数名以Test开头</li><li>函数参数为 *testing.T类型</li></ol><li>常规日志记录</li><ol><li>t.Log</li><li>t.Logf</li></ol><li>错误日志记录</li><ol><li>t.Errorf</li></ol><li>致命错误日志</li><ol><li>t.Failf</li></ol><li>失败标记</li><ol><li>t.Fail</li><li>t.FailNow &nbsp;会直接终止当前测试函数的运行，转而运行其他测试函数</li></ol><li>失败判断</li><ol><li>t.Failed获取失败标志</li></ol><li>忽略测试</li><ol><li>t.SkipNow 标记当前测试函数已经被标记为忽略测试</li></ol><li>并行运行</li><ol><li>t.Parallel &nbsp;标记当前测试函数可以被并行运行</li></ol></ol>"
+    },
+    {
+      "type": "text",
+      "data": "<b>功能测试常用参数说明</b>"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>-v 打印测试过程中的被记录的日志</li><li>-timeout 设置测试的超时时间</li><ul><li>s &nbsp;表示秒 -timeout 1000s</li><li>ms 表示毫秒 -timeout 1000ms&nbsp;</li><li>ns 表示纳秒 -timeout 1000ns</li><li>us 表示微秒</li><li>h 表示小时</li><li>m 表示分钟</li></ul><li>-parallel 标记最大并发进行的测试函数数量，需要在测试函数中t.Parallel标记</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<b>基准测试函数的编写</b><div><ul><li>函数名以Benchmark开头</li><li>函数参数为 *testing.B 类型</li><li>testing.B.N &nbsp;可以获取技术次数<br></li><li>testing.B.ResetTimer 可以重置计数器</li><li>testing.B.StartTimer 可以开始计时器</li><li>testing.B.StopTimer 可以停止计时器</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>基准测试常用参数说明</b><div><ul><li>-bench 运行基准测试</li><li>-benchmem 输出内存分配统计信息</li><li>-benchtime 控制单个基准测试分配的时间上限</li><li>-cpu 标记需要调用CPU核数的列表用逗号分隔</li></ul></div>"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "go test -bench=Prime -cpu=1,2,4,6,8 cnet/etcp"
+    },
+    {
+      "type": "text",
+      "data": "<b>样本测试</b><div><ul><li>函数名以Example开头</li></ul></div>"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "package net\n\nimport \"fmt\"\n\nfunc ExampleHello() {\n    fmt.Println(\"hello, Go\")\n    //Output: hello, Go\n}"
+    },
+    {
+      "type": "text",
+      "data": "<b>测试覆盖率</b><div><ul><li>-cover &nbsp;启用测试覆盖率分析</li></ul></div>"
+    }
+  ]
+}

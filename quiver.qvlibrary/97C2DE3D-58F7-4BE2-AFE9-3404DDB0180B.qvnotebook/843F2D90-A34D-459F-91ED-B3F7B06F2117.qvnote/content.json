@@ -1,0 +1,10 @@
+{
+  "title": "Go跨平台交叉编译",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "GOPATH=/Users/synder/Documents/project/golang GOOS=linux GOARCH=amd64 go build ssdb.go"
+    }
+  ]
+}

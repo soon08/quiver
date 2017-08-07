@@ -1,0 +1,22 @@
+{
+  "title": "iptables配置与命令",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>iptables的配置文件</b><div><b><br></b></div><div><b>注意: centos和ubuntu配置有些不一样<br></b><div><ul><li>规则文件 &nbsp;/etc/sysconfig/iptables</li><ul><li>-A/-D &nbsp; &nbsp; &nbsp; &nbsp; 在链中插入一条规则</li><ul><li>INPUT</li><li>OUTPUT</li><li>FORWARD</li><li>POSTROUTING</li><li>PREROUTING</li></ul><li>-p &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;使用的协议</li><ul><li>tcp</li><li>udp</li></ul><li>-m &nbsp; &nbsp; &nbsp; &nbsp; 使用的模块</li><ul><li>tcp</li><li>udp</li></ul><li>--dport &nbsp;指定端口</li><li>-j &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 行为（ACCEPT）</li><ul><li>ACCEPT</li><li>DROP</li><li>LOG</li><li>ULOG</li><li>REJECT</li></ul><li>-i &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 指定网络设备</li><ul><li>-i lo &nbsp;指定回环网卡</li></ul></ul><li>配置文件&nbsp;/etc/sysconfig/iptables-config</li><li>恢复文件 /etc/sysconfig/iptables.old</li></ul></div></div>"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "*nat                       #nat表的配置\n\n*filter                    #filter表的配置\n:INPUT ACCEPT [1:32]       #input链默认控制端口为1到32号端口\n:FORWARD ACCEPT [0:0]      #forward链默认不控制端口\n:OUTPUT ACCEPT [80:60698]  #output链默认不控制端口\n-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  #添加一条iptables的规则\n-A INPUT -p icmp -j ACCEPT\n-A INPUT -i lo -j ACCEPT   #接受回环网卡的数据\n-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT\n-A INPUT -j REJECT --reject-with icmp-host-prohibited\n-A FORWARD -j REJECT --reject-with icmp-host-prohibited\nCOMMIT                     #提交"
+    },
+    {
+      "type": "text",
+      "data": "<b>iptables的配置命令</b><div><ul><li>保存iptables配置的方式</li><ul><li>edit &nbsp;/etc/sysconfig/iptables</li><li>service iptables save</li><li>service iptable restart</li><li>service iptable start</li><li>service iptable stop</li></ul><li>常用命令</li><ul><li>-h &nbsp; 帮助信息</li><li>-L &nbsp; 列出规则</li><ul><li>iptables -L &nbsp; &nbsp; &nbsp; &nbsp; 默认显示的filter表中的信息</li><li>iptables -L -t nat &nbsp; 显示nat表中的信息</li></ul><li>-A &nbsp;追加规则</li><ul><li>在所有规则下面追加一条规则</li></ul><li>-I &nbsp; 插入规则</li><ul><li>在所有规则上面插入一条规则</li></ul><li>-P &nbsp;设置默认规则</li><ul><li>iptables -P INPUT DROP &nbsp;将input链默认规则设为DROP</li></ul><li>-F &nbsp;清除默认链中的规则</li><ul><li>iptables -F &nbsp;将会清除所有默认的规则</li></ul><li>-X &nbsp;清除用户自定义规则</li><ul><li>iptables -X&nbsp;</li></ul><li>-n &nbsp; 只显示IP地址，不显示域名</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/BC1DF892729A4B0FC83010359DA726C1.jpg\"><br>"
+    }
+  ]
+}

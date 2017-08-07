@@ -1,0 +1,13 @@
+{
+  "title": "SSH的认证方式和访问策略",
+  "cells": [
+    {
+      "type": "text",
+      "data": "SSH服务安全性不仅仅体现在数据加密传输方式，同时还具有多种身份验证方式，配合SSH本身访问策略以及linux系统自带的防火墙和TCP Wrappers提供的访问权限控制"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>SSH基于口令的认证方式</li><ul><li>默认是启用的</li></ul><li>SSH基于秘钥的认证方式</li><ul><li>不需要输入密码</li><li>在自动化运维中非常重要</li><li>原理</li><ul><li>将公钥写入 /&lt;user&gt;/.ssh/下的authorized_keys里面</li><li>将authorized_keyes文件权限设为600即只读权限 .ssh目录权限是700</li><li>用带私钥的客户端访问</li></ul></ul><li>限制用户连接SSH（/etc/ssh/sshd_config）</li><ul><li>DenyUsers test &nbsp; &nbsp; &nbsp; &nbsp; 禁止test用户登入（多个用户逗号分隔）</li><li>AllowUsers test &nbsp; &nbsp; &nbsp; &nbsp;允许test用户登入</li><li>DenyGroups test &nbsp; &nbsp; &nbsp;禁止test群组登入</li><li>AllowGroups test &nbsp; &nbsp; 允许test群组登入</li></ul><li>限制IP连接SSH</li><ul><li>通过iptables来限制</li><ul><li>iptables -A INPUT -p tcp --dport &nbsp;22 -s 192.168.0.10/32 -j ACCEPT &nbsp; 允许192.168.0.10访问22端口</li><li>iptables -A INPUT -p tcp --dport &nbsp;22 &nbsp;-j ACCEPT &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 阻止所有地址访问22端口</li></ul><li>通过TCP Wrappers来实现（/etc/hosts.allow和/etc/hosts.deny）</li><ul><li>sshd:192.168.0.10/255.255.255.255(TCP Wrapper只支持长掩码方式)</li><li>sshd:ALL EXCEPT 192.168.0.10</li></ul></ul></ul>"
+    }
+  ]
+}

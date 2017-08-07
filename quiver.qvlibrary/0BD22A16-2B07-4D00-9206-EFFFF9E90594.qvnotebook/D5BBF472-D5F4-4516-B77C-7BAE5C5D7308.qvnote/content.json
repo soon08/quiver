@@ -1,0 +1,18 @@
+{
+  "title": "Cookie",
+  "cells": [
+    {
+      "type": "text",
+      "data": "相关类<div><ul><li>HTTPCookie &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; http cookie的表示类</li><li>HTTPCookieStorage &nbsp; &nbsp;http cookie的存储类</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "创建一个Cookie"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": ""
+    }
+  ]
+}

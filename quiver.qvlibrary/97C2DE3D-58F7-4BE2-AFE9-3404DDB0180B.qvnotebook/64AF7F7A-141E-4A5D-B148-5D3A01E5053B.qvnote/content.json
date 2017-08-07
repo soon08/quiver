@@ -1,0 +1,49 @@
+{
+  "title": "文件系统",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>打开文件</b>"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "func OpenFile(name string, flag int, mode os.FileMode) (*os.File, error)"
+    },
+    {
+      "type": "text",
+      "data": "<b>文件偏移——文件空洞</b>"
+    },
+    {
+      "type": "text",
+      "data": "&nbsp; &nbsp; &nbsp; <font face=\"Arial\">在类*NIX操作系统中，文件位移量可以大于当前长度，在这种情况下，对该文件的下一次写将延长该文件，并在文件中构成一个空洞，位于文件中没有写过的字节都被设置为0.</font><div><font face=\"Arial\">&nbsp; &nbsp; &nbsp; 如果offset比文件当前长度更大，下一个写操作就会把文件撑大。没有实际写入文件的所有字节由重复的0表示。空洞是否占用磁盘空间由文件系统决定。</font></div><div><font face=\"Arial\">&nbsp; &nbsp; &nbsp;&nbsp;<span style=\"orphans: 2; text-indent: 28px; widows: 2;\"><font>空洞文件作用很大，例如迅雷下载文件，在未下载完成时就已经占据了全部文件大小的空间，这时候就是空洞文件。下载时如果没有空洞文件，多线程下载时文件就都只能从一个地方写入，这就不是多线程了。如果有了空洞文件，可以从不同的地址写入，就完成了多线程的优势任务</font></span></font></div>"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "file.Seek(0, os.SEEK_SET) // 文件开始处\rfile.Seek(0, SEEK_END)    // 文件结尾处的下一个字节\rfile.Seek(-1, SEEK_END)   // 文件最后一个字节\rfile.Seek(-10, SEEK_CUR)  // 当前位置前10个字节\rfile.Seek(1000, SEEK_END) // 文件结尾处的下1001个字节，会在文件中产生空洞"
+    },
+    {
+      "type": "text",
+      "data": "<b>截断文件</b>"
+    },
+    {
+      "type": "text",
+      "data": "如果文件大小大于size，文件多余的部分将会被丢弃，如果文件大小小于size，将会在文件尾部补充一些字节或者空洞。"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "func Truncate(name string, size int64) error\rfunc (f *File) Truncate(size int64) error"
+    },
+    {
+      "type": "text",
+      "data": "<b>文件属性</b>"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "func Stat(name string) (os.FileInfo, error)\nfunc (f *File) Stat() (os.FileInfo, error)\nfunc (f *File) Lstat() (os.FileInfo, error)"
+    }
+  ]
+}

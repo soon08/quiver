@@ -1,0 +1,9 @@
+{
+  "title": "URL",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ol><li>协议 Protocol （http、ftp）</li><li>用户 User</li><li>密码 Password</li><li>主机 Host</li><li>路径 Path</li><li>参数 Param</li><li>查询 Query</li><li>段 &nbsp; &nbsp;Hash</li></ol><div>主要在浏览器中，段信息是不会发送给服务器的。</div><div><br></div><div><ul><li>相对路径 Relative Path</li><li>绝对路径 Absolute Path</li></ul><div><br></div></div><div>URL字符集 Charset：</div><div><ul><li>为了避免安全语法字符集带来的限制，设计了一种编码机制，用来在URL中表示不安全的字符</li></ul></div>"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "bufio",
+  "cells": [
+    {
+      "type": "text",
+      "data": "linux对IO文件操作分为不带缓存的IO操作和标准IO操作（带缓存）。<div>&nbsp; &nbsp; &nbsp; &nbsp; 由于不带缓存的IO使用的是系统内核较小的缓冲区，导致系统调用read和write次数增加，性能较低。<div>&nbsp; &nbsp; &nbsp; &nbsp; 带缓存的标准IO操作，在系统内核外自建了较大的缓冲区，目的是为了减少read和write次数</div></div><div><ul><li>无缓存IO操作数据流向路径：数据——内核缓存区——磁盘<br></li><li>标准IO操作数据流向路径：数据——流缓存区——内核缓存区——磁盘</li></ul><div>标准IO，他对每个IO流都是自动进行管理的，它提供了三种类型的缓存。</div></div><div><ul><li>全缓存。当填满标准I/O缓存后才执行I/O操作。磁盘上的文件通常是全缓存的。<br></li><li>行缓存。当输入输出遇到新行符或缓存满时，才由标准I/O库执行实际I/O操作。stdin、stdout通常是行缓存的。<br></li><li>无缓存。相当于read、write了。stderr通常是无缓存的，因为它必须尽快输出。<br></li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "bufio包的目的就是为了减少IO的系统调用次数，增加IO程序性能。"
+    },
+    {
+      "type": "text",
+      "data": "<ol><li>ReadWriter : &nbsp;func NewReadWriter(*Reader, *Writer)</li><li>Reader : func NewReader(r io.Reader)</li><li>Writer : func NewWriter(w io.Writer)</li><li>Scanner: func NewScanner(r io.Reader)</li></ol>"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "package main\n\nimport(\n  \"bufio\"\n  \"io\"\n  \"log\"\n  \"testing\"\n)\n\nconst str = \"Go, The STDLIB\"\nconst times = 100\n\n\nfunc openFile(name string) *os.File {\n  \n  file, err := os.OpenFile(name, os.O_WRONLY | os.O_CREATE | os.O_TRUNC, 0644)\n  \n  if err != nil {\n      log.Fatal(err)\n  }\n  \n  return file\n}\n\nfunc BenchmarkBufio(b *testing.B) {\n  file := openFile(os.DevNull)\n  \n  defer file.Close()\n  \n  bufferedFile := bufio.NewWriter(file)\n  \n  for i := 0; i < b.N; i++ {\n    if _, err := bufferedFile.WriteString(str); err != nil {\n      log.Fatal(err)\n    }\n  }\n  \n  bufferedFile.Flush()\n}\n\nfunc BenchmarkIO(b *testing.B) {\n  file := openFile(os.DevNull)\n  \n  defer file.Close()\n  \n  for i := 0; i < b.N; i++ {\n    if _, err := io.WriteString(file, str); err != nil {\n      log.Fatal(err)\n    }\n  }\n}"
+    }
+  ]
+}

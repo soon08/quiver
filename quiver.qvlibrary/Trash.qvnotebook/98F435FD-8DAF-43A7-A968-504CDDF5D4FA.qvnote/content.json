@@ -1,0 +1,9 @@
+{
+  "title": "股票均线",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(102, 102, 102); font-family: Arial, 'Hiragino Sans GB', 'Microsoft YaHei'; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 30px; widows: 1; background-color: rgb(255, 255, 255);\">这四条是分别是5日(白)、10日(黄)、20日(紫)及60日(绿)均线。在图上表示为MA5,MA10,MA20,MA60，以5日线为例，是求最近5日收盘价的平均价，然后将每天的数连成一条曲线，就是均线。这些参数你可以自己设置。一般来说当短期均线(如5日线)由下向上穿过长期均线(如60日均线)，形成金叉，则是买入点。反之，当短期均线(如5日线)由上向下穿过长期均线(如60日均线)，形成死叉，则是卖出点。这是很教条的简单的判断方法，在现在的市场中没有太好的参考意义。</span>"
+    }
+  ]
+}

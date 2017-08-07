@@ -1,0 +1,15 @@
+{
+  "title": "JS的隐含行为",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//为false的值\n\"\"\nfalse\nNaN\n0 -0\nnull\nundefined"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//为true的值\n[] [1]\n{} {a:1}\n31\ntrue\nfunction(){}"
+    }
+  ]
+}

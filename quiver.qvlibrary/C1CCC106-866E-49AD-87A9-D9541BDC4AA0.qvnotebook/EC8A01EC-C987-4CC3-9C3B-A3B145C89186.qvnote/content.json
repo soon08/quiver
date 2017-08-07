@@ -1,0 +1,13 @@
+{
+  "title": "大纲",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>集合</li><li>线性结构</li><ul><li>线性表</li><li>队列</li><li>栈</li><li>串</li></ul><li>非线性结构</li><ul><li>树</li><li>图</li><li>多维数组</li><li>广义表</li></ul></ul>"
+    },
+    {
+      "type": "text",
+      "data": "数据的存储方式<div><ul><li>顺序的存储结构</li><li>链式存储结构</li><li>索引存储结构</li><li>散列存储结构</li></ul></div>"
+    }
+  ]
+}

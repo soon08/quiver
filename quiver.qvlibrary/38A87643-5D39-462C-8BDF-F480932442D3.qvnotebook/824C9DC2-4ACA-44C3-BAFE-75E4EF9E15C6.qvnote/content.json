@@ -1,0 +1,13 @@
+{
+  "title": "相识度",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>欧式距离</li><li>曼哈顿距离</li><li>切比雪夫距离</li><li>闵可夫斯基距离</li><li>标准化欧式距离</li><li>马氏距离</li><li>夹角余弦</li><li>汉明距离&lt;Hamming Distance&gt;</li><li>杰卡德距离</li><li>相关距离</li><li>信息熵</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<b>汉明距离&lt;Hamming Distance&gt;</b><div><ul><li>两个等长字符串之间的汉明距离是两个字符串对于位置不同字符的个数</li></ul></div>"
+    }
+  ]
+}

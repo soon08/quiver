@@ -1,0 +1,21 @@
+{
+  "title": "Auto Scaling",
+  "cells": [
+    {
+      "type": "text",
+      "data": "作用：<div><br></div><div><span style=\"color: rgb(56, 56, 56); font-family: 'Microsoft Yahei', Arial, Helvetica, sans-serif; line-height: 20px; widows: 1; background-color: rgb(255, 255, 255);\">弹性伸缩服务是根据用户的业务需求和策略，自动调整其弹性计算资源的管理服务。其能够在业务增长时自动增加ECS实例，并在业务下降时自动减少ECS实例。(<b>不包括RDS</b>)</span><br><div><ol><li>业务峰值如何应对</li><li>业务运维自动化如何实现</li></ol><div>场景：</div></div><div><ol><li>可以预估某个时刻业务将达到峰值</li><li>无法预估峰值，需要根据CPU利用率、LOAD、带宽利用扩展服务能力</li></ol><div><img src=\"quiver-image-url/16B3E6B7439629B142496F6CFB889777.jpg\"><br></div></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ESS模式：</b><div><ul><li><b>定时模式 执行周期性任务</b></li><li><b>动态模式 根据CPU等指标自动增减ECS实例</b></li></ul><div><b><br></b></div><div><ul><li><b>伸缩组&nbsp;</b><b>可以指定组内ECS实例数的最大值、最小值以及其相关联的SLB实例和RDS实例属性等</b><br></li><li><b>伸缩规则</b></li><li><b>伸缩配置</b></li><li><b>伸缩活动</b></li><li><b>伸缩触发的任务</b></li></ul></div></div><div><b><br></b></div>"
+    },
+    {
+      "type": "text",
+      "data": "ESS依赖：<div><ol><li>需要SLB，在弹性伸缩过程中，自动向SLB实例中添加或者移除响应的ECS实例</li><li>支持RDS访问白名单，在增加或者减少ECS实例时，自动向RDS访问白名单中添加或者移除该ECS实例的IP</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

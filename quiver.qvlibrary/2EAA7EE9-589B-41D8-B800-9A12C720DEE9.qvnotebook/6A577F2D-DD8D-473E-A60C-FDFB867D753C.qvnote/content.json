@@ -1,0 +1,63 @@
+{
+  "title": "高级数据类型",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>1. Tuple</div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let HTTP_404_ERROR = (404, \"Not Found\");\n\nlet HTTP_500_ERROR = (code: 500, msg: \"Server Error\"); //可以给元组元素命名\n\nvar point = (1, 3, 10);\n\nvar (x, y, z) = point; //分解元组元素\n \nvar (code, _) = HTTP_404_ERROR;\n\nprintln(\"x: \\(x), y:\\(y), z:(\\z)\");"
+    },
+    {
+      "type": "text",
+      "data": "2. 可选类型"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "var age: Int?; //会被自动设置为nil\n\nif age != nil {\n    println(\"age is \\(age)\")\n}else{\n    println(\"age is nil\")\n}\n\nif let temp = age{\n    println(temp);\n}\n\nage = nil; //nil 不能用于非可选的常量的变量\n\n//隐式解析可选类型"
+    },
+    {
+      "type": "text",
+      "data": "3.字符串<div><ol><li>String类和Character类提供了Unicode字符串处理</li><li>字符串是值类型</li></ol></div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "for char in \"Dog\"{\n    println(char);\n}\n\n//返回字符串长度\nvar len = count(\"name\");\n\n//字符串连接\nvar name = \"sam\"+ \" \" + \"wiki\";\nname.append(\"yeah\");\n\n//字符串插值\nvar score = \"my score is \\(score)\";\n\n//字符串比较\nif name == \"sam wiki\" {\n    println(\"this person this sam wiki\");\n}\n\n//前缀、后缀\nname.hasPrefix(\"sam\");\nname.hasSuffix(\"wiki\");\n\n//大小写转换\nname = name.uppercaseString;\nname = name.lowercaseString;\n\n//访问uft8属性\nfor codeUnit in name.utf8 {\n    println(codeUnit);\n}\n\n//访问uft16属性\nfor codeUnit in name.utf16 {\n    println(codeUnit);\n}\n\n//访问unicode\nfor scalar in name.unicodeScalars {\n    println(codeUnit);\n}"
+    },
+    {
+      "type": "text",
+      "data": "4.数组"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//创建数组\nvar list = [Int]();\n\nvar list = [Int](count: 3, repeatedValue: 0); // [0, 0, 0]\n\nvar temp = []; //空数组\n\n//数组长度\n\n//追加元素\n[].append(1);\n\n//数组赋值\nlist[2...3] = [\"name\", \"sam\"];\n\n//插入元素\nlist.insert(\"wiki\", 3); //在3索引项之前添加元素\n\n//删除元素\nlist.removeAtIndex(2);\n\n//遍历\nfor item in list {\n    println(item);\n}\n\n\nfor (index, value) in list {\n    println(index, value);\n}   \n\n//合并数组，只能合并类型相同的数组\nvar a = [Int]();\nvar b = [Int]();\n\nvar c = a + b;"
+    },
+    {
+      "type": "text",
+      "data": "5.集合"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "var letter = Set<Int>();\n\nletter.insert(10);\nletter.insert(20);\n\nvar books: Set<String> = [\"swift\", \"golang\", \"node.js\"];\n\n//集合元素数量\nletter.count;\n\n//插入\nletter.insert(10);\n\n//删除\nletter.remove(10);\n\n//遍历\nfor l in letter{\n    println(l);\n}\n\nfor l in sorted(letter){\n    println(l);\n}\n\n//集合相等， 子集， "
+    },
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/882B952BDC66A25F740B7B7D0B6786FD.jpg\">"
+    },
+    {
+      "type": "text",
+      "data": "6.字典"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "var socre: [String:Int] = [\"sam\":60, \"synder\": 80];\n\nvar empty = Dictionary<String, Int>();\n\nsocre[\"sam\"] = 80;\n\nfor (key, val) in dic {\n    println(key, val);\n}\n\nfor key in dic.keys{\n    println(key);\n}\n\nfor val in dic.values {\n    println(val);\n}\n\nvar arr = Array(dic.keys);"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "title": "GCD线程技术",
+  "cells": [
+    {
+      "type": "text",
+      "data": "GCD有串行队列和并行队列"
+    },
+    {
+      "type": "text",
+      "data": "GCD队列类型<div><ol><li>主队列，调用主线程更新UI（串行队列）</li><li>全局队列（有不同的优先级）</li><li>自定义队列（需要自己创建）</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "获取队列的方法"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let queue: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)\n\nlet customQueue: dispatch_queue_t = dispatch_queue_create(\"synder.me.threads\", nil)\n\nlet mainQueue: dispatch_queue_t = dispatch_get_main_queue()"
+    },
+    {
+      "type": "text",
+      "data": "GCD全局队列优先级<div><ol><li><p style=\"margin: 0px; font-size: 18px; line-height: normal; font-family: Menlo;\"><span style=\"font-variant-ligatures: no-common-ligatures\">DISPATCH_QUEUE_PRIORITY_HIGH</span></p></li><li><p style=\"margin: 0px; font-size: 18px; line-height: normal; font-family: Menlo;\"><span style=\"font-variant-ligatures: no-common-ligatures\">DISPATCH_QUEUE_PRIORITY_DEFAULT</span></p></li><li><p style=\"margin: 0px; font-size: 18px; line-height: normal; font-family: Menlo;\"><span style=\"font-variant-ligatures: no-common-ligatures\">DISPATCH_QUEUE_PRIORITY_LOW</span></p></li><li><p style=\"margin: 0px; font-size: 18px; line-height: normal; font-family: Menlo;\"><span style=\"font-variant-ligatures: no-common-ligatures\">DISPATCH_QUEUE_PRIORITY_BACKGROUND</span></p></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "异步方式运行线程"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let queue: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)\ndispatch_async(queue, {()-> Void in\n    //异步操作\n})"
+    },
+    {
+      "type": "text",
+      "data": "创建自定义线程队列"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let customQueue: dispatch_queue_t = dispatch_queue_create(\"synder.me.threads\", DISPATCH_QUEUE_SERIAL) \n\n//DISPATCH_QUEUE_SERIAL串行队列\n//DISPATCH_QUEUE_CONCURRENT并行队列\n\ndispatch_async(customQueue, {()-> Void in\n    //异步操作\n})"
+    },
+    {
+      "type": "text",
+      "data": "常用GCD线程操作"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "dispatch_after() //延时作用，主要放在主队列中\ndispatch_apply() //重复执行，是同步函数会阻塞线程，应该放在异步线程中执行，主要放在并发线程中\ndispath_group_create()\ndispath_group_notify()\ndispath_group_wait()"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let queue: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)\n\nlet customQueue: dispatch_queue_t = dispatch_queue_create(\"synder.me.threads\", nil)\n\nlet mainQueue: dispatch_queue_t = dispatch_get_main_queue()\n\nvar imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))\n\ndispatch_async(queue, {\n\tlet url = NSURL(string: \"http://travel.people.com.cn/mediafile/200503/31/F2005033117255900000.jpg\")\n\t\n\tif let data = NSData(contentsOfURL: url!) {\n\t\tdispatch_async(mainQueue, {\n\t\t\timageView.image = UIImage(data: data)\n\t\t\timageView\n\t\t})\n\t}\n})"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//延时2秒执行\nlet delta = 2.0 * Double(NSEC_PER_SEC)\nlet dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(delta))\ndispatch_after(dtime, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () ->Void in\n    println(\"延时2秒执行\")\n}"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "title": "curl 请求发送工具",
+  "cells": [
+    {
+      "type": "text",
+      "data": "curl的基本用法"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "curl -X<verb> '<protocol>://<host>:<port>/<path>?<query>' -d '<body>'"
+    },
+    {
+      "type": "text",
+      "data": "解释"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>verb<br></li><ul><li>GET</li><li>POST</li><li>PUT</li><li>DELETE</li></ul><li>protocol<br></li><ul><li>http</li><li>https</li></ul></ul>"
+    },
+    {
+      "type": "text",
+      "data": "常用参数<div><ul><li>-i &nbsp; &nbsp;显示响应头信息</li><li>-d &nbsp; 指定数据</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "常用实例"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "curl -XPOST 'http://www.host.com/user' -d @body.json\ncurl -XPOST 'http://www.host.com/user' -d '{\"name\":\"sam\",\"age\":10}'"
+    }
+  ]
+}

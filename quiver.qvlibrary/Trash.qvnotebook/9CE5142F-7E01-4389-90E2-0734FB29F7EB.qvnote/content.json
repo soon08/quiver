@@ -1,0 +1,61 @@
+{
+  "title": "ECS(Elastic Compute Service)",
+  "cells": [
+    {
+      "type": "text",
+      "data": "ECS-elastic compute server<div><br></div><div><img src=\"quiver-image-url/590DAEBA986B7227D4E9024EE1925A38.jpg\"><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS支持垂直和水平扩展：</b><div><ol><li>垂直扩展</li><ol><li>升级带宽（不需要停机）</li><li>升级CPU和内存（需要停机）</li><li>增加存储容量</li></ol><li>水平扩展</li><ol><li>增加机器</li></ol></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS的特点：</b><div><ol><li>云盘的数据可靠性高（99.9999）</li><li>支持宕机迁移</li><li>支持数据备份和数据回滚</li><li>系统有性能告警能力</li><li>安全（阿里云有一个云盾产品，能提供DDOS攻击，防密码破解）</li><li>阿里云提供安全组的规则保护策略</li><li>ECS是可弹性扩展的（垂直扩展和水平扩展）l</li><li>性能好 本地SSD能达到1.2万IOPS，300MS的随机读写</li><li>综合多个BGS运营商</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS的应用场景：</b><div><ol><li>作为应用程序的运行环境</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS的Region和Zone解释：</b><div><ul><li>region 一个地区</li><li>在一个Region下有多个Zone（数据中心）</li><li>资源在同一个zone下延时低</li><li>资源在不同zone下可以抱枕资源的高可用</li><li>磁盘不可以跨zone（物理机房）去挂载</li><li>磁盘数据迁移不可以跨zone（）</li><li>快照和镜像在一个Region内是可见的</li><li>安全组策略可以跨Region使用</li><li><img src=\"quiver-image-url/527ED203AC16B349212C4D919356660B.jpg\"></li><li><img src=\"quiver-image-url/CCC3A3A3A41A2F63CCCF235BAC3F57C9.jpg\"></li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS磁盘：</b><div><ul><li><b>系统盘</b></li><li><b>数据盘</b></li></ul><div><div><div><ol><li>普通云盘（使用普通磁盘作为介质，所以IO性能不太高，容量在5GB-2TB之间）</li><li>SSD云盘（使用SSD的IO性能很好，使用盘古分布式文件系统，提供三副本分布备份，最高可达256M/S）</li><li>本地SSD磁盘（使用物理机磁盘，IO性能更好时延更低但没有备份，不能挂载和卸载，一旦生成就与实例绑定在一起）</li><li>可以通过FIO命令去测试磁盘的IOPS</li><li>云盘不能跨ZONE挂载，一个磁盘同时只能在一个时间挂载在一个实例下面</li><li>一个ECS最多可以挂载4块数据盘，加上系统盘最多5快磁盘挂载</li></ol><div><br></div></div></div></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS快照：</b><div><ul><li>就是在磁盘数据在某一点的拷贝</li><li>ECS快照存放在OSS上</li><li>快照可以回滚，可以恢复数据</li><li>通过系统盘快照可以创建自定义镜像，批量复制出与目前系统完全一样的的云服务器实例</li><li>通过数据盘快照可以快速复制数据盘</li><li>快照会影响磁盘性能，所以需要在应用非高峰时期执行</li><li>每个用户最多可以创建快照数量为 = &nbsp;6 * 磁盘数量 + 6</li></ul><div>注意：</div></div><div><ol><li>同一时刻只能对一个ECS实例的一个磁盘创建快照</li><li>第一次快照时间较长</li><li>同一个ECS的实例的系统盘和数据盘不能同时创建快照</li><li>创建快照会影响磁盘性能，所以应该避开业务高峰期</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS镜像:</b><div><b>场景:</b></div><div><ol><li>需要快速复制ECS镜像</li></ol></div><div><b>定义：</b></div><div><div><ol><li>是系统和系统环境的一个快照的包装</li><li>快照不可跨Region使用（可在一个Region的多个zone中使用）</li></ol><div>注意事项：</div></div><div><ol><li>在linux下，可能在/etc/fstab设置了自动数据盘mount,制作自定义镜像的时候，去掉这个设置，否者将导致无法启动这个实例（因为一个数据盘在同一时刻只能被一个实例挂载）</li><li>新的镜像实例root密码是新分配的，但是用户创建的用户信息是会被保存的</li><li>应当设置好启动时需要自动启动的服务，这样镜像起来之后就可以自动服务</li></ol></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS安全组：</b><div><ol><li>可以对ECS实例分组，并对一组实例应用一个或者多个防火墙规则</li><li>规则包含访问的网络协议、端口、源IP</li><li>每个实例至少要加入一个组</li></ol><div><br></div></div><div><img src=\"quiver-image-url/8B7516D210502B390B6D3CA0FE5994E1.jpg\"><br></div><div><br></div><div>安全组操作：</div><div><ol><li>新建安全组规则</li><li>将ECS实例加入安全组</li><li>ECS默认的安全组策略允许所有公网IP任意协议的访问</li></ol></div><div><br></div><div><b>不同用户网络隔离：</b></div><div><ul><li>每个用户都有自己的安全组，不同用户的安全组之间完全隔离</li><li>系统默认安全组，系统默认为每个用户创建了一个安全组可以访问公网</li><li>每个用户最多100个安全组</li><li>每个安全组最多1000个实例</li><li>每个实例最多5个安全组</li><li>每个安全组最多100条规则</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS标签:</b><div><ol><li>可以将ECS分类</li><li>每个实例允许打十个标签</li><li>每个标签键必须是不同的</li><li>标签是不可以跨Region的</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS的API和SDK：</b><div><div><br></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>ECS总结:</b><div><ul><li>如何判断ECS Linux带宽是否跑满 &nbsp;&nbsp;</li><ul><li>sar -n DEV &nbsp;1 &nbsp;5 &nbsp;(1表示一分钟一次，一共取5次)</li><li>通过nethogs工具来查看某一张网卡的进程流量信息</li><li>如果是web程序可以使用iftop等工具来查询具体的IP来源，然后分析web访问日志是否为正常流量</li><li>日志分析可以使用logwatch和awstats等工具</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "<br>"
+    }
+  ]
+}

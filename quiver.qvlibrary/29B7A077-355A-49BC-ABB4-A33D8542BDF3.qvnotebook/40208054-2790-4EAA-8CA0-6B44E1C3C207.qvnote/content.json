@@ -1,0 +1,9 @@
+{
+  "title": "减少NODE.JS开发过程中的问题",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>让问题在开发阶段就暴露出来。</div><div><br></div>本地测试好好的，推上生产环境就出了问题<div><ol><li>代码大小写问题，git默认是不区分文件名的大小写的，所有在有些时候重命名的时候就可能产生这些问题</li><ol><li>正确的姿势</li><ol><li>使用git来重命名文件</li><li>将git集成到webstorm中，在webstorm中命名文件git会自动跟踪到（前提是一个项目一个webstorm窗口）</li></ol></ol><li>包管理问题，很多人喜欢使用npm install -g 来安装node的依赖包，这就可能导致项目本身的package.json缺失代码包声明，但是本地运行却没有报错</li><li>版本问题，本地开发环境一个环境，CI一个环境，生产一个环境，这样出问题只是概率问题</li><li>软件窗口习惯，一些人喜欢在webstorm中开多个项目（原因是这样方便）,但是我看到某些时候，因为这样的习惯，原本要改A项目的某个文件，却错误的改掉了B项目的某个文件</li><ol><li>正确的姿势</li><ol><li>一个webstorm窗口只开一个项目</li><li>mac中使用 command+~ 键可以快速的在多个窗口之间切换</li></ol></ol><li><br></li></ol></div>"
+    }
+  ]
+}

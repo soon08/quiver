@@ -1,0 +1,13 @@
+{
+  "title": "我的账户信息",
+  "cells": [
+    {
+      "type": "text",
+      "data": "mailgun<div><ul><li style=\"widows: 1;\">account&nbsp;<font color=\"#000000\" face=\"Open Sans, -apple-system, Helvetica Neue, Helvetica, Arial, PingFang SC, Microsoft Yahei, Hiragino Sans GB, sans-serif\" size=\"4\"><span style=\"background-color: rgb(255, 255, 255);\">synder@mailgun.com</span></font></li><li style=\"widows: 1;\"><font color=\"#000000\" face=\"Open Sans, -apple-system, Helvetica Neue, Helvetica, Arial, PingFang SC, Microsoft Yahei, Hiragino Sans GB, sans-serif\" size=\"4\"><span style=\"background-color: rgb(255, 255, 255);\">password&nbsp;</span></font></li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div style=\"font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif !important;\"><div style=\"line-height: 1.5;\">招行卡号：6214 8302 1986 2108（上海） 6225 8812 8892 6339（成都）</div></div><div style=\"font-size: 14px; line-height: 1.5; font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif !important;\">交行卡号：6222 6201 1002 2898 010（上海）</div>"
+    }
+  ]
+}

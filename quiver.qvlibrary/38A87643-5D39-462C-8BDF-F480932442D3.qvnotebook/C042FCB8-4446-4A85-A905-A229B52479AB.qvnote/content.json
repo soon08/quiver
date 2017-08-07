@@ -1,0 +1,21 @@
+{
+  "title": "哈希",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>hash</b>"
+    },
+    {
+      "type": "text",
+      "data": "<b>局部敏感Hash&lt;</b>当我们需要比较两篇文章的相似度，我们会用哪些方法呢？<b>&gt;</b><div><ol><li>对文章进行分词，得到一系列的特征向量，然后计算特征向量之间的距离</li><li>采用Hash方式对文章生成一个指纹，比较指纹之间的距离</li></ol><div><br></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>pHash</b>"
+    },
+    {
+      "type": "text",
+      "data": "<b>SIFT</b>"
+    }
+  ]
+}

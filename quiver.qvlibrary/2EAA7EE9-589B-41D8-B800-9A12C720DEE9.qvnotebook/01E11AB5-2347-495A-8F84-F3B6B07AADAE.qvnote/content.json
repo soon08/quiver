@@ -1,0 +1,35 @@
+{
+  "title": "基础数据类型",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ol><li>Int</li><ol><li>Int8 UInt8</li><li>Int32 UInt32</li><li>Int64 UInt64</li><li>Int Uint &nbsp;在32位平台上是32位长度，在64位平台上是64位</li></ol><li>Float &nbsp; 32位浮点数</li><li>Double &nbsp;&nbsp;64位浮点数</li><li>Bool</li><li>String</li><li>Array</li><li>Set</li><li>Dictionary</li></ol>"
+    },
+    {
+      "type": "text",
+      "data": "整数<div>&nbsp; &nbsp; 可以访问不同类型的min和max属性来获取对应类型的最大值和最小值 UInt.min UInt.max</div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let temp = 0b1010;\nlet temp = 0o21;\nlet temp = 0x1a;"
+    },
+    {
+      "type": "text",
+      "data": "浮点数"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let temp = 1.25e2;"
+    },
+    {
+      "type": "text",
+      "data": "类型转换<div><ul><li>小整数转大整数 &nbsp;var x = UInt16(10);</li><li>整数转浮点数 &nbsp; &nbsp; Double(10)</li><li>浮点数转整数 &nbsp; &nbsp; Int(3.14) &nbsp; &nbsp;这种转换时截断型的转换</li><li>字符串转整数 &nbsp; &nbsp; “11”.toInt()</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "类型别名<div>&nbsp;typealias Audio = UInt16</div>"
+    }
+  ]
+}

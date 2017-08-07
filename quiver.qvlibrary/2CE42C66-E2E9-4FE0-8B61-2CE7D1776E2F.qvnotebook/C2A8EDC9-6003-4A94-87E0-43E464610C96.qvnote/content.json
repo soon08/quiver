@@ -1,0 +1,22 @@
+{
+  "title": "核心动画 CoreAnimation",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>什么是核心动画</li><li>图层CALayer</li><li>动画类CAAnimation</li><li>事务类CATransaction</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<b>核心动画</b><div><img src=\"quiver-image-url/12610818181A30B9CDE150C864FB1F3A.jpg\"><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>CALayer</b><div><ul><li>什么是layer</li><ul><li>动画发生的地方</li><li>每一个view都有layer</li></ul><li>创建和获取layer</li><li>layer和sublayer</li><li>layer属性</li></ul></div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let layer = CALayer()\n\t\t\nlayer.backgroundColor = UIColor.magentaColor().CGColor\nlayer.frame = CGRectMake(0, 0, 100, 100)\n\nself.view.layer.addSublayer(layer)"
+    }
+  ]
+}

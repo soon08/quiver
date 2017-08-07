@@ -1,0 +1,14 @@
+{
+  "title": "联网",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ol><li>NSURL 构造URL</li><li>NSURLReuqest 构造请求</li><li>NSURLSession &nbsp;管理连接</li><ol><li>NSURLSession</li><li>NSURLSessionDelegate</li><li>NSURLSessionConfiguration &nbsp;处理缓存、cookie、代理、超时</li><li>NSURLSessionTask</li></ol><li>NSURLResponse</li><li>NSHTTPURLResponse</li></ol>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let url  = NSURL(string: \"http://www.baidu.com\");\nlet host = url?.host;\n\nlet request = NSURLReuqest(URL: url!);\nrequest.HTTPMethod = \"POST\";"
+    }
+  ]
+}

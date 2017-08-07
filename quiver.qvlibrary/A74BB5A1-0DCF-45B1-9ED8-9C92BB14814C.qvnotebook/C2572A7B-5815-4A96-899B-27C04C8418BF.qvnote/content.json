@@ -1,0 +1,29 @@
+{
+  "title": "Docker容器技术",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(64, 64, 64); font-family: 'Microsoft YaHei', Verdana, sans-serif, SimSun; font-size: 14px; line-height: 25.2px; widows: 1; background-color: rgb(250, 250, 250);\">Docker 容器和文件夹很类似，一个Docker容器包含了所有的某个应用运行所需要的环境。每一个 Docker 容器都是从 Docker 镜像创建的。Docker 容器可以运行、开始、停止、移动、暂停和删除。每一个 Docker 容器都是独立和安全的应用平台，Docker 容器是 Docker 的运行部分。</span><br>"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li><b>容器的基本操作</b></li><li><b>守护式容器</b></li><li><b>在容器中部署静态网站</b></li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<b>容器的基本操作：</b><div><ol><li>启动容器</li><ol><li>docker run IMAGE &lt;command&gt; &lt;args&gt; 启动容器输出命令</li><li>docker run -it IMAGE /bin/bash &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 启动交互式命令容器</li><ol><li>-i &nbsp;--interactive=true | false &nbsp;生成交互</li><li>-t &nbsp;--tty=true | false &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 为容器分配一个tty终端</li><li>--rm=true &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 容器停止后直接删除容器</li><li>--name=docker-name &nbsp; &nbsp; &nbsp; &nbsp; 为容器命名</li></ol><li>docker run &nbsp;--name=container -it IMAGE &lt;command&gt; &lt;args&gt; &nbsp;为容器指定名称</li></ol><li>查看容器</li><ol><li>docker ps &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;列出正在运行的容器</li><li>docker ps -a &nbsp; &nbsp; &nbsp;列出所有容器</li><li>docker ps -l &nbsp; &nbsp; &nbsp; 列出最新创建的容器</li><li>docker inspect &lt;容器ID | 容器的名称&gt;</li></ol><li>停止、重启、杀死、暂停和恢复容器</li><ol><li>docker start [-i | -t] &lt;容器ID | 容器名称&gt;</li><li>docker restart &lt;容器ID | 容器名称&gt; &nbsp;重启已经停止的容器</li><li>docker stop&nbsp;&lt;容器ID | 容器名称&gt;</li><li>docker kill&nbsp;&nbsp;&lt;容器ID | 容器名称&gt;</li><li>docker pause&nbsp;&nbsp;&lt;容器ID | 容器名称&gt;</li><li>docker unpause&nbsp;&nbsp;&lt;容器ID | 容器名称&gt;</li></ol><li>如何重新进入正在运行的Docker容器中</li><ol><li>docker attach &lt;容器ID | 容器Name&gt;</li></ol><li>删除容器</li><ol><li>docker rm &lt;容器名称&gt;</li><ol><li>-f &nbsp; 强制删除</li><li>-v &nbsp;删除相应空间</li></ol><li>docker rm $(docker ps -a -q) &nbsp; &nbsp;删除所有容器</li></ol><li>保存对容器的修改(保存对容器的修改，比如安装了新的软件等)</li><ol><li>docker commit ID &lt;新的镜像名称&gt;</li><ol><li>相当于把当前实例（container）固化成一个新的image</li></ol></ol><li>查看容器日志</li><ol><li>docker logs [-f][-t][--tail] &lt;容器名&gt;</li><ol><li>-f &nbsp; &nbsp; &nbsp; &nbsp;一致跟踪变化并返回</li><li>-t &nbsp; &nbsp; &nbsp; &nbsp;显示时间戳</li><li>--tail &nbsp; 返回结尾处多少日志（默认全部返回）</li></ol></ol><li>查看运行中容器进程</li><ol><li>docker top &lt;容器名称|容器ID&gt;</li></ol><li>根据Dockerfile和镜像构建一个容器</li><ol><li>docker build -t &lt;镜像名称&gt; &lt;Dockerfile路径&gt;</li></ol><li>以守护方式在容器内部运行进程</li><ol><li>docker exec -d &lt;镜像名称&gt; &lt;command&gt; &lt;args&gt;</li></ol><li>删除容器</li><ol><li>docker rm &lt;容器ID|容器名称&gt;</li><li>docker rm `docker ps -a -q` &nbsp;-q表示只需要返回容器的ID，而不需要返回容器的其他信息</li></ol><li>查看容器的端口映射关系</li><ol><li>docker port &lt;镜像名&gt; &lt;端口名称&gt;</li><li>docker port redis 6379</li></ol></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>守护式容器：</b><div><b><br></b></div><div><b>使用-d参数启动一个守护式容器<br></b><div><ul><li>能长期运行</li><li>没有交互式会话</li><li>非常适合运行应用程序</li></ul><div><ol><li>在交互式命令容器中退出</li><ol><li>ctrl p + ctrl q &nbsp; &nbsp; &nbsp;退出交互式命令，但是容器仍然在运行（这里是两个命令）</li><li>exit &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;容器会直接退出运行</li></ol><li>启动守护式容器</li><ol><li>docker run -d IMAGE &lt;command&gt; &lt;args&gt;</li></ol><li>在运行的容器中启动新的进程</li><ol><li>docker exec [-d] [-t] [-i] &lt;容器名|容器ID&gt; &lt;command&gt; &lt;args&gt;</li><ol><li>-d</li><li>-i</li><li>-t</li></ol></ol></ol></div></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>容器的端口映射：</b><div><ul><li>设置容器的端口映射</li><ul><li>docker run [-p] [-P] &lt;port&gt; IMAGE &lt;command&gt; &lt;args&gt;</li><ul><li>-p &nbsp; 指定端口映射 （-p 80 &nbsp;或 &nbsp;-p 8080:80）</li><ul><li>指定容器端口</li><ul><li>docker run -p 80 -it ubuntu /bin/bash</li></ul><li>指定宿主机端口+容器端口</li><ul><li>docker run -p 8080:80 -it ubuntu /bin/bash</li></ul><li>指定宿主机IP+容器端口</li><ul><li>docker run -p 0.0.0.0:80 -it ubuntu /bin/bash</li></ul><li>指定宿主机IP和端口+容器端口</li><ul><li>docker run -p 0.0.0.0:8080:80</li></ul></ul><li>-P &nbsp;将为容器暴露的端口添加映射</li></ul><li><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">docker port &lt;容器名称|容器ID&gt; &nbsp; 查看容器的端口映射情况</font></li></ul><li>如何在容器中部署nginx</li><ul><li>创建映射80端口的交互式容器</li><li>安装nginx</li><li>安装vim</li><li>创建静态页面</li><li>修改nginx配置</li><li>运行nginx</li><li>验证网站访问</li></ul><li>当一个容器重启后，如果没有固定IP那么映射的地址和端口就会变化</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Docker容器的数据管理：</b><div><b><br></b></div><div><img src=\"quiver-image-url/39E788DA0332663FC72ACBCD97AB01A9.jpg\"><b><br></b><div><ul><li>Docker容器的数据卷</li><ul><li>数据卷是经过特殊设计的目录</li><li>可以绕过联合文件系统（UFS）</li><li>为一个或者多个容器提供访问</li><li>数据卷设计的目的是用于数据持久化</li><li>它完全独立于容器的生命周期</li><li>docker不会在删除容器时删除数据卷，也不会存在类似的垃圾回收机制，对容器引用的数据卷进行处理</li></ul><li>Docker的数据卷容器</li><li>Docker数据卷的备份和还原</li></ul><div><b>特点：</b></div></div></div><div><ol><li>数据卷在容器启动时初始化，如果容器使用的镜像在挂载点包含了数据，这些数据就会拷贝到新初始化的数据卷中</li><li>数据卷可以在容器之间共享和重用</li><li>可以对数据卷里的内容直接进行修改</li><li>数据卷变化不会影响镜像的更新</li><li>卷会一致存在，即使挂载数据卷的容器已经被删除</li></ol><div><b>数据卷挂载：</b></div></div><div><ul><li>docker run -it -v &lt;本地目录:容器目录&gt; &lt;镜像名称&gt; &lt;commander&gt; &lt;args&gt;</li></ul></div>"
+    }
+  ]
+}

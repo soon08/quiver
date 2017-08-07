@@ -1,0 +1,9 @@
+{
+  "title": "常用Css库",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>normalize.css&nbsp;<a href=\"https://github.com/necolas/normalize.css\">https://github.com/necolas/normalize.css</a>&nbsp;使所有浏览器渲染方式一致</li><li>animate.css&nbsp;<a href=\"https://github.com/daneden/animate.css\">https://github.com/daneden/animate.css</a>&nbsp;定义许多CSS3动画效果<br></li><li>font awesome&nbsp;<a href=\"http://fontawesome.io/\">http://fontawesome.io</a>&nbsp;字体图标</li><li>hover.css&nbsp;<a href=\"https://github.com/IanLunn/Hover\">https://github.com/IanLunn/Hover</a>&nbsp;定义了一些鼠标经过样式</li></ul>"
+    }
+  ]
+}

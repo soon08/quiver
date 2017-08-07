@@ -1,0 +1,17 @@
+{
+  "title": "代码服务器",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>安装软件</div><div><ol><li>mysql-5.7.1 &nbsp;&nbsp;<span style=\"color: rgb(255, 240, 165); font-family: Menlo; font-size: 16px; background-color: rgb(19, 119, 61);\">/usr/sbin/</span></li><li>gogs-0.10.2 &nbsp;&nbsp;<span style=\"color: rgb(255, 240, 165); font-family: Menlo; font-size: 16px; background-color: rgb(19, 119, 61);\">/opt/gogs</span></li><li>nginx-1.10.2 &nbsp;<span style=\"color: rgb(255, 240, 165); font-family: Menlo; font-size: 16px; background-color: rgb(19, 119, 61);\">/usr/sbin/nginx</span></li></ol><div>账户密码</div></div><div><ol><li>admin</li><ol><li>root:yuwei@7496560</li></ol><li>server</li><ol><li>root:wjy@jkinvest</li></ol><li>mysql</li><ol><li>root:<span style=\"color: rgb(255, 240, 165); font-family: Menlo; font-size: 16px; background-color: rgb(19, 119, 61);\">ifibbs@wjy@jkinvest</span></li></ol></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "代码服务<div><ol><li>管理员</li><ol><li>administrator<br></li><li>yuwei@7496560</li></ol></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<br>"
+    }
+  ]
+}

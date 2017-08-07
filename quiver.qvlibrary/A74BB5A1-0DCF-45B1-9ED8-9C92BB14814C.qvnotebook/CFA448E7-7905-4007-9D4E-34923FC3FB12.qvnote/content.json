@@ -1,0 +1,25 @@
+{
+  "title": "Docker数据卷",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/39E788DA0332663FC72ACBCD97AB01A9.jpg\"><br>"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>数据卷的概念</li><li>创建带数据卷的容器</li><li>数据卷的备份和还原</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<b>数据卷概念(Data Volume)</b><div><ul><li>是特殊设计的目录，为一个或者多个容器提供访问</li><li>数据卷设计的目的就是用于数据永久化，它完全独立于容器的生存周期，docker不会在容器删除时删除其挂载的数据卷，也不会有相应的垃圾回收机制对数据卷进行处理</li></ul><div>特点</div></div><div><ol><li>数据卷在容器启动时初始化，如果容器使用的镜像在挂载点包含了数据，这些数据会拷贝到新的初始化数据卷中</li><li>数据卷可以在容器中间共享和重用</li><li>容器可以直接对数据卷的内容进行修改</li><li>数据卷的变化不会影响镜像的更新</li><li>数据卷一致都会存在，即使挂载数据卷的容器已经销毁</li><li>数据卷实际是存在于宿主机中的</li></ol><div>添加</div></div><div><ul><li>docker run -it -v &lt;宿主机目录:容器中目录&gt; ubuntu /bin/bash&nbsp;</li><li>docker run -it -v &lt;宿主机目录:容器中目录:权限&gt; ubuntu /bin/bash &nbsp;为数据卷添加权限</li><ul><li>ro &nbsp; 只读权限</li><li>wr &nbsp;读写</li></ul><li>可以使用VOLUMS直接在Dockerfile中指定数据卷</li><li>一个容器可以指定多个数据卷</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>数据卷容器</b><div><img src=\"quiver-image-url/7AB58B38F2DAB45409C7AD8BA74B2988.jpg\"><br><div><ul><li>命名的容器挂载数据卷，其他容器通过挂载这个容器实现数据共享，挂载数据卷的容器就称为数据卷容器</li><li>挂载数据卷容器的方法</li><ul><li>docker run &nbsp;--volume-from &lt;容器名称&gt; &lt;镜像名称&gt; &lt;command&gt; &lt;args&gt;</li></ul><li><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">挂载数据卷容器，只是挂载数据卷信息的传递，即使数据卷容器被删除，容器仍然能访问挂载的数据卷</font></li><li><font color=\"#323232\"><span style=\"background-color: rgb(254, 250, 0);\">在Docker中如果一个数据卷还在被使用，那么使用Docker rm -v &lt;容器ID&gt;将不会删除该挂载的数据卷</span></font></li></ul></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>数据卷的备份和还原</b><div><img src=\"quiver-image-url/37E5409262FEE01B8404A45F9C70CFEF.jpg\"><b><br></b><div><ul><li>实际是将数据备份目录和数据卷挂载目录同时挂载在一个容器上，这样就可以实现数据转移</li><ul><li>docker run --volume-from &lt;需要备份的容器名&gt; -v &lt;本地备份目录:新容器目录:wr&gt; --name &lt;容器名&gt; &lt;镜像名&gt; tar -cvf /backup/temp.tar &lt;需要备份数据卷路径&gt;</li></ul></ul></div></div>"
+    }
+  ]
+}

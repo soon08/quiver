@@ -1,0 +1,10 @@
+{
+  "title": "toString引发的错误",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "3.toString() //error\n3..toString() //'3'\n(3).toString() //'3'"
+    }
+  ]
+}

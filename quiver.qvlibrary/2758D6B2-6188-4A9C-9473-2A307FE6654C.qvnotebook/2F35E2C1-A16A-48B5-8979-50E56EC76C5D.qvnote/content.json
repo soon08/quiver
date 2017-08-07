@@ -1,0 +1,10 @@
+{
+  "title": "线程常用操作",
+  "cells": [
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "sleep(5) //线程休眠"
+    }
+  ]
+}

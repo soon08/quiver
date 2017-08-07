@@ -1,0 +1,22 @@
+{
+  "title": "沙盒机制",
+  "cells": [
+    {
+      "type": "text",
+      "data": "出于安全考虑，IOS系统的沙盒机制规定每个应用都只能访问当前沙盒目录下的文件（也有例外，通讯系统录能在用户授权的情况下被其他应用访问）"
+    },
+    {
+      "type": "text",
+      "data": "<b>目录结构</b><div><ul><li>Documents 用于存储数据，该文件夹会被备份</li><li>Library</li><ul><li>Cache &nbsp;用户存放缓存</li><li>Preferences &nbsp; 系统存放默认偏好设置</li></ul><li>tmp &nbsp; 缓存文件</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>获取主要路径的方法</b>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "import UIKit\n\nclass ApplicationDirectories {\n\t\n\tstatic var bundleDirectoryPath: String {\n\t\treturn NSBundle.mainBundle().bundlePath\n\t}\n\t\n\tstatic var homeDirectoryPath: String {\n\t\treturn NSHomeDirectory()\n\t}\n\t\n\tstatic var tempDirectoryPath: String {\n\t\treturn NSTemporaryDirectory()\n\t}\n\t\n\tstatic var documentDirectoryPath: String? {\n\t\treturn NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).last\n\t}\n\t\n\tstatic var libraryDirectoryPath: String? {\n\t\treturn NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.LibraryDirectory, NSSearchPathDomainMask.UserDomainMask, true).last\n\t}\n\t\n\tstatic var libraryCacheDirectoryPath: String? {\n\t\treturn NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).last\n\t}\n}"
+    }
+  ]
+}

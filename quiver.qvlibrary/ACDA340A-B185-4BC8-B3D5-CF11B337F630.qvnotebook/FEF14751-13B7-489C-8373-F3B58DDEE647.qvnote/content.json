@@ -1,0 +1,17 @@
+{
+  "title": "archive",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>tar linux中常见的归档算法，将多个文件打包成一个文件，但是不带压缩功能<br></li><li>gzip *inux中国常见的压缩工具，算法基于DEFLATE，文件格式为gz，可以和tar组合使用</li><li>zip 一种开源的压缩算法，算法不确定，但主要是用DEFLATE</li><li>rar 商业压缩算法，算法固定</li><li>7zip 和zip差不多，是通用的压缩容器，支持多种压缩算法（zip 常用 Deflate，7z 带 lzma 系列、ppmd、bzip2）</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "Archive包主要用于以tar或者zip格式将读取和写入。zip文件支持选择compress/flate中的DEFLATE算法。"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

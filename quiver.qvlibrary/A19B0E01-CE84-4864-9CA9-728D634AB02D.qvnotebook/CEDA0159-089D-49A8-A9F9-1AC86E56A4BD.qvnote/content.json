@@ -1,0 +1,9 @@
+{
+  "title": "常用前端控件封装",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>表格空间<br></li><ul><li>ajax数据源</li><li>local数据源</li></ul><li>弹窗组件</li><ul><li>confirm弹窗</li><li>alert提示弹窗</li><li>loading提示弹窗</li><li>自定义弹窗</li></ul><li>联动选择框</li><ul><li>三级联动</li></ul><li>轮播控件</li><ul><li>图片轮播</li></ul><li>输入框控件</li><ul><li>自动完成输入框</li><ul><li>ajax数据源</li><li>local数据源</li></ul><li>搜索框</li><ul><li>普通搜索框</li><li>带提示的搜索框</li></ul></ul><li>状态选择控件</li><ul><li>switch控件</li></ul><li>按钮控件</li><ul><li>普通按钮控件</li><li>带icon的按钮控件</li><li>带下来的按钮控件</li></ul><li>segment控件</li><ul><li>段头</li><li><br></li></ul></ul>"
+    }
+  ]
+}

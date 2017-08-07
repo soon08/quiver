@@ -1,0 +1,27 @@
+{
+  "title": "壹财宝安全重构",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>API请求日志服务</b><div><ul><li>API请求记录</li><ul><li>记录api和参数</li><li>记录在mongodb的cap集合中</li></ul><li>API请求频度</li><ul><li>能记录每个api在调用频度</li><li>可以设置API请求频度阈值</li><li>根据阈值和配置规则报警</li><li>根据阈值和配置禁用IP地址</li></ul><li>API请求频度信息获取工具</li></ul><div><br></div></div><div><b>图形验证码</b></div><div><ul><li>专门新建一个图形验证码服务</li><ul><li>暴露接口</li><ul><li>生成图形验证码</li><li>接口支持设置过期时间</li><li>过期时间不能超过最大过期时间</li></ul><li>验证图形验证码</li><ul><li>验证成功，删除验证码</li><li>验证失败，删除验证码</li></ul></ul><li>需要控制的问题</li><ul><li>防止大量生成验证码，但又不使用</li><ul><li>客户端请求网站首页自动添加一个关于客户端的标识植入，用于唯一识别客户端</li></ul><li>需要配合API请求限制策略</li></ul></ul><div><b>短信服务IP限制不兼容性修改</b></div></div><div><ul><li><input type=\"checkbox\" checked=\"checked\">&nbsp;将短信服务里面的IP改为必填参数</li><li><input type=\"checkbox\" checked=\"checked\">&nbsp;所有调用短信服务的地方都需要传递这个参数</li><li><input type=\"checkbox\">&nbsp;将短信服务部署到生产环境</li><li><input type=\"checkbox\" checked=\"checked\">&nbsp;针对不同环境的APP生成不同的APP_ID，方便定位请求来源</li><ul><li>drop app_info 数据表</li><li>drop app_template 数据表</li><li>drop service_account 数据表</li><li>drop send_secure_code_log 数据表</li><li>drop send_sms_log 数据表</li><li>drop&nbsp;send_email_log 数据表</li><li>add send_log 数据表</li></ul><li><input type=\"checkbox\">&nbsp;改进APP权限验证机制</li></ul><div><b>壹财宝代理白名单</b></div></div><div><ul><li><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">需要显式代理到API的接口需要在壹财宝WEB项目中显式声明</font></li><li><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">识别现在所有在网页中直接调用API的服务，并在壹财宝WEB代理白名单中声明</font></li><li><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">需要登录才能代理的API需要验证登录</font></li></ul><div><font color=\"#323232\"><b>部署改进</b></font></div><div><ul><li>配置改成继承方式</li><li>基于脚本生成一个验收环境，环境完全隔离</li><ul><li>包含服务环境</li><li>包含基于生产环境数据库备份生成的临时数据库</li></ul></ul></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>安全风险代码识别</b>"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "var apiCommon = require('./apiCommon');\n\nmodule.exports = function (req, res, next) {\n\n    //图形验证码直接略过，请求直接到了api，API可能会被疯狂请求\n    req.body.checkImgCode = false;\n    if (req.body.imageCode) {\n        if (req.imgCode != req.body.imageCode) {\n            return res.json({msg: '图形验证码不正确'});\n        } else {\n            req.body.checkImgCode = true;\n        }\n    }\n    \n    //如果用户不登录，在body里面随机传递了一个mobile会出现跟你预期不一致的问题\n    if(req.user){\n        req.body.mobile = req.user.mobile;\n    }\n    \n    //这个接口逻辑应该是需要登录的，但是客户可能没有登录的情况下就调用了API接口\n    apiCommon(req, res, next);\n};\n\n//图形验证码的出现逻辑放在客户端，跟没有图形验证码是一样的\nif (req.body.imageCode) {\n    if (req.imgCode != req.body.imageCode) {\n        return res.json({msg: '图形验证码不正确'});\n    } else {\n        req.body.checkImgCode = true;\n    }\n}\n\n//客户端不带cookie，也不带验证码，出现两个undefined，验证通过\nif(req.body.imgCode != req.imgCode) {\n    return res.json({\n        success : false,\n        msg : '图形验证码错误'\n    });\n}"
+    },
+    {
+      "type": "text",
+      "data": "<div><b>安全意识</b></div><div><ul><li>不要相信你面对的是一个正常的客户端</li><ul><li>攻击工具可以完全模拟客户端行为</li><li>不要假设客户端会按照你想要的方式运行</li><ul><li>客户端可能不会传递cookie</li><ul><li>控制图形验证码出现的逻辑放在cookie里面，客户端不传递cookie，验证码永远也出不来</li></ul><li>客户端不会传递你想要的数据或数据类型</li><ul><li>数据传递类型放在客户端，服务器没有做参数验证</li></ul><li>客户端可能不会响应跳转命令</li><ul><li>攻击者不会响应跳转命令</li><li>攻击者可以拦截跳转命令</li></ul></ul><li>不要相信客户端传递过来的数据</li><ul><li>关键的关于客户的数据不要从客户端取，从服务器session或者数据库里面去取</li></ul></ul><li>期望什么数据格式，就验证什么，不是期望数据，验证失败</li></ul></div>"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "var type = req.body.type; \n//期望的是email，但是客户端完全可以传递sms或者其他，这样行为就跟你预期不一致\n\nvar email = req.body.target;\n//期望的是一个邮箱地址，但是客户端完全可以给你传递一个手机号码或者其他，产生的行为也与你不一致\n"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "title": "URL",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>相关类</div><ul><li>NSURL</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "URL编码<div><ul><li><br></li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "URL属性<div><ul><li>scheme</li><li>user</li><li>password</li><li>host</li><li>port</li><li>path</li><li>pathExtension</li><li>pathComponents</li><li>parameterString</li><li>query</li><li>fragment</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "实例"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "界面",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>UIControl<br></li><ul><li>UILabel</li><li>UIButton</li><li>UISegmentControll 类似于tab页</li><ol style=\"list-style-type: lower-latin;\"><li>添加tab页</li><li>删除tab页</li><li>选择委托事件</li></ol><li>UITextField</li><li>UISlider</li><li>UISwitch</li></ul></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<br>"
+    }
+  ]
+}

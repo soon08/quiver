@@ -1,0 +1,10 @@
+{
+  "title": "常用前端库",
+  "cells": [
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "http://featurejs.com/  检测浏览器特征\nhttps://www.tinymce.com/  //html编辑器\nhttp://www.minimamente.com/example/magic_animations/  //动画库\nhttp://gudh.github.io/ihover/dist/index.html          //hover样式\nhttps://connoratherton.com/loaders                    //loading样式\nhttps://github.com/IanLunn/Sequence/                  //动画库\nhttp://necolas.github.io/normalize.css/\nhttp://daneden.github.io/animate.css/\nhttp://www.material-ui.com/"
+    }
+  ]
+}

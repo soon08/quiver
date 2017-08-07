@@ -1,0 +1,9 @@
+{
+  "title": "包销产品和分销产品",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>包销产品</li><ul><li>关系</li><li>分析</li></ul><li>分销产品</li><ul><li>渠道</li></ul></ul>"
+    }
+  ]
+}

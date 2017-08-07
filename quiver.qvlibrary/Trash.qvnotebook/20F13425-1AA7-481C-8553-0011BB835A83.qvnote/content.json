@@ -1,0 +1,13 @@
+{
+  "title": "测试断言",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>常用断言库</li><ul><li>should</li><li>chai</li><li>expect</li></ul></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<b>should断言库的常用使用</b><div><ul><li>类型判断</li><ul><li>obj.should.type(should.Function, 'this should be a Function type')</li></ul><li>属性判断</li><ul><li>obj.should.have.ownProperty('a')</li><li>obj.should.have.property('a')</li><li>obj.should.have.keys('a', 'b')</li><li>obj.should.have.keys(['a', 'b'])</li></ul><li>数值比较</li><ul><li>obj.should.be.equal(n)</li><li>obj.should.be.NaN()</li><li>obj.should.not.be.NaN()</li><li>obj.should.be.Infinity()</li><li>obj.should.be.above(n)</li><li>obj.should.be.aboveOrEqual(n)</li><li>obj.should.be.below(n)</li><li>obj.should.be.belowOrEqual(n)</li><li>obj.should.be.approximately(value, delta)</li><li>obj.should.be.within(star, finish)</li></ul><li>字符串比较</li><ul><li>obj.should.be.exactly(str)</li><li>obj.should.be.startWith(str)</li><li>obj.should.be.endWith(str)</li><li>obj.should.be.empty()</li></ul><li>数组比较</li><ul><li>array.should.be.equal(arr)</li><li>array.should.be.containDeep(arr)</li><li>array.should.have.length(2)</li></ul><li>对象比较</li><li>布尔比较</li><ul><li>obj.should.be.ok()</li><li>obj.should.be.true()</li><li>obj.should.be.false()</li></ul><li>正则比较</li><ul><li>obj.should.match()</li><li>obj.should.matchAny()</li><li>obj.should.matchEach()</li></ul></ul></div>"
+    }
+  ]
+}

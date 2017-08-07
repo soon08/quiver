@@ -1,0 +1,17 @@
+{
+  "title": "buildin",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h4 cid=\"c7\" mdtype=\"heading\" class=\"md-end-block md-heading md-focus\" style=\"line-height: 1.4; box-sizing: border-box; font-size: 1.25em; position: relative; margin-top: 1rem; margin-bottom: 1rem; cursor: text; width: inherit; font-family: 'Open Sans', 'Clear Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; white-space: pre-wrap; background-color: rgb(255, 255, 255);\"><br></h4>"
+    },
+    {
+      "type": "text",
+      "data": "len,cap,make,new的使用总结"
+    },
+    {
+      "type": "text",
+      "data": "complex的使用总结"
+    }
+  ]
+}

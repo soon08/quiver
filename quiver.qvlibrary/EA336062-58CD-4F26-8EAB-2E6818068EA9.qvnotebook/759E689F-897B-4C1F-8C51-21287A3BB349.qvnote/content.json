@@ -1,0 +1,13 @@
+{
+  "title": "Mac设置Redis开机自启",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><b>具体步骤</b></div><div><b>创建一个plist文件</b></div><div>首先我们需要在/Library/LaunchDaemons目录下创建一个plist文件，使用如下命令：</div><div><br></div><div>sudo vim /Library/LaunchDaemons/io.redis.redis-server.plist</div><div><br></div><div><b>将下面的内容粘贴到上一条命令创建的文件里</b></div><div><br></div><div>&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;</div><div>&lt;!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\"&gt;</div><div>&lt;plist version=\"1.0\"&gt;</div><div>&lt;dict&gt;</div><div>&nbsp; &nbsp; &lt;key&gt;Label&lt;/key&gt;</div><div>&nbsp; &nbsp; &lt;string&gt;io.redis.redis-server&lt;/string&gt;</div><div>&nbsp; &nbsp; &lt;key&gt;ProgramArguments&lt;/key&gt;</div><div>&nbsp; &nbsp; &lt;array&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;string&gt;/usr/local/bin/redis-server&lt;/string&gt;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &lt;string&gt;/usr/local/etc/redis.conf&lt;/string&gt;</div><div>&nbsp; &nbsp; &lt;/array&gt;</div><div>&nbsp; &nbsp; &lt;key&gt;RunAtLoad&lt;/key&gt;</div><div>&nbsp; &nbsp; &lt;true/&gt;</div><div>&lt;/dict&gt;</div><div>&lt;/plist&gt;</div><div><br></div><div>粘贴完以后，我们需要对上面的内容做两处修改：一个是“redis-server”的路径，这里需要改为你自己的安装路径(可以使用”which redis-server”命令来查看具体的路径)。还有一个就是redis配置文件的路径，这个是可选的，如果没有使用配置文件那么就把第二个删除，如果使用了配置文件，一定要改为正确的路径。</div><div><br></div><div><b>将plist文件载入到launchd</b></div><div>编辑完plist文件以后，我们需要将该文件载入到launchd里，使用launchctl命令，具体命令如下：</div><div><br></div><div>sudo launchctl load /Library/LaunchDaemons/io.redis.redis-server.plist<br></div><div><br></div><div>重启以后，redis就可以开机启动了。如果不想重新启动，也可以使用如下命令：</div><div><br></div><div>sudo launchctl start io.redis.redis-server</div><div><br></div><div><b>关闭redis</b></div><div>如果想关闭redis的话，使用如下命令：</div><div><br></div><div>sudo launchctl stop io.redis.redis-server</div><div><br></div><div><b>设置别名</b></div><div>为了使用方便，我们可以给redis的开启和关闭命令设置别名：</div><div><br></div><div>alias redisstart='sudo launchctl start io.redis.redis-server'</div><div>alias redisstop='sudo launchctl stop io.redis.redis-server'</div>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

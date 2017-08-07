@@ -1,0 +1,9 @@
+{
+  "title": "需要完善的知识",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ol><li>mysql 管理和高级查询</li><li>mongoldb 管理和高级查询</li><li>redis 事务和管道</li><li>缓存的过期与更新问题</li><li>如何保证应用无状态</li><li>分布式服务如何处理事务问题</li><li>shell脚本</li></ol>"
+    }
+  ]
+}

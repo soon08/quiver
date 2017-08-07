@@ -1,0 +1,9 @@
+{
+  "title": "常见投资条款",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<p style=\"border: 0px; margin: 0px; padding: 26px 0px 0px; font-size: 14px; word-wrap: break-word; font-family: 微软雅黑, 宋体; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 26px; widows: 1; background-color: rgb(255, 255, 255);\">　　<strong style=\"border: 0px; margin: 0px; padding: 0px;\">典型的清算优先权条款如下：</strong>如公司触发清算事件，A系列优先股股东(即投资人)有权优先于普通股股东(即创业股东)每股获得初始购买价格2倍的回报。此处的“清算”，并不单指我们通常所理解的、因资不抵债而无法继续经营下去的破产清算。更进一步，如果公司因合并、被收购、出售控股权，以及出售主要资产，从而导致公司现有股东占有存续公司的股权比例低于50%，同样也被视作清算事件。</p><p style=\"border: 0px; margin: 0px; padding: 26px 0px 0px; font-size: 14px; word-wrap: break-word; font-family: 微软雅黑, 宋体; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 26px; widows: 1; background-color: rgb(255, 255, 255);\">　　<strong style=\"border: 0px; margin: 0px; padding: 0px;\">典型的领售权条款如下：</strong>在公司符合IPO之前，如果多数A类优先股股东同意出售或者清算公司，剩余的A类优先股股东及普通股股东应该同意此交易，并以同样的价格和条件出售他们的股份。</p><p style=\"border: 0px; margin: 0px; padding: 26px 0px 0px; font-size: 14px; word-wrap: break-word; font-family: 微软雅黑, 宋体; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 26px; widows: 1; background-color: rgb(255, 255, 255);\">　　<strong style=\"border: 0px; margin: 0px; padding: 0px;\">典型的股份回购条款如下：</strong>如果大多数A类优先股股东同意，公司应该从第5年开始，分3年回购已经发行在外的A类优先股，回购价格等于原始发行价格加上已宣布但尚未支付的红利。当然，股份回购的触发方式，也可以不是优先股股东投票表决，而是由条款规定具体的某一时间性事件触发，比如5年之内企业未能实现IPO，则触发股份回购条款。</p><div><br></div>"
+    }
+  ]
+}

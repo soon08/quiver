@@ -1,0 +1,10 @@
+{
+  "title": "centos6.5 更换阿里源",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup\n\nwget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo\n\nyum clean all\n\nyum makecache"
+    }
+  ]
+}

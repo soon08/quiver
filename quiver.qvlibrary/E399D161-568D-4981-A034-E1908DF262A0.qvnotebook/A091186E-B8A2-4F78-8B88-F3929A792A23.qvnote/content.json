@@ -1,0 +1,9 @@
+{
+  "title": "JSON的高级用法",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>JSON.parse(text [, reviver])<br></li><li>JSON.stringify(value [, replacer] [, space])<br></li></ul>"
+    }
+  ]
+}

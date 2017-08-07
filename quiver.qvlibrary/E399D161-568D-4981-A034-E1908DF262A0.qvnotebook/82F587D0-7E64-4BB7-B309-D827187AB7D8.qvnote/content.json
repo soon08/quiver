@@ -1,0 +1,23 @@
+{
+  "title": "数组的遍历相关方法",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>filter<br></li><ul><li>只会遍历初始化后的元素</li></ul><li>map<br></li><ul><li>只会遍历初始化后的元素</li></ul><li>reduce<br></li><ul><li>只会遍历初始化后的元素</li><li>不能对空数组执行这个操作</li></ul><li>forEach<br></li><ul><li>只会遍历初始化后的元素</li></ul></ul>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var array = [];\narray[5] = 1;\n\nconsole.log(array.length); //6\n\nfor(var i = 0; i < array.length; i++){\n    console.log(array[i]); \n    // undefined\n    // undefined\n    // undefined\n    // undefined\n    // undefined\n    // 1\n}\n\n\narray.map(function (item, index, array) {\n   return item + 1\n});//[,,,,,2]\n\narray.filter(function (item) {\n    console.log(item);\n    // 1\n});\n\narray.forEach(function (item) {\n    console.log(item);\n    // 1\n});\n\n[].reduce(Math.pow); //error"
+    },
+    {
+      "type": "text",
+      "data": "<b>join方法</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "[,,,].join(\":\") //':,'"
+    }
+  ]
+}

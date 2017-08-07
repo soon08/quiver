@@ -1,0 +1,9 @@
+{
+  "title": "siege 压力测试工具",
+  "cells": [
+    {
+      "type": "text",
+      "data": "wrk -t8 -d1m -c400 <a href=\"http://127.0.0.1:9090/home\">http://127.0.0.1:9090/home</a><div><br></div><div>siege -c 200 -r 100 <a href=\"http://127.0.0.1:8000\">http://127.0.0.1:8000</a><br></div>"
+    }
+  ]
+}

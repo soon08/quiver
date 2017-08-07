@@ -1,0 +1,21 @@
+{
+  "title": "bytes",
+  "cells": [
+    {
+      "type": "text",
+      "data": "借助bytes包可以对[]byte切片进行如下操作。<div><ul><li>对比 compare</li><li>搜索 search</li><li>转换</li><ul><li>upper</li><li>lower</li></ul><li>分割 split</li><li>组合 join</li><li>修改</li><ul><li>trim</li><li>modify</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "对比<div><ul><li>Compre</li><ul><li>返回-1 表示小于</li><li>返回0表示相同</li><li>返回1 表示大于</li></ul><li>Contains</li><li>Index</li><li>IndexByte</li><li>IndexFunc</li><li>IndexRune</li><li>Count</li><li>HasPrefix</li><li>HasSuffix</li><li>Equal</li><ul><li>相同返回true</li><li>不同返回false</li></ul><li>EqualFold 忽略大小写比较</li><li>Map</li><li>Replace</li><li>Runes</li><li>Fields</li><li>Split</li><li>Join</li><li>Trim</li><li>TrimFunc</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "Buffer"
+    },
+    {
+      "type": "text",
+      "data": "Reader"
+    }
+  ]
+}

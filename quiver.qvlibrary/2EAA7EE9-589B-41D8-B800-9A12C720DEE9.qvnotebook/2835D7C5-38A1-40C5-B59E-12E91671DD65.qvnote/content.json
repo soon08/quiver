@@ -1,0 +1,14 @@
+{
+  "title": "错误处理",
+  "cells": [
+    {
+      "type": "text",
+      "data": "错误使用ErrorType这个空协议来表示"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//: Playground - noun: a place where people can play\n\nimport UIKit\n\n\nenum IPError: ErrorType {\n    case IPStringErrorType\n    case ShortIpComponents\n    case IPAddressError(segue: Int)\n}\n\n\nvar ip = \"192.168.1.1\"\n\nfunc parseIP(ip:String) throws -> Int  {\n    //defer 处理\n    defer{\n        print(\"do some clean worker\")\n    }\n    \n    let temp = ip.componentsSeparatedByString(\".\")\n    \n    //guard\n    guard temp.count == 4 else{\n        if temp.count < 4{\n            throw IPError.ShortIpComponents\n        }else{\n            throw IPError.IPStringErrorType\n        }\n    }\n    \n    var res = 0;\n    \n    for i in 0 ..< temp.count {\n        if let x = Int(temp[i]) where x < 256{\n            res += x\n        }else{\n            throw IPError.IPAddressError(segue: i)\n        }\n    }\n    \n    return res;\n}\n\n\ntry parseIP(ip)\n\ndo{\n    try parseIP(\"192.168.300.1\")\n} catch IPError.ShortIpComponents{\n    print(\"ShortIpComponents\")\n} catch IPError.IPStringErrorType{\n    print(\"IPStringErrorType\")\n} catch IPError.IPAddressError(let segue){\n    print(segue)\n}\n\n//将错误转换为可选值\nlet x = try? parseIP(\"192.168.2.1\")\nlet y = try! parseIP(\"192.168.255.1\")"
+    }
+  ]
+}

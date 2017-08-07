@@ -1,0 +1,21 @@
+{
+  "title": "树",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li><b>二叉树</b><br></li><ul><li>二叉树</li><li>二叉查找树——有序二叉树</li><li>平衡二叉查找树</li><li>红黑树</li></ul><li><b>多叉树</b></li><ul><li>B树</li><li>B-树</li><li>B+数</li><li>2-3树</li></ul><li><b>其它树</b></li><ul><li>字典树</li><li>后缀树</li></ul></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<b>二叉树</b><div><ul><li>树只有左右两个分支</li><li>树的查找次数与树的深度有关</li><li>树的遍历</li><ul><li>先序遍历</li><li>中序遍历</li><li>后序遍历</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "多叉树<div><ul><li>当元素数量非常庞大的时候，二叉树的深度就会非常深，查找效率就会底下，这时就需要多叉树</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "其它树<div><br></div>"
+    }
+  ]
+}

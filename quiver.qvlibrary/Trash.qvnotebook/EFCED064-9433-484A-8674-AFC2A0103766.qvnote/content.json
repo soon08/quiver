@@ -1,0 +1,25 @@
+{
+  "title": "Modules",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Node.js的依赖管理:"
+    },
+    {
+      "type": "text",
+      "data": "Node.js的包管理方式:"
+    },
+    {
+      "type": "text",
+      "data": "Node.js制作一个包发布到NPM:"
+    },
+    {
+      "type": "text",
+      "data": "自己动手搭建一个NPM私有框架:"
+    },
+    {
+      "type": "text",
+      "data": "如何加快NPM的安装速度:"
+    }
+  ]
+}

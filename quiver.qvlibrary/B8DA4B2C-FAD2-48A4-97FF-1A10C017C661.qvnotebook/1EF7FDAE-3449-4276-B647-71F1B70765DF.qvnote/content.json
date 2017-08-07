@@ -1,0 +1,14 @@
+{
+  "title": " UIActivityIndicatorView ",
+  "cells": [
+    {
+      "type": "text",
+      "data": "外观<div><img src=\"quiver-image-url/01FE64630891C3D9E3C6664E72D8392E.jpg\"><br></div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "indicator.startAnimating()\nindicator.stopAnimating()"
+    }
+  ]
+}

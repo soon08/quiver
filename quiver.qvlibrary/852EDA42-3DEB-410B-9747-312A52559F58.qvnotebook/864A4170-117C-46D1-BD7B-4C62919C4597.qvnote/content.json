@@ -1,0 +1,17 @@
+{
+  "title": "理财中，各种角色的颜色标识",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>风控</li><li>融资方</li><li>资管公司</li><li>政府</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/BFFF9D8045656BB10FDDD2DD2867151D.jpg\"><div><img src=\"quiver-image-url/4C9CE4B768F79EB2B7FCB70F5E7DB5BF.jpg\"><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div>基于相似性推荐，还是基于诱饵的推荐方式</div><img src=\"quiver-image-url/7B383B6BA2A002BF828284187D9144ED.jpg\"><div>信托公司地图<br><div><img src=\"quiver-image-url/E727C8913527236FAFE44C9B324EE990.jpg\"><br></div></div>"
+    }
+  ]
+}

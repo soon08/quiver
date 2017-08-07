@@ -1,0 +1,9 @@
+{
+  "title": "小程序-获取用户信息接口",
+  "cells": [
+    {
+      "type": "text",
+      "data": "在加密的用户信息接口中（<a href=\"https://mp.weixin.qq.com/debug/wxadoc/dev/api/open.html\">https://mp.weixin.qq.com/debug/wxadoc/dev/api/open.html</a>），返回的encryptedData在微信账号没有绑定的情况下是获取不到用户的unionId的"
+    }
+  ]
+}

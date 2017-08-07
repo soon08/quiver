@@ -1,0 +1,18 @@
+{
+  "title": "协议",
+  "cells": [
+    {
+      "type": "text",
+      "data": "作用：<div><ol><li>约定实例属性</li><li>约定实例方法</li><li>约定实例构造器</li><li>约定类型属性</li><li>约定类型方法</li></ol></div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "protocol SomeProtocol {\n    var name: String {get set}\n    var age : Int {get}\n    \n    func show()\n    \n    mutating func change(age: Int)\n    \n    init(name: String, age: Int)\n    //你可以在采纳协议的类中实现构造器，无论是作为指定构造器，还是作为便利构造器。无论哪种情况，你都必须为构造器实现标上 required 修饰符：\n}"
+    },
+    {
+      "type": "text",
+      "data": "<ol><li>利用协议实现代理模式</li><li>协议继承</li><li>类的专属协议</li><li>协议合成</li><li>协议检查</li><li>协议扩展</li></ol>"
+    }
+  ]
+}

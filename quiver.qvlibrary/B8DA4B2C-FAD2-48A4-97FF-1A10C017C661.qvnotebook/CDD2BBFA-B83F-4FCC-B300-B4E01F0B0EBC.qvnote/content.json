@@ -1,0 +1,55 @@
+{
+  "title": "常用类库",
+  "cells": [
+    {
+      "type": "text",
+      "data": "数据"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>UIImage</li><li>NSData</li><li>NSString</li><li>NSBundle<br></li><li>UIScreen</li></ul>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//将文本框中的值转换成数字\nvar i = (tf1.text as NSString).intValue\nvar f = (tf1.text as NSString).floatValue\nvar d = (tf1.text as NSString).doubleValue\n\n//数字转字符串\nvar f = 123.32342342\nvar s = String(format: \"%.2f\", f) //123.32\nlet i = 255\nlet s:String = String(format: \"%x\", i) //ff\nlet i = 255\nlet s:String = String(format: \"%06x\", i) //0000ff"
+    },
+    {
+      "type": "text",
+      "data": "尺寸<div><ul><li>CGReact&nbsp;CGRectMake</li><li>CGSize CGSizeMake</li><li>CGFloat</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "事件<div><ul><li>UIControlEvents<br></li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "时间<div><ul><li>NSDate &nbsp; 日期操作</li><li>NSTimer &nbsp;定时器</li><li>NSDateFormater &nbsp;日期格式化</li><li>NSCalendar<br></li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "颜色"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>UIColor</li></ul>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "UIColor(red: 55/255, green: 186/255, blue: 89/255, alpha: 0.5)  //要除以255\nUIColor(red: 0x37/255, green: 0xba/255, blue: 0x46/255, alpha: 0.5)"
+    },
+    {
+      "type": "text",
+      "data": "设备信息"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>UIScreen</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

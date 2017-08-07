@@ -1,0 +1,9 @@
+{
+  "title": "express bug",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>/\\/(trust|asset\\-management|obligation\\-fund|security\\-fund|equity\\-fund)_(.*)_(.*)/ig</div><div><br></div><div>http://localhost:3000/trust_province_</div>"
+    }
+  ]
+}

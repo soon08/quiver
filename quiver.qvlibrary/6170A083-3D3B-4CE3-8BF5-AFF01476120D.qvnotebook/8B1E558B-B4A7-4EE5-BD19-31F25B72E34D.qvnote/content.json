@@ -1,0 +1,9 @@
+{
+  "title": "http基础",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ol><li>MIME</li><ol><li>http为每一种数据类型都打上了一个MIME类型标签，如HTML文件的MIME标签为 text/html</li></ol><li>URL</li><ol><li>schema</li><li>user</li><li>password</li><li>host</li><li>port</li><li>path</li><li>query</li><li>hash</li></ol><li>Transaction</li><ol><li>一个http事务包含一个请求和一个响应</li></ol><li>Method</li><ol><li>GET</li><li>POST</li><li>PUT</li><li>DELETE</li><li>HEAD</li></ol><li>Status Code</li><li>报文</li><ol><li>包含起始行、报文头、报文体</li><li>分为请求报文、响应报文</li></ol><li>Protocol Version</li><ol><li>http/1.0</li><li>http/1.1</li><li>http/2.0</li></ol><li>web的结构组件</li><ol><li>客户端 Client</li><li>代理 Proxy（位于客户端和服务器之间的转发实体）</li><li>缓存 Cache</li><li>网关 Gateway（链接其他应用程序的WEB服务器，通常用于将http协议转化成其他协议）</li><li>隧道 Tunning（对HTTP通行报文进行盲转发的特殊代理）</li><li>Agent代理（发起自动http请求的半智能web客户端，如爬虫）</li></ol></ol>"
+    }
+  ]
+}

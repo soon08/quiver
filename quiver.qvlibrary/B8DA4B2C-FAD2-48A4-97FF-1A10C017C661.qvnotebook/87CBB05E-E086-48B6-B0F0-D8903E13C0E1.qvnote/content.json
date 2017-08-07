@@ -1,0 +1,18 @@
+{
+  "title": "UIControl-UISwitch",
+  "cells": [
+    {
+      "type": "text",
+      "data": "外观<div><img src=\"quiver-image-url/F5A108F15E6AA7F0F328BBBCA2267509.jpg\"><img src=\"quiver-image-url/14367B25A0E3845C06DE37A717867B0E.jpg\"><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/2B25F1EAE91AEAF4300B196713AF4C30.jpg\"><img src=\"quiver-image-url/59D3E96AE73A805239B13B3ACA86A670.jpg\">"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "import UIKit\n \nclass ViewController: UIViewController {\n    var uiswitch:UISwitch!;\n    override func viewDidLoad() {\n        super.viewDidLoad()\n        uiswitch = UISwitch()\n        //设置位置（开关大小无法设置）\n        uiswitch.center=CGPointMake(100,50);\n        //设置默认值\n        uiswitch.on=true;\n        uiswitch.addTarget(self, action: @selector(switchDidChange),\n                           forControlEvents:UIControlEvents.ValueChanged)\n        self.view.addSubview(uiswitch);\n    }\n     \n    //ValueChanged 事件\n    func switchDidChange(){\n        //打印当前值\n        print(uiswitch.on)\n    }\n}"
+    }
+  ]
+}

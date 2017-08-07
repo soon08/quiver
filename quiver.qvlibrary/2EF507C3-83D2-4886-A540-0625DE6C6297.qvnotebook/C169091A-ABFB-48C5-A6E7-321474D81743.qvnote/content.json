@@ -1,0 +1,9 @@
+{
+  "title": "工具",
+  "cells": [
+    {
+      "type": "text",
+      "data": "yum install glances -y 报警监控"
+    }
+  ]
+}

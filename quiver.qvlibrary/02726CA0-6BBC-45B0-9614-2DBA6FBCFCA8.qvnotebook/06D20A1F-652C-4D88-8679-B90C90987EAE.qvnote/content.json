@@ -1,0 +1,58 @@
+{
+  "title": "MySQL常用操作",
+  "cells": [
+    {
+      "type": "text",
+      "data": "创建用户："
+    },
+    {
+      "type": "code",
+      "language": "sql",
+      "data": "CREATE USER 'username'@'host' IDENTIFIED BY 'password';"
+    },
+    {
+      "type": "text",
+      "data": "删除用户："
+    },
+    {
+      "type": "code",
+      "language": "sql",
+      "data": "DROP USER 'username'@'host'; "
+    },
+    {
+      "type": "text",
+      "data": "授予权限："
+    },
+    {
+      "type": "code",
+      "language": "sql",
+      "data": "-- 授权\nGRANT SELECT, INSERT ON db.tablename TO 'username'@'host' IDENTIFIED BY 'password'; \nGRANT ALL ON *.* TO 'username'@'host';\n\n-- 收回权限\nREVOKE SELECT ON db.tablename FROM 'username'@'host'; \n\n-- 刷新权限\nFLUSH PRIVILEGES;"
+    },
+    {
+      "type": "text",
+      "data": "设置用户密码："
+    },
+    {
+      "type": "code",
+      "language": "sql",
+      "data": "SET PASSWORD FOR 'username'@'host' = PASSWORD('newpassword');\n\n-- 设置Root密码\nmysqladmin -uroot password 123;"
+    },
+    {
+      "type": "text",
+      "data": "常用权限："
+    },
+    {
+      "type": "code",
+      "language": "sql",
+      "data": "-- CRUD\nDELETE\nSELECT\nUPDATE\nINSERT\n\n-- table\nCREATE\nALTER\nDROP\nINDEX\n\n-- view\nCREATE VIEW"
+    },
+    {
+      "type": "text",
+      "data": "查看数据库信息"
+    },
+    {
+      "type": "text",
+      "data": "查看数据表信息"
+    }
+  ]
+}

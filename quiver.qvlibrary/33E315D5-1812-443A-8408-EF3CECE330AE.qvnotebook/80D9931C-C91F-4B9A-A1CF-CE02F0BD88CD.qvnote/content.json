@@ -1,0 +1,13 @@
+{
+  "title": "Swift 3.0",
+  "cells": [
+    {
+      "type": "text",
+      "data": "数据类型<div><ul><li>不同的数据类型之间不允许直接转换，需手动转换</li><li>Swfit中，不存在基本数据类型，都是结构体和类类型</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "可选类型<div><ul><li>可能有指定类型的值，也可能为nil</li><li>在类型后面添加一个？，表示变量可选</li></ul></div>"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "native方法",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>NSURL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;请求地址</li><li>NSURLRequest &nbsp; &nbsp; &nbsp; 构造请求</li><li>NSURLConnection &nbsp;发送请求（同步和异步）</li><li>DataJSON &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 数据类型</li><li>反序列化 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;编程对象</li></ul>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let apiUrl = NSURL(string: \"http://api.k780.com:88/?app=qr.get&data=test&level=L&size=6\")!\n        \nlet apiRequest = NSURLRequest(URL: apiUrl)\n        \n//这个方法已经在ios9中被废除        \nNSURLConnection.sendAsynchronousRequest(apiRequest, queue: NSOperationQueue(), completionHandler: {(res, data, err) in\n        if err == nil && data != nil{\n            self.qrcodeImageView.image = UIImage(data: data!)\n        }\n            \n})\n\n//\nNSSession session = NSSession"
+    }
+  ]
+}

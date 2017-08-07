@@ -1,0 +1,103 @@
+{
+  "title": "常见高级用法",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>fn.bind.apply(fn, arguments)</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//创建一个日志函数\nvar DEBUG = console.log.bind(console, 'DEBUG:')\nvar LOG = console.log.bind(console, 'LOG:')\nDEBUG(1,2,3) //DEBUG: 1 2 3\nLOG('info')  //LOG: info\n\n//定义一个日志函数\nvar logger = function(log){\n    log.bind.apply(log, arguments)();\n};\n\nlogger(console.log, 1, 2, 3); //1 2 3"
+    },
+    {
+      "type": "text",
+      "data": "<b>Array.prototype.slice.call(arguments)</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function show(){\n    var temp = Array.prototype.slice.call(arguments);\n    console.log(temp); \n}\n\nshow(1,2,3) //[ 1, 2, 3 ]\n\n//将字符串拆开成数组\nArray.prototype.slice.call(\"12323\"); //[ '1','2', '3', '2','3']\n//等价于 [].slice.call('12344', 0)\n//在slice内部实现由一个遍历操作，所有能够转换"
+    },
+    {
+      "type": "text",
+      "data": "<div><b>在JS中，这三者都是用来改变函数的this对象的指向的，他们有什么样的区别呢。</b></div><div><b><br></b></div><div>在说区别之前还是先总结一下三者的相似之处：</div><div><ul><li>都是用来改变函数的this对象的指向的。<br></li><li>第一个参数都是this要指向的对象。<br></li><li>都可以利用后续参数传参。<br></li></ul></div><div>那么他们的区别在哪里的，先看一个例子。</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var xw = {\n    name : \"小王\",\n    gender : \"男\",\n    age : 24,\n    say : function() {\n        alert(this.name + \" , \" + this.gender + \" ,今年\" + this.age);\n    }\n};\nvar xh = {\n    name : \"小红\",\n    gender : \"女\",\n    age : 18\n};\nxw.say();"
+    },
+    {
+      "type": "text",
+      "data": "<div>本身没什么好说的，显示的肯定是小王 ， 男 ， 今年24。</div><div>那么如何用xw的say方法来显示xh的数据呢。</div><div>对于call可以这样:</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "xw.say.call(xh);"
+    },
+    {
+      "type": "text",
+      "data": "<div>对于apply可以这样：<br></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "xw.say.apply(xh);"
+    },
+    {
+      "type": "text",
+      "data": "<div>而对于bind来说需要这样：<br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div>xw.say.bind(xh)();<br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div>如果直接写xw.say.bind(xh)是不会有任何结果的，看到区别了吗？call和apply都是对函数的直接调用，而bind方法返回的仍然是一个函数，因此后面还需要()来进行调用才可以。<br></div><div><div>那么call和apply有什么区别呢？我们把例子稍微改写一下。</div></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var xw = {\n    name : \"小王\",\n    gender : \"男\",\n    age : 24,\n    say : function(school,grade) {\n        alert(this.name + \" , \" + this.gender + \" ,今年\" + this.age + \" ,在\" + school + \"上\" + grade);\n    }\n};\nvar xh = {\n    name : \"小红\",\n    gender : \"女\",\n    age : 18\n};"
+    },
+    {
+      "type": "text",
+      "data": "<div>可以看到say方法多了两个参数，我们通过call/apply的参数进行传参。<br></div><div>对于call来说是这样的 &nbsp; &nbsp;&nbsp;</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "xw.say.call(xh,\"实验小学\",\"六年级\");  "
+    },
+    {
+      "type": "text",
+      "data": "<div>而对于apply来说是这样的</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "xw.say.apply(xh,[\"实验小学\",\"六年级郑州牛皮癣医院\"]);"
+    },
+    {
+      "type": "text",
+      "data": "<div>看到区别了吗，call后面的参数与say方法中是一一对应的，而apply的第二个参数是一个数组，数组中的元素是和say方法中一一对应的，这就是两者最大的区别。</div><div>那么bind怎么传参呢？它可以像call那样传参。</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "xw.say.bind(xh,\"实验小学\",\"六年级\")();"
+    },
+    {
+      "type": "text",
+      "data": "<div>但是由于bind返回的仍然是一个函数，所以我们还可以在调用的时候再进行传参。</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "xw.say.bind(xh)(\"实验小学\",\"六年级\");"
+    }
+  ]
+}

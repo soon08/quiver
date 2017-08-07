@@ -1,0 +1,30 @@
+{
+  "title": "node.js",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>Node的诞生历程</b><div><ul><li>2009年3月，Ryan Dahl在其博客上宣布准备用V8创建一个Web服务器并准备为其提供一套库</li><li>2009年5月，Ryan Dahl在Github上发布了最初版</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Node的特点</b><div><ul><li>异步IO</li><li>单线程</li><ul><li>无法利用多核CPU</li><li>错误会引起应用推出</li><li>大量计算会导致CPU被长时间占用无法继续调用IO</li></ul><li>跨平台</li><ul><li>libuv</li></ul></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Node的应用场景</b><div><ul><li>IO密集型</li><li>分布式应用</li><ul><li>NodeFox</li><li>ITier</li></ul><li>并行IO</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Node模块</b><div><ul><li>CommonJS</li><ul><li>require</li><li>module</li><ul><li>exports</li></ul></ul></ul><div>Node的模块实现方式</div></div><div><ol><li>路径分析</li><li>文件定位</li><li>变异执行</li></ol><div>在Node中模块分为两类：Node提供的核心模块和第三方模块</div></div><div><ul><li>核心模块在Node源代码编译过程中，编译进了二进制执行文件中。在Node进程启动时，部分核心模块就被直接加载进了内存，所以这部门核心模块引入时，文件定位和编译执行这两个步骤都省略了</li><li>模块会优先从缓存加载，所以两次使用require()加载同一个模块，第二次都是加载的缓存</li></ul><div>文件扩展名分析</div></div><div><ul><li>.js &nbsp;通过fs同步读取后编译</li><li>.node &nbsp;通过dolmen()加载最后编译后的文件</li><li>.json &nbsp;通过fs模块同步读取后调用JSON.parse()</li><li>其他 &nbsp;都被当做.js的文件载入</li></ul><div>JS模块编译</div></div><div><ul><li>每个编译成功的模块都会以文件路径为索引缓存在module._cache对象上</li><li>在读取完js文件后，node会对JavaScript文件进行头尾包装，包装后的代码通过vm.runInThisContext()运行返回一个function</li><li>最后将exports, require, module, __filename, __dirname传入这个函数执行</li><li>执行后exports属性被返回给调用方</li></ul><div>C/C++模块的编译</div></div><div><ul><li>Node调用process.dlopen()进行加载和执行</li><li>.node文件不需要编译，它是C/C++编译后生成的</li><li>执行过程中，模块的exports对象和.node模块产生联系，然后返回给调用者</li></ul></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "(function(exports, require, module, __filename, __dirname){\n  //code\n});"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

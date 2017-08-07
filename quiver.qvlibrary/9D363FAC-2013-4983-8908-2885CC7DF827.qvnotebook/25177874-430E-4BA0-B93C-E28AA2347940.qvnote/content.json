@@ -1,0 +1,9 @@
+{
+  "title": "gpasswd",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><b>gpasswd命令：将用户从组中添加、删除</b></div><div><br></div><div>功能：管理组</div><div><br></div><div>用法：gpasswd[-a user][-d user][-A user,...][-M user,...][-r][-R]groupname</div><div><br></div><div>参数：</div><div><ul><li>-a：添加用户到组<br></li><li>-d：从组删除用户<br></li><li>-A：指定管理员<br></li><li>-M：指定组成员和-A的用途差不多<br></li><li>-r：删除密码<br></li><li>-R：限制用户登入组，只有组中的成员才可以用newgrp加入该组<br></li></ul></div><div><b>gpasswd groupname：</b></div><div>&nbsp; &nbsp; &nbsp; &nbsp; 如系统有个peter账户，该账户本身不是groupname群组的成员，使用newgrp需要输入密码即可让使用者暂时加入成为该组成员，之后peter建立的文件group也会是groupname。所以该方式可以暂时让peter建立文件时使用其他的组，而不是peter本身所在的组。所以使用gpasswd groupname设定密码，就是让知道该群组密码的人可以暂时切换具备groupname群组功能的.</div><div><br></div><div><b>gpasswd -A peter users</b></div><div>&nbsp; &nbsp; &nbsp; &nbsp; 这样peter就是users群组的管理员，就可以执行下面的操作:</div><div><br></div><div><b>gpasswd -a mary users</b></div><div><b>gpasswd -a allen users</b></div><div>&nbsp; &nbsp; &nbsp; &nbsp; *给组账号设置完密码以后，用户登陆系统，使用newgrp命令，输入给组账号设置的密码，就可以临时添加到指定组，可以管理组用户，具有组权限。格式：newgrp 【组名】<br></div>"
+    }
+  ]
+}

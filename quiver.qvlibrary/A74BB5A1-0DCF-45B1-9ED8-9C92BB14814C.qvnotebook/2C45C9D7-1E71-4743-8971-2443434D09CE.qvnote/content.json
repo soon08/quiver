@@ -1,0 +1,17 @@
+{
+  "title": "Dockerfile",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>构建过程</b><div><img src=\"quiver-image-url/90496DB975E5AE9AC6841A0D247C7037.jpg\"><b><br></b><div><ol><li>从基础镜像运行一个容器</li><li>执行一条指令，对镜像做出修改</li><li>执行类似docker commit的操作，提交一个新的镜像层</li><li>再基于刚提交的镜像运行一个新的容器</li><li>删除中间层创建的容器</li><li>执行Dockerfile中的下一条指令，直到所有指令执行完毕</li><li>docker history &lt;镜像名称&gt; 查看镜像的构建过程</li></ol><div>docker构建过程中会删除中间层创建的容器，但不会删除构建过程中创建的中间镜像，这就为我们调试docker构建过程提供了方法</div></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>FROM ubuntu:14.04</li><li>MAINTAINER 告诉Docker镜像的坐着是谁</li><li>RUN 指令会在当前镜像中运行指定的命令</li><li>EXPOSE 向外部公开端口</li><ul><li>docker 出于安全原因，不会自动打开该端口，而需要你在docker run是指定需要打开的端口</li></ul></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Dockerfile指令</b><div><ul><li>FROM</li><li>RUN</li><ul><li>bash模式(/bin/bash -c command) RUN apt-get install -y nginx&nbsp;</li><li>exec模式 RUN [“/bin/bash”, “-c”, “apt-get”, “update\"]</li></ul><li>MAINTAINER<br></li><li>CMD</li><ul><li>用于容器启动时的默认行为，一般和ENTERYPOINT配合使用、</li><li>CMD command param .. &nbsp;（shell模式）</li><li>CMD[“/bin/bash”,”-c”, “wget”, “”] (exec模式) &nbsp; &nbsp; &nbsp;&nbsp;</li><li>指定一个容器启动时要运行的命令，不同于RUN，RUN命令用于构建时运行的命令</li><li>一个Dockerfile只会有最后一个CMD命令生效</li><li>如果在启动Docker容器时指定了命令，将会覆盖CMD命令</li></ul><li>ENTRYPOINT</li><ul><li>与CMD类似，但是不会被docker run中指定的命令覆盖，如果要覆盖需要指定 --entrypoint选项</li><li>ENTRYPOINT[“/usr/sbin/nginx”, “-g”] (exec 模式)</li><li>ENTRYPOINT ls -l &nbsp;(shell模式)<br></li><li>类似于CMD命令</li><li>ENTRYPOINT不会被docker run传入的命令覆盖</li><li>一个Dockerfile只会有最后一个ENTRYPOINT命令生效</li></ul><li>ADD</li><ul><li>用于将构建环境下的文件和目录复制到镜像中</li><ul><li>安装一个应用程序时，ADD指令需要源文件位置和目的文件位置两个参数</li><li>ADD software.lic /opt/application/software.lic</li><li>ADD nginx.tar.gz /</li><li>ADD [“src”, “dest”] 适用于路径有空格</li></ul><li>ADD与COPY类似，但ADD包含tar功能</li></ul><li>COPY</li><ul><li>类似于ADD，但不做文件提取和文件解压工作</li><ul><li>COPY &nbsp;conf.d &nbsp;/etc/apache</li><li>COPY [“src”, “dest”] 适用于路径有空格</li></ul></ul><li>VOLUME</li><ul><li>用来向基于镜像创建的容器添加卷</li><ul><li>卷可以在容器间共享和重用</li><li>一个容器可以不是必须的和其他容器共享卷</li><li>对卷的修改是立即生效的</li><li>对卷的修改不会对更新镜像产生影响</li><li>卷会一致存在知道没有容器再使用它</li></ul><li>VOLUME[“宿主机目录”, “容器目录”]</li></ul><li>WORKDIR</li><ul><li>WORKDIR &nbsp;/path</li><li>用于在从镜像创建一个新的容器时，在容器内部设置一个目录</li><li>ENTRYPOINT和CMD指定的程序会在这个目录下执行</li><li>在docker run中通过-w来覆盖默认的工作目录</li><ul><li>docker &nbsp;run -it -w /synder &lt;镜像名称&gt; &lt;command&gt; &lt;args&gt;</li></ul></ul><li>USER</li><ul><li>指定该镜像会以什么用户去运行</li><li>USER root</li><li>USER user:group</li></ul><li>ONBUILD</li><ul><li>为镜像添加触发器(trigger)，当一个镜像被用作其他镜像的基础时，该触发器将会被执行</li><li>ONBUILD RUN apt-get update</li></ul><li>ENV</li><ul><li>设置环境变量</li><li>ENV PATH /home/bin</li></ul></ul></div>"
+    }
+  ]
+}

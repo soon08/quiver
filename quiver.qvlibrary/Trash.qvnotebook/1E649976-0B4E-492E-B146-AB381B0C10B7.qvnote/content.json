@@ -1,0 +1,9 @@
+{
+  "title": "主要涉及的包",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>os 创建、打开、删除、获取文件</li><li>os 文件操作方式</li><li>os 文件分隔符</li><li>os 标准输入输出</li><li>os 修改文件权限</li></ul>"
+    }
+  ]
+}

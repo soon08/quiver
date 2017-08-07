@@ -1,0 +1,41 @@
+{
+  "title": "产品设计工具分享",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><div>好的产品原型工具很多</div></div>"
+    },
+    {
+      "type": "text",
+      "data": "我所见过的基本就分为两类<div><ol><li>线框图类 &nbsp;------ &nbsp;灵感记录</li><li>高保真类 &nbsp;------ &nbsp;细节还原</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "线框图类-----记录瞬间的灵感<div><ol><li>IOS 上的POP</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "高保真类-----还原细节"
+    },
+    {
+      "type": "text",
+      "data": "<ol><li>axure &nbsp; ------- &nbsp;老牌，适合web原型设计，入门相对较难<br></li><li>justinmind &nbsp;------- &nbsp;新进，适合app原型设计，入门简单，效果可观</li><li>pixate studio &nbsp;----- &nbsp;新生，适合app原型已经强动画设计</li><li>XCode</li></ol>"
+    },
+    {
+      "type": "text",
+      "data": "justinmind一开始出来就使用，亲测很简单很好用，尤其是app原型设计快速、美观、简便<div><ol><li>拖放控件</li><li>添加事件</li><ol><li>链接页面</li><li>动画效果</li></ol></ol><div><br></div><div>为什么不用axure？</div><div>&nbsp; &nbsp; 做app实在费劲</div><div>&nbsp; &nbsp; 我用它化过web界面和流程图，这些还是很实用的</div></div>"
+    },
+    {
+      "type": "text",
+      "data": "其他还有什么比较实用的工具呢？<div><ol><li>思维导图</li><ol><li>结构化思维的辅助工具</li><li>让文档更加具有思维特征</li><li>事物关系更加明确</li></ol></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "我的产品观------道法自然<div><ol><li>商业逻辑 &nbsp;------ &nbsp;一个产品的魂</li><li>交互方式 &nbsp;------ &nbsp;一个产品的思想</li><ol><li>页面逻辑</li><li>动画效果</li><ol><li>旋转</li><li>缩放</li></ol><li>模糊遮罩</li><ol><li>将视野从背景移开 &nbsp; ----- 人的视觉也是一样的（道法自然）</li></ol><li>弹窗提示</li><li>旁白注解</li></ol><li>色彩系统 &nbsp;------ &nbsp;一个产品的肤色</li><ol><li>色彩具有心理特征</li><li>乐嘉的色彩心理学与色彩心理学</li><ol><li>用色彩来给人的心理做标记和分类</li></ol><li>色彩给人的心理感受</li><li>色彩呈现心理年龄</li><ol><li>老成</li><li>轻浮</li></ol><li><img src=\"quiver-image-url/0EF23B37216BCD53C93ED266F82EC99E.jpg\" alt=\"psb (2).jpeg\"></li><li><img src=\"quiver-image-url/552385AF4F848DCA8EE1DDD1AD48824B.jpg\" alt=\"psb (1).jpeg\"><br></li><li><img src=\"quiver-image-url/F156AFF78E0945DC5EB7FC43AA99E29D.jpg\" alt=\"psb.jpeg\"><br></li></ol><li>符号系统 &nbsp;------ &nbsp;一个产品的身材</li><ol><li>上海有一家咨询公司叫《华与华》战略咨询公司，符号是这家公司立生之本，大到一个logo，小到一个图标，一个拥有好的符号系统的产品，会拥有天然的传播性</li><li>图标要有自解释性</li><li>扁平还是拟物</li><li>图标要有传承性------一定是基于熟悉的元素来生成<img src=\"quiver-image-url/0FE098F0DB517BA95EBFEC19A060FB2C.jpg\" alt=\"logo4.jpg\"><img src=\"quiver-image-url/E4B742D9865F1F3AF7E94FBE42E249F5.png\" alt=\"IMG_0165.PNG\"></li></ol></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "我相信万物相通，任何东西抓住本质，就能触类旁通。------ self taught<div><br></div><div>产品设计要具有延续性，一旦用户形成习惯，改变很难。----- office 2003 -- office 2007改版，请问有多少人喜欢不喜欢</div><div><ol><li>用户是不会喜欢一款产品主要使用流程发生很大的变化的</li><ol><li>登陆流程 &nbsp;---- 登陆按钮 （注册不包含在内）</li><li>个人中心分类</li><li>购物流程</li><li>结算流程</li></ol><li>产品迭代也不是更新皮肤</li><ol><li>简化或者细化流程</li></ol><li>常规页面也可以创新</li><ol><li>404可以创新</li><li>500可以创新</li></ol></ol></div><div><div><br></div><div>站在用户角度思考产品 &nbsp;Steven Jobs 的能耐</div><div><br></div><div>我是一个专业的理财师，我会如何用壹财富的网站, 我是喜欢这种很高的条（需要每次去翻页），还是喜欢类似于excel表格的东西</div><div><br></div><div><img src=\"quiver-image-url/CE5CA608281F3574B9E588AA4D932625.jpg\"><br></div><div><ol><li>基于用户使用场景来思考产品</li><ol><li>地理场景</li><ol><li>家里 &nbsp;ipad</li><li>公司</li><li>学校</li><li>马路上</li><li>车里 &nbsp; &nbsp; &nbsp; 锤子手机新发布时发布了他的导航，专门针对开车场景做了大的优化</li></ol><li>需求场景</li><ol><li>我不知道我要买什么 ---- 搜索</li><li>我知道我要买什么品牌 ----- 筛选</li><li>我知道我要买什么类型的产品 &nbsp;--- 搜索加筛选</li></ol></ol><li>基于用户使用习惯来思考产品</li><ol><li>人的生理习惯</li><ol><li>左撇子</li><li><br></li></ol><li>人的心理习惯</li></ol></ol></div></div>"
+    }
+  ]
+}

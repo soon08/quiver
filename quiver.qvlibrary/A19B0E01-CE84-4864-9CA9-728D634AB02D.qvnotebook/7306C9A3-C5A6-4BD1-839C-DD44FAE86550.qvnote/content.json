@@ -1,0 +1,10 @@
+{
+  "title": "背景渐变",
+  "cells": [
+    {
+      "type": "code",
+      "language": "css",
+      "data": ".background-1 {\n   background: #282537;\n   background-image: -webkit-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);\n   background-image: -moz-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);\n   background-image: -o-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);\n   background-image: radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);\n}\n "
+    }
+  ]
+}

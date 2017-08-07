@@ -1,0 +1,10 @@
+{
+  "title": "常用全局函数",
+  "cells": [
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//输出\nprintln(\"this is a string\")\n\nvar name = \"sam\";\n\nprintln(\"my name is \\(name)\")"
+    }
+  ]
+}

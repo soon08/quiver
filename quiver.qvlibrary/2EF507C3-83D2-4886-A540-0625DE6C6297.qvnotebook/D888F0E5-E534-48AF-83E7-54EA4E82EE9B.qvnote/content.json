@@ -1,0 +1,24 @@
+{
+  "title": "centos6.5 编译安装ruby",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "wget  http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.1.tar.gz\n\ntar -zxvf ./ruby-2.1.1.tar.gz\n\ncd ./ruby-2.1.1\n\nyum install zlib-devel\n\nyum install openssl-devel\n\n./configure\n\nmake\n\nmake install"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "# 更换gem源为淘宝源\ngem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(0, 0, 0); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 25.2px; widows: 1; background-color: rgb(255, 255, 255);\">1）问题1（NoMethodError：openssl）&nbsp;</span><br style=\"color: rgb(0, 0, 0); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 25.2px; widows: 1; background-color: rgb(255, 255, 255);\"><div class=\"quote_title\" style=\"font-weight: bold; padding: 5px; margin: 5px 0px 0px 15px; color: rgb(0, 0, 0); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 25.2px; widows: 1; background-color: rgb(255, 255, 255);\">引用</div><div class=\"quote_div\" style=\"border: 1px solid rgb(204, 204, 204); margin: 0px 5px 5px 15px; padding: 3px; color: rgb(0, 0, 0); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 25.2px; widows: 1; background-color: rgb(250, 250, 250); background-position: initial initial; background-repeat: initial initial;\"># gem update --system&nbsp;<br>ERROR:&nbsp; Loading command: update (LoadError)&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cannot load such file -- openssl&nbsp;<br>ERROR:&nbsp; While executing gem ... (NoMethodError)&nbsp;<br>&nbsp;&nbsp;&nbsp; undefined method `invoke_with_build_args' for nil:NilClass</div><span style=\"color: rgb(0, 0, 0); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 25.2px; widows: 1; background-color: rgb(255, 255, 255);\">2）问题2（NoMethodError：zlib）&nbsp;</span><br style=\"color: rgb(0, 0, 0); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 25.2px; widows: 1; background-color: rgb(255, 255, 255);\"><div class=\"quote_title\" style=\"font-weight: bold; padding: 5px; margin: 5px 0px 0px 15px; color: rgb(0, 0, 0); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 25.2px; widows: 1; background-color: rgb(255, 255, 255);\">引用</div><div class=\"quote_div\" style=\"border: 1px solid rgb(204, 204, 204); margin: 0px 5px 5px 15px; padding: 3px; color: rgb(0, 0, 0); font-family: Helvetica, Tahoma, Arial, sans-serif; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 25.2px; widows: 1; background-color: rgb(250, 250, 250); background-position: initial initial; background-repeat: initial initial;\"># gem update --system\t<br>ERROR: Loading command: update (LoadError)\t<br>cannot load such file -- zlib\t<br>ERROR: While executing gem ... (NoMethodError)\t<br>undefined method `invoke_with_build_args' for nil:NilClass</div>"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "cd ./ruby-2.1.1/ext/zlib/ \nruby extconf.rb \nmake \nmake install \n\ncd ./ruby-2.1.1/ext/openssl/ \nruby extconf.rb \nmake \nmake install \n\n#安装openssl在ruby extconf.rb后make会报错\n#修复方式是在ruby extconf.rb后手动修改Makefile文件，增加一行 \n#top_srcdir = ../.."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "UIAlertController",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<span style=\"font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: normal; widows: 1;\">自iOS8起，苹果就建议告警框使用UIAlertController来代替UIAlertView和UIActionSheel。</span><br>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//\n//  ViewController.swift\n//  AlertControllerDemo\n//\n//  Created by synder on 16/6/11.\n//  Copyright © 2016年 synder. All rights reserved.\n//\n\nimport UIKit\n\nclass ViewController: UIViewController {\n\n\toverride func viewDidLoad() {\n\t\tsuper.viewDidLoad()\n\t\n\t}\n\t\n\toverride func viewDidAppear(animated: Bool) {\n\t\tsuper.viewDidAppear(animated)\n\t\t\n\t}\n\n\toverride func didReceiveMemoryWarning() {\n\t\tsuper.didReceiveMemoryWarning()\n\t\t// Dispose of any resources that can be recreated.\n\t}\n\n\t@IBAction func openAlertViewDidPress(sender: UIButton) {\n\t\tlet alertController = UIAlertController(title: \"提示\", message: \"信息\", preferredStyle: UIAlertControllerStyle.Alert)\n\t\t\n\t\tlet cancleAction = UIAlertAction(title: \"取消\", style: UIAlertActionStyle.Cancel, handler: nil)\n\t\t\n\t\tlet confirmAction = UIAlertAction(title: \"确认\", style: UIAlertActionStyle.Default, handler: { (alertAction: UIAlertAction) -> Void in\n\t\t\tprint(\"ok\")\n\t\t})\n\t\t\n\t\talertController.addAction(cancleAction)\n\t\talertController.addAction(confirmAction)\n\t\t\n\t\tself.presentViewController(alertController, animated: true, completion: {\n\t\t\tprint(\"view\")\n\t\t})\n\t}\n\n\t@IBAction func openActionSheetDidPress(sender: AnyObject) {\n\t\tlet alertController = UIAlertController(title: \"保存或删除数据\", message: \"删除数据将不可恢复\",\n\t\t                                        preferredStyle: .ActionSheet)\n\t\tlet cancelAction = UIAlertAction(title: \"取消\", style: .Cancel, handler: nil)\n\t\tlet deleteAction = UIAlertAction(title: \"删除\", style: .Destructive, handler: nil)\n\t\tlet archiveAction = UIAlertAction(title: \"保存\", style: .Default, handler: nil)\n\t\talertController.addAction(cancelAction)\n\t\talertController.addAction(deleteAction)\n\t\talertController.addAction(archiveAction)\n\t\tself.presentViewController(alertController, animated: true, completion: nil)\n\n\t}\n}"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "self.presentedViewController?.dismissViewControllerAnimated(false, completion: nil) //移除提示框"
+    }
+  ]
+}

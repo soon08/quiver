@@ -1,0 +1,9 @@
+{
+  "title": "Https基础",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/17A19CDDE222C0193BDBBD934BF5048D.jpg\"><div><span style=\"color: rgb(93, 93, 93); font-family: helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', simsun; font-size: 18px; line-height: 30px; widows: 1; background-color: rgb(255, 255, 255);\">TLS/SSL 全称安全传输层协议 Transport Layer Security, 是介于 TCP 和 HTTP 之间的一层安全协议，不影响原有的 TCP 协议和 HTTP 协议，所以使用 HTTPS 基本上不需要对 HTTP 页面进行太多的改造。</span><br></div>"
+    }
+  ]
+}

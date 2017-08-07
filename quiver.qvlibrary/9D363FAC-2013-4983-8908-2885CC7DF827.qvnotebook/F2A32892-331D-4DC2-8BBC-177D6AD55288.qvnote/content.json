@@ -1,0 +1,29 @@
+{
+  "title": "linux用户管理",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li><font color=\"#4b4b4b\" face=\"verdana, Arial, helvetica, sans-seriff\" size=\"3\"><span style=\"background-color: rgb(255, 255, 255);\"><b><span style=\"color: rgb(102, 102, 102); font-family: 宋体, Arial; font-weight: normal; line-height: 26px; widows: 1;\">useradd</span><br></b></span></font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">adduser</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">passwd</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">usermod</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">pwcov</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">pwck</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">pwunconv</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">finger</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">id</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">chfn</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">su</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">sudo</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">visudo</font></li><li style=\"widows: 1;\"><font color=\"#666666\" face=\"宋体, Arial\" size=\"3\">sudoedit</font></li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>groupadd</li><li>groupdel</li><li>groupmod</li><li>groups</li><li>grpck</li><li>grpconv</li><li>prpunconv</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "用户基本操作：<div><ol><li>添加用户 useradd &nbsp;&lt;user&gt;</li><li>添加带家目录的用户 useradd -d /usr/sam -m&nbsp;&lt;user&gt;</li><li>添加用户的时指定组 useradd -d /usr/sam -m -s /bin/sh -g admin -G user,root sam</li><li>删除账号 userdel -r &lt;user&gt;</li><li>修改账号信息 usermod （参数和useradd一样）</li><li>查看用户信息 id &lt;user&gt;</li><li>查看用户组信息 group &lt;user&gt;</li><li>修改用户密码 passwd &lt;user&gt;</li><li>锁定用户 passwd -l &lt;user&gt;</li><li>解锁用户 passwd -u &lt;user&gt;</li><li>清除用户密码 passwd -d &lt;user&gt;</li><li>强制用户下次修改密码 passwd -f &lt;user&gt;</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "用户组基本操作：<div><ol><li>增加组 groupadd &lt;group&gt;</li><li>删除组 groupdel &lt;group&gt;</li><li>修改组信息 groupmod &lt;group&gt; （和groupadd参数一致）</li><li><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "其他操作："
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

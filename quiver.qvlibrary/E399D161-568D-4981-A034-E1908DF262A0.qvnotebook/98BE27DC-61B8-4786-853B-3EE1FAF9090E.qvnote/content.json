@@ -1,0 +1,62 @@
+{
+  "title": "奇妙的数字问题",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><b>数字溢出</b></div>js中最大安全数值间于 -(2^53 - 1) 和 2^53 -1<div><br></div><div>Number.MAX_SAFE_INTEGER : 9007199254740991</div><div>Number.MIN_SAFE_INTEGER : -9007199254740991</div><div>Number.MIN_VALUE &nbsp;是最小的比0大的数</div><div>Number.isSafeInteger(2305843009213693700) 判断是否是安全数字<br></div><div><img src=\"quiver-image-url/728DEB93B7B8EB5196DAD568D202164F.jpg\"><br></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var max = Math.pow(2, 53)\n\nfor(var i = 0; i <= max; i++){\n    console.log(i);\n}\n\n// 2^53 + 1 == 2^53 永远等于true\n\nMath.pow(2, 53) + 1 == Math.pow(2, 53) //true\nNumber.isSafeInteger(2305843009213693700) //false"
+    },
+    {
+      "type": "text",
+      "data": "<b>浮点数精度</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "7/100 * 100 //7.000000000000001"
+    },
+    {
+      "type": "text",
+      "data": "<b>求余运算要注意</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var x = 9\nvar y = -x\n\nconsole.log(x % 2) //1\nconsole.log(y % 2) //-1"
+    },
+    {
+      "type": "text",
+      "data": "<b>运算后的数字比较</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var two   = 0.2\nvar one   = 0.1\nvar eight = 0.8\nvar six   = 0.6\n\ntwo - one == one //true\neight - six == two //false\neight - six //0.20000000000000007"
+    },
+    {
+      "type": "text",
+      "data": "<b>parseInt进制</b>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "parseInt(3, 8)  //3\nparseInt(3, 5)  //3\nparseInt(3, 4)  //3\nparseInt(3, 2)  //NaN\nparseInt(3, 0)  //3系统会把0当成10解析"
+    },
+    {
+      "type": "text",
+      "data": "<b>安全的js大数字计算库</b><br><div><ul><li><a href=\"http://crunch.js.org/\">http://crunch.js.org/</a><br></li></ul><a href=\"http://crunch.js.org/\"></a></div>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "LVS技术解析",
+  "cells": [
+    {
+      "type": "text",
+      "data": "LVS : linux virtual server 是一种集群技术，采用IP负载均衡技术和内容请求分发技术来实现。"
+    },
+    {
+      "type": "text",
+      "data": "LVS结构：<div><ul><li>load balancer/director 它是整个集群对外的前端机，负责将客户请求均衡发送到一组服务器上执行</li><li>server pool/ real server 一组真正执行客户请求的服务器，执行的服务一般有web、mail 、ftp、dns</li><li>shared storage 服务器池提供的一个共享存储区</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "LVS的三种负载方式：<div><ol><li>vs/nat (virtual server via network address translation NAT) 网络地址转换技术</li><li>vs/tun (virtual server via IP tunneling) IP隧道技术</li><li>vs/dr (virtual server via direct routing) 直接路由模式</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "VS/DR模式<div>&nbsp; &nbsp; VS/DR模式通过修改请求报文中的MAC地址部分来实现，Director和RealServer之间必须在一个局域网内，Director的VIP对外可见，而RealServer得VIP对外不可见。</div><div><img src=\"quiver-image-url/DAA49DC1C0309E709EAAB9DD3D73F944.jpg\"><br></div>"
+    }
+  ]
+}

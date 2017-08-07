@@ -1,0 +1,17 @@
+{
+  "title": "触摸事件",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>touchstart</li><li>touchmove</li><li>touchend</li><li>touchcancel</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "Touch对象"
+    },
+    {
+      "type": "text",
+      "data": "<ul><li>clientX<font color=\"#000000\">&nbsp;</font>The Touch.clientX read-only property returns the X coordinate of the touch point relative to the viewport, not including any scroll offset.（相对于当前元素界面的坐标）</li><li style=\"orphans: 2; widows: 2;\"><font color=\"#000000\" face=\"Open Sans, arial, x-locale-body, sans-serif\" size=\"3\">clientY&nbsp;</font>The Touch.clientY read-only property returns the Y coordinate of the touch point relative to the browser's viewport, not including any scroll offset.</li><li style=\"orphans: 2; widows: 2;\">pageX&nbsp;The Touch.pageX read-only property returns the X coordinate of the touch point relative to the viewport, including any scroll offset. (兼容性差)</li><li style=\"orphans: 2; widows: 2;\">pageY&nbsp;The Touch.pageY read-only property returns the Y coordinate of the touch point relative to the viewport, including any scroll offset.&nbsp;(兼容性差)</li><li style=\"orphans: 2; widows: 2;\">screenX&nbsp;Returns the X coordinate of the touch point relative to the screen, not including any scroll offset.</li><li style=\"orphans: 2; widows: 2;\">screenY Returns the Y coordinate of the touch point relative to the screen, not including any scroll offset.</li></ul>"
+    }
+  ]
+}

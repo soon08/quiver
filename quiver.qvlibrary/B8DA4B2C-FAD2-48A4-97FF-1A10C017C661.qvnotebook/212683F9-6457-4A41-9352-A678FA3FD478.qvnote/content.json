@@ -1,0 +1,41 @@
+{
+  "title": "UIControl-UISlider",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>样式</b><div><img src=\"quiver-image-url/6C313436F853BED83185B6A347920CE7.jpg\"><br></div>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let slider=UISlider(frame:CGRectMake(0,0,300,50))\nslider.center=self.view.center\nslider.minimumValue=0  //最小值\nslider.maximumValue=1  //最大值\nslider.value=0.5  //当前默认值\nself.view.addSubview(slider)\nslider.setValue(0.8,animated:true)\nslider.continuous=false  //滑块滑动停止后才触发ValueChanged事件\n\nslider.addTarget(self, action:@selector(sliderDidchange:), forControlEvents:UIControlEvents.ValueChanged)\n \nfunc sliderDidchange(slider:UISlider){\n    print(slider.value)\n}"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; font-weight: bold; line-height: 26px; widows: 1;\">滑块左右两边槽的颜色</span>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "slider.minimumTrackTintColor=UIColor.redColor()  //左边槽的颜色\nslider.maximumTrackTintColor=UIColor.greenColor() //右边槽的颜色"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"font-family: arial; font-size: 14px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; font-weight: bold; line-height: 26px; widows: 1;\">滑块后面槽线两侧添加图标</span>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "slider.minimumValueImage=UIImage(named:\"voice+\")  //左边图标\nslider.maximumValueImage=UIImage(named:\"voice-\")  //右边图标"
+    },
+    {
+      "type": "text",
+      "data": "<b>替换滑块图片</b>"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "slider.setThumbImage()"
+    }
+  ]
+}

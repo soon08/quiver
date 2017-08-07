@@ -1,0 +1,14 @@
+{
+  "title": "iptables规则",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>规则格式（<font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">在iptables中越在上面的规则优先级越高，在冲突情况下优先级高的生效</font>）</b><div><b><br></b><div>iptables [-t 表名] &lt;-A|I|D|R&gt; 链名 [规则编号] [-i|o 网卡名称] [-p 协议类型] [-s 源IP地址|源子网] [--sport 源端口号] [-d 目标IP地址|目标子网] [--dport 目标端口号] &lt;-j&gt; 动作</div><div><br></div><div><ul><li>-t 指定要编辑的表名</li><ul><li>filter 默认</li><li>nat</li><li>mangle</li><li>raw</li></ul><li>-A|I|R|D</li><ul><li>-A &nbsp;在表末尾添加一条规则</li><li>-I &nbsp; 在表首插入一条规则</li><li>-R &nbsp;更新一条规则</li><li>-D &nbsp;删除一条规则</li></ul><li>链名<br></li><ul><li>INPUT</li><li>OUTPUT</li><li>FORWARD</li><li>PREROUTING</li><li>POSTROUTING</li></ul><li>-p<br></li><ul><li>tcp</li><li>udp</li></ul><li>-s</li><ul><li>在INPUT链中就是指远端</li><li>在OUTPUT链中就是指本机</li></ul><li>-d</li><li>-j</li><ul><li>ACCEPT &nbsp;接受</li><li>DROP &nbsp; &nbsp; &nbsp;丢弃（推荐使用）</li><li>REJECT &nbsp;拒绝</li></ul><li>-i/o &nbsp;指定网卡</li><li><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\">--state &nbsp;数据包状态</font></li><li><font>-m 启用一个模块</font></li><ul><li><font>tcp</font></li><ul><li><font>iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT</font></li></ul><li><font>comment &nbsp;备注模块</font></li><ul><li><font>iptables -A INPUT -p tcp --dport 80 -j ACCEPT -m comment --comment \"allow http\" &nbsp; 启用一个注释模块</font></li></ul><li>connlimit &nbsp;连接限制模块</li><ul><li>iptables -A INPUT -p tcp --dport 90 -m connlimit -connlimit-above 30 -j DROP</li><ul><li>只允许每个IP发起30个80端口请求，超过的请求将会被丢弃</li></ul></ul><li>iprange&nbsp;</li><ul><li>iptables -A INPUT -m iprange -src-range 192.168.0.10-192.168.1.20 -j DROP</li><ul><li>丢弃192.168.0.10-192.168.1.20这个范围内IP地址的请求</li></ul></ul><li>state</li><ul><li>ipatbles -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</li><ul><li>允许已经建立连接的数据包通过</li></ul></ul><li>string</li><ul><li>iptables -A FORWARD -m string -algo bm -string baidu -j DROP</li><ul><li>对数据包的内容进行过滤（这里过滤了包含'baidu'的数据包）</li></ul></ul><li>mac</li><ul><li>iptables -A INPUT -m mac -mac-source XX:XX:XX:XX:XX -j DROP</li><ul><li>基于mac地址的过滤</li></ul></ul><li>muluiport</li><ul><li>iptables -A INPUT -m muluiport -dport 21,22,80,443 -j DROP</li></ul><li>recent</li><ul><li><img src=\"quiver-image-url/E383E235E3416039075A352FC4AC7A26.jpg\"><br></li></ul><li>layer7</li><ul><li>iptables -A FORWARD -m layer7 --17proto qq -j DROP</li><ul><li>限制QQ的规则，这个限制是在应用层做出的</li><li>该模块没有被整合需要自行安装</li></ul></ul></ul></ul></div></div>"
+    },
+    {
+      "type": "code",
+      "language": "golang",
+      "data": "iptables -P INPUT ACCEPT #设置INPUT链的默认规则为接受 \niptables -A INPUT -p tcp --dport 22 -j ACCEPT"
+    }
+  ]
+}

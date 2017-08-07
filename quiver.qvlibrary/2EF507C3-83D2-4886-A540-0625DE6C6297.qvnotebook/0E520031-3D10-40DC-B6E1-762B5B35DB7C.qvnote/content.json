@@ -1,0 +1,19 @@
+{
+  "title": "centos6.5 安装配置mysql",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "yum -y install mysql-server\n\nchkconfig mysqld on\n\nservice mysqld start\n"
+    },
+    {
+      "type": "text",
+      "data": "设置mysql用户密码"
+    },
+    {
+      "type": "code",
+      "language": "sh",
+      "data": " \nmysql -u root\n\nset password for root@localhost=password('root');"
+    }
+  ]
+}

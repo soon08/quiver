@@ -1,0 +1,13 @@
+{
+  "title": "Docker Swarm",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>Swarm是什么</b><div>&nbsp; &nbsp; 是一种用于创建Docker主机集群的工具，使用Swarm操作集群就像是在操作一台机器一样。还有一些其他的新技术，Docker Machine（Docker 管理工具） 和 Docker Compose（Docker编排工具）。Ansible（一个自动化运维工具）与Machine和Compose拥有类似的功能。</div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Swarm如何工作</b><div>&nbsp; &nbsp; Swarm运行在linux机器的守护程序，采用Go编写，它所绑定的网络接口和独立的Docker实例相同。Swarm守护程序可以和标准的Docker客户端 &nbsp;&gt;= 1.4.0相互连接并接受其发来的信息。Docker没有对Docker命令提供一对一的支持。</div>"
+    }
+  ]
+}

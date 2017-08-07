@@ -1,0 +1,9 @@
+{
+  "title": "UITableView",
+  "cells": [
+    {
+      "type": "text",
+      "data": "在IOS中默认是一个单列表格"
+    }
+  ]
+}

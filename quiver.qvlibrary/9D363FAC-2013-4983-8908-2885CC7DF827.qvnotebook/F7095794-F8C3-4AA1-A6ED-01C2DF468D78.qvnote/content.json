@@ -1,0 +1,21 @@
+{
+  "title": "Linux 安装EPEL源",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<pre id=\"best-content-1999827147\" accuse=\"aContent\" class=\"best-text mb-10\" style=\"margin-bottom: 10px; padding: 0px; font-family: arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; white-space: pre-wrap; word-wrap: break-word; font-size: 14px; line-height: 24px; widows: 1; background-color: rgb(243, 255, 236);\">Centos6 32位：<br>rpm -ivh <a href=\"http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm\" target=\"_blank\" rel=\"nofollow\" style=\"color: rgb(45, 100, 179); text-decoration: none;\">http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm</a><br>centos6 64位：<br>rpm -ivh <a href=\"http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm\" target=\"_blank\" rel=\"nofollow\" style=\"color: rgb(45, 100, 179); text-decoration: none;\">http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm</a></pre>"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(68, 68, 68); font-family: 'Microsoft YaHei', Helvetica, Arial, 'Lucida Grande', Tahoma, sans-serif; font-size: 15px; line-height: 27px; text-align: justify; widows: 1; background-color: rgb(255, 255, 255);\">如果你使用redhat或者centos，我们运维生存时间兄弟们都会强烈你安装</span><a rel=\"external nofollow\" href=\"http://fedoraproject.org/wiki/EPEL\" style=\"box-sizing: border-box; border: 0px; font-family: 'Microsoft YaHei', Helvetica, Arial, 'Lucida Grande', Tahoma, sans-serif; font-size: 15px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(47, 136, 154); text-decoration: none; line-height: 27px; text-align: justify; widows: 1; background-color: rgb(255, 255, 255);\">epel</a><span style=\"color: rgb(68, 68, 68); font-family: 'Microsoft YaHei', Helvetica, Arial, 'Lucida Grande', Tahoma, sans-serif; font-size: 15px; line-height: 27px; text-align: justify; widows: 1; background-color: rgb(255, 255, 255);\">（Extra Packages for Enterprise），epel是社区强烈打造的免费开源发行软件包版本库，系统包含大概有1万多个软件包，163和sohu的镜像是没有这么多软件了.</span>"
+    },
+    {
+      "type": "text",
+      "data": "查看安装状态：<div><ul><li>yum repolist</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(68, 68, 68); font-family: 'Microsoft YaHei', Helvetica, Arial, 'Lucida Grande', Tahoma, sans-serif; font-size: 15px; line-height: 27px; text-align: justify; widows: 1; background-color: rgb(255, 255, 255);\">看到epel，说明安装成功了，可以看到epel有10万335个包.有了他你不在需要tar、configure、make等等繁琐的动作了。使用yum即可搞定一切.</span>"
+    }
+  ]
+}

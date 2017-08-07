@@ -1,0 +1,17 @@
+{
+  "title": "Request",
+  "cells": [
+    {
+      "type": "text",
+      "data": "相关类<div><ul><li>NSURLRequest &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 构建不可修改的请求，默认请求方法为GET</li><li>NSMutableURLRequest &nbsp; &nbsp; &nbsp; &nbsp;构建可以定制定制的请求，可以修改请求方法等参数</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "功能：用户构建请求，包含请求的方法、头、缓存策略、请求体等"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

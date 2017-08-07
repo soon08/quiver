@@ -1,0 +1,10 @@
+{
+  "title": "字符和字符串",
+  "cells": [
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//: Playground - noun: a place where people can play\n\nimport UIKit\n\nvar str = \"Hello, playground\"\n\nstr.dynamicType\n\nlet name = String(\"sam\")\n\nname.dynamicType\n\nlet gender = \"\"\n\ngender.isEmpty\n\nstr = \"playground\"\n\nstr += gender\n\nprint(str)\n\nfor char in str.characters {\n    print(char.dynamicType)\n}\n\nlet chars: [Character] = [\"s\", \"a\", \"m\"]\nlet makr: Character = \"!\"\n\nvar myName = String(chars)\nmyName.append(makr)\n\nlet times = 10\n\nvar message = \"it is \\(times * 10) \\(myName)\"\n\nvar len = message.characters.count\n\n//String.index\nmessage.startIndex\nmessage.endIndex\nmessage.startIndex.successor().predecessor()\n\nmessage[message.startIndex]\n\nmessage[message.startIndex.successor()]\nmessage[message.endIndex.predecessor()]\n\nfor index in message.characters.indices{\n    print(message[index])\n}\n\nmessage.insert(\"!\", atIndex: message.startIndex)\n\nmessage.insertContentsOf(\"sam\".characters, at: message.endIndex)\n\nmessage.removeAtIndex(message.startIndex)\n\nmessage.removeRange(message.startIndex.successor()..<message.startIndex.advancedBy(1))\n\n"
+    }
+  ]
+}

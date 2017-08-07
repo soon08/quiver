@@ -1,0 +1,10 @@
+{
+  "title": "centos6.5 安装node.js",
+  "cells": [
+    {
+      "type": "code",
+      "language": "sh",
+      "data": "wget https://npm.taobao.org/mirrors/node/v5.9.0/node-v5.9.0-linux-x64.tar.gz\n\ntar zxvf node-v5.9.0-linux-x64/* /opt/node.tar.gz\n\nmkdir /opt/node\n\ncp ./node-v5.9.0-linux-x64/* /opt/node/\n\n#编辑.bash_profile 加入环境变量"
+    }
+  ]
+}

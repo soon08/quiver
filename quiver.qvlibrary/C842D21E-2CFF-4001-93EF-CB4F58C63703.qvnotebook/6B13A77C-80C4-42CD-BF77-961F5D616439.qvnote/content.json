@@ -1,0 +1,9 @@
+{
+  "title": "IOS数据持久化机制",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>属性列表</li><ul><li>NSDictionary</li><li>NSArray</li></ul><li>对象归档</li><li>嵌入式关系数据库sqlite</li><li>CoreData框架</li></ul>"
+    }
+  ]
+}

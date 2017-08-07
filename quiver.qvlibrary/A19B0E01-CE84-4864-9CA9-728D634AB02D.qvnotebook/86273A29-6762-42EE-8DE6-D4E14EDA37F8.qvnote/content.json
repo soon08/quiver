@@ -1,0 +1,27 @@
+{
+  "title": "元素的高宽滚动",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>clientHeight &nbsp;元素可见区域的高度(不包含边框)</li><li>clientWidth &nbsp; 元素可见区域的宽度(不包含边框)</li><li>clientTop 元素顶部边框宽度</li><li>clientLeft 元素左侧边框宽度</li><li>scrollHeight 元素包含卷曲区域的高度</li><li>scrollWidth &nbsp;元素包含卷曲区域的宽度</li><li>scrollTop &nbsp; 元素卷曲区域的上部高度</li><li>scrollLeft &nbsp; 元素卷曲区域的左侧宽度</li><li>offsetHeight 元素本身的高度（包含边框高度）</li><li>offsetWidth&nbsp;元素本身的高度（包含边框高度）</li><li>offsetTop 元素相对于他的父元素的顶部距离</li><li>offsetLeft&nbsp;元素相对于他的父元素的左侧距离</li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/6D60B9E39828905B14088E5CE69870D8.jpg\" width=\"594\" height=\"603\"><br><div><br></div><div>判断元素是否滚动到底</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "el.scrollHeight - el.scrollTop === el.clientHeight;"
+    },
+    {
+      "type": "text",
+      "data": "要让元素滚动到某个位置"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "el.scrollTop = 200;\nel.scrollLeft = 200;"
+    }
+  ]
+}

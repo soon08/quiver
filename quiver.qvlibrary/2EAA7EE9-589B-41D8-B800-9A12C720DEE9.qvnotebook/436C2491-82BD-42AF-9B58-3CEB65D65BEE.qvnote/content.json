@@ -1,0 +1,19 @@
+{
+  "title": "流程控制",
+  "cells": [
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "var x = 1;\nif x > 0{\n    \n}else if x > 2{\n\n}else{\n\n}\n\n//可选变量nil会被判断为false"
+    },
+    {
+      "type": "text",
+      "data": "循环"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let scores = [1,2,3];\nlet users = [\n    \"sam\": 80,\n    \"synder\":81\n];\nvar name = \"sam wiki\":\n    \nfor score in scores {\n    print(score);\n}\n\nfor use in users {\n    print(user);\n}\n\nfor var i = 0; i < 3; i++{\n    print(i);\n}\n\nfor char in name {\n    print(char);\n}\n\nfor i in 0..3 {\n    print(i);\n}\n\nvar n = 2;\n\nwhile n < 100 {\n    print(n);\n    n++;\n}"
+    }
+  ]
+}

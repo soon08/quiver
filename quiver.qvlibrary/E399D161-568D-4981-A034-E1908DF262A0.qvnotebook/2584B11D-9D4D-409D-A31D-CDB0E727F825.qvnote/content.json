@@ -1,0 +1,10 @@
+{
+  "title": "typeof与instanceof的迷惑",
+  "cells": [
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "typeof null == 'object' //true\nnull instanceof Object //false"
+    }
+  ]
+}

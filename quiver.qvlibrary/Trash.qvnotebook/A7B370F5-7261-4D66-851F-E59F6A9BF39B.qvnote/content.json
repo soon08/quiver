@@ -1,0 +1,17 @@
+{
+  "title": "Http",
+  "cells": [
+    {
+      "type": "text",
+      "data": "常用方法:"
+    },
+    {
+      "type": "text",
+      "data": "自己动手写一个Http服务:"
+    },
+    {
+      "type": "text",
+      "data": "封装一个类似于Express的框架:<div><ul><li>解析query数据</li><li>解析json数据</li><li>解析form表单</li><li>解析Buffer数据</li><li>解析XML数据</li><li>解析纯文本数据</li><li>路由的原理</li><li>路由方法重写</li><li>中间件的概念</li></ul></div>"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "ssh/sftp",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<b>ssh 常用详解</b><div><ul><li>ssh xxx.xxx.xxx.xxx 用当期用户名登陆</li><li>ssh -l &lt;username&gt;&nbsp;&nbsp;xxx.xxx.xxx.xxx 指定用户名登陆</li><li>ssh &lt;username&gt;@xxx.xxx.xxx.xxx 指定用户名登陆</li><li>ssh &lt;username&gt;@xxx.xxx.xxx.xxx -p 44 指定端口连接</li><li>ssh -C &lt;username&gt;@xxx.xxx.xxx.xxx 所有的请求数据加密<br></li><li>ssh -v &lt;username&gt;@xxx.xxx.xxx.xxx 打开调试模式<br></li><li>ssh -b 192.168.2.100 &lt;username&gt;@xxx.xxx.xxx.xxx 当你的客户端有两个IP的时候，需要指定一个IP来登陆<br></li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<div><b>使用其他配置文件</b></div><div>&nbsp; &nbsp; &nbsp; &nbsp; 默认情况下，ssh 会使用位于 /etc/ssh/ssh_config 的配置文件。这个配置文件作用于系统的所有用户。但你想要为特定的用户指定特殊的设置的话，可以把配置放入 ~/.ssh/config 文件中。如果此文件不存在，可以手工创建一个。下面是一个通用 ssh_config 文件配置的例子。这配置文件位于 /home/pungki 目录下。</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "Host 192.168.0.*\nForwardX11 yes\nPasswordAuthentication yes\nConnectTimeout 10\nCiphers aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-cbc,3des-cbc\nProtocol 2\nHashKnownHosts yes"
+    },
+    {
+      "type": "text",
+      "data": "<div><b>要使用指定的配置文件，可以使用 -F 选项。</b></div><div>$ ssh -F /home/pungki/my_ssh_config 192.168.0.101</div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>使用SFTP传输文件</b><div><p style=\"margin: 10px auto; color: rgb(0, 0, 0); widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\">sftp &nbsp;root@202.206.64.33 （其实sftp就是ssh 的一个程式。）</font></p><p style=\"margin: 10px auto; color: rgb(0, 0, 0); widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\">sftp&gt; get /var/www/fuyatao/index.php&nbsp; /home/fuyatao/<br>这条语句将从远程主机的&nbsp; /var/www/fuyatao/目录下将 index.php 下载到本地&nbsp; /home/fuyatao/目录下。</font></p><p style=\"margin: 10px auto; color: rgb(0, 0, 0); widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\">sftp&gt; put /home/fuyatao/downloads/Linuxgl.pdf /var/www/fuyatao/</font></p><p style=\"margin: 10px auto; color: rgb(0, 0, 0); widows: 1; background-color: rgb(255, 255, 255);\"><br></p><p style=\"margin: 10px auto; color: rgb(0, 0, 0); widows: 1; background-color: rgb(255, 255, 255);\"><font face=\"Verdana\"><b>sftp命令和ftp命令类似</b></font></p></div>"
+    }
+  ]
+}

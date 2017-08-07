@@ -1,0 +1,116 @@
+{
+  "title": "快速产考",
+  "cells": [
+    {
+      "type": "text",
+      "data": "变量声明"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//常量声明\nlet username: String = \"synder\"\n\n//变量声明\nvar password: String = \"123456\""
+    },
+    {
+      "type": "text",
+      "data": "数据类型"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//整数类型\n//Int8  Int16  Int32  Int64  Int\n//UInt8 UInt16 UInt32 UInt64 UInt\nvar age: UInt16 = 24\n\n//浮点类型\nvar score: Float = 80.0\nvar weight: Double = 110\n\n//字符类型\nvar char: Character = \"a\"\n\n//字符串\nvar username: String = \"synder\"\n\n//数组\nvar users: [String] = [String]()\nvar scores: Array<Float> = Array<Float>()\nusers.append(\"synder\")\n\nvar threed: [[Int]] = [[1,2]] \n\n//字典\nvar userScore: [String:Float] = [String:Float]()\nuserScore[\"synder\"] = 10\n\nvar userAge: Dictionary<String, Int> = Dictionary<String, Int>()\nuserAge[\"sam\"] = 24\n\n//集合\nvar users: Set<String> = Set<String>()\nusers.insert(\"sam\")\nusers.insert(\"synder\")\n\n//元组\ntypealias Point = (Int, Int, Int)\nlet orgin: Point = (0, 0)\n\n//函数类型\ntypealias Compare = (a: Int, b: Int) -> Bool\n\n//可选类型\nvar username: String? = nil\nvar password: String! = nil\nvar gender: Optional<Bool> = nil\n\n"
+    },
+    {
+      "type": "text",
+      "data": "类型转换"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//数字与字符长相互转换\nvar age: Int = 32\nvar weight: Float = 123.0\n\nvar ageString: String = String(age)\nvar weightString: String = String(weight)\n\nage = Int(ageString)!\nweight = Float(weightString)!\n\n//字符和字符串相互转换\nvar username: String = \"synder\"\nvar chars: Character = username.characters\n\nvar synder: String = String(chars)\n\n//类类型转换\nas as? as!\n\n//可选类型与非可选类型的转换\nvar age: Int? = Int(\"123\")\n\n//可选绑定\nif let temp = age {\n    print(temp)\n}\n"
+    },
+    {
+      "type": "text",
+      "data": "运算符"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//算术运算符 + - * / %\n\n//复合运算符 += -= *= /= %=\n\n//条件运算符 == != > < >= <= === !==\n\n//逻辑运算符 || &&\n\n//二进制运算符 << >> ~ ^ & |\n\n//二进制移除运算符 &+ &- &* &/ &%\n\n//三目条件运算符 condition ? value1 : value2\n\n//区间运算符 ...  ..<\n"
+    },
+    {
+      "type": "text",
+      "data": "条件判断"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//if 条件判断\nvar username = \"synder\"\n\nif username == \"synder\" {\n    print(\"synder\")\n} else if username == \"sam\" {\n    print(\"sam\")\n} else {\n    print(\"none\")\n}\n\n//guard guard主要用在函数中截断函数执行\nvar username = \"synder\"\nguard username == \"synder\" else {\n\tprint(\"none\")\n\treturn\n}\n\n//switch 判断\nvar username = \"synder\"\n\nswitch username {\ncase \"synder\":\n\tprint(\"synder\")\ndefault:\n\tprint(\"none\")\n}"
+    },
+    {
+      "type": "text",
+      "data": "循环"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "for index in 1...5{\n    print(index)\n}\n\nfor index in 1..<6{\n    print(index)\n}\n\n//遍历数组\nvar users: [String] = [\"sam\", \"synder\"]\n\nfor name in users {\n    print(name)\n}\n\n//遍历字典\nvar userScore: [String: Int] = [\"synder\": 20, \"sam\": 23]\n\nfor (name, score) in userScore {\n\tprint(name, score)\n}\n\n//遍历集合\nvar users: Set<String> = Set<String>()\nusers.insert(\"synder\")\n\nfor user in users {\n\tprint(user)\n}\n\n//遍历字符串\nvar username = \"synder\"\n\nfor char in username.characters {\n\tprint(char)\n}\n\n//while循环\nvar count = 0\n\nrepeat {\n\tprint(count)\n\tcount += 1\n} while count < 1\n\nwhile count < 10{\n    print(count)\n    count += 1\n}"
+    },
+    {
+      "type": "text",
+      "data": "函数"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//1.函数传递参数时，对于结构类型默认采用的是值拷贝传递\n//2.函数参数默认被声明为let，所有参数默认不能修改\n\n//函数多返回值\nfunc minAndMax(data: [Int]) -> (min: Int, max: Int){}\n\n//默认参数\nfunc join(nums: [Int], separate: String = \"\"){}\n\n//外函数参数名\nfunc minAndMax(data array: [Int]) -> (min: Int, max: Int)? {}\nfunc minAndMax(_ array: [Int]) -> (min: Int, max: Int)? {}\n\n//可变参数\nfunc sum(numbers: Int...) -> Int {}\n\n//函数作为参数\nfunc sort(nums: [Int], compare: (a: Int, b: Int) -> Bool) -> [Int]{}\n\n//inout参数\nfunc swap(a: inout Int, b: inout Int){}\nvar x = 1\nvar y = 2\nswap(&x, &y)\n\n//函数作为返回值\nfunc wraper() -> (Int, Int) -> Int {\n    return func(a: Int, b: Int) -> Int {\n        return a + b\n    }\n}\n\n//闭包\n//{ (parameters) -> type in\n//    statements\n//}\n\nvar names: [Int] = [1, 2]\nnames.sort({(a: Int, b: Int) -> Bool in\n    return a < b\n})\n\n//尾追闭包\n//reversed = names.sort { $0 > $1 }\nlet numbers = [16, 58, 510]\nlet strings = numbers.map {\n    (number) -> String in\n    var number = number\n    var output = \"\"\n    while number > 0 {\n        output = digitNames[number % 10]! + output\n        number /= 10\n    }\n    return output\n}"
+    },
+    {
+      "type": "text",
+      "data": "错误处理"
+    },
+    {
+      "type": "text",
+      "data": "结构体"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//结构体属于值类型\nstruct Point {\n    var x : Int = 0\n    var y : Int = 0\n}\n\n//通过函数修改结构体值\nstruct Point {\n   var x = 0.0\n   var y = 0.0\n   mutating func moveBy(x deltaX: Double, y deltaY: Double) {\n      x += deltaX\n      y += deltaY\n   }\n}"
+    },
+    {
+      "type": "text",
+      "data": "枚举"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//枚举属于值类型\nenum Gender {\n    case Male\n    case Female\n    case Unknown\n}\n\n//关联值\nenum Barcode {\n    case upc(Int, Int, Int, Int)\n    case qr(String)\n}\n\nvar barcode = Barcode.upc(1,2,3,4)\nvar qrcode = Barcode.qr(\"http://www.uemo.com\")\n\nswitch barcode {\n   case .upc(let a, let b, let c, let d):\n      print(a, b, c, d)\n   case .qr(let code):\n      print(code)\n}\n//原始值\nenum ASCIIControlCharacter: Character {\n    case tab = \"\\t\"\n    case line = \"\\n\"\n    case returns = \"\\r\"\n}\n\nprint(ASCIIControlCharacter.tab.rawValue)\n\n//默认赋值，venus等于2\nenum Planet: Int {\n   case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune\n}\n\n//\nenum StateSwitch {\n   case off, low, high\n   mutating func next() {\n      switch self {\n         case off:\n            self = low\n         case low:\n            self = high\n         case high:\n            self = off\n      }\n   }\n}"
+    },
+    {
+      "type": "text",
+      "data": "类"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//类引用比较  ===  !== \n\n//属性\nclass Human {\n\tvar username: String = \"\"\n\tvar gender: Bool = false\n\tvar description: String {\n\t\treturn self.username\n\t}\n\t\n  init(){\n\t    \n\t}\n\t\n\tinit(username: String, gender: Bool){\n\t\tself.username = username\n\t\tself.gender = gender\n\t}\n\t\n\n\tfunc toString() -> String {\n\t\treturn self.username + String(self.gender)\n\t}\n}\n\nclass User : Human{\n\t//类属性\n\tclass var className = \"User\"\n\tstatic var classVersion: Int {\n\t\treturn 1\n\t}//计算属性\n\tstatic var instance: User! = nil\n\t\n\t//实例属性\n\toverride var description: String{\n\t\treturn super.description + String(self.gender)\n\t}//覆盖属性\n\t\n\tlazy var filename: String = {\n\t\treturn \"filename\"\n\t}() //延时属性\n\t\n\tvar temp: Int = 0 //存储属性\n\t\n\t//计算属性\n\tvar center: Int {\n\t    get{\n\t        return 1\n\t    }\n\t    \n\t    set(newValue){\n\t        self.temp = newValue\n\t    }\n\t}\n\t\n\tvar password: String = \"\" {\n\t\twillSet {\n\t\t\tprint(newValue)\n\t\t}\n\t\tdidSet {\n\t\t\tprint(oldValue)\n\t\t}\n\t}//属性监控，只能在存储属性上设置监控\n\t\n\tvar uppername: String {\n\t\tget {\n\t\t\treturn username.uppercaseString\n\t\t}\n\t\tset{\n\t\t\tusername = newValue.lowercaseString\n\t\t}\n\t}//计算属性\n\t\n\tinit(username: String, password: String){\n\t\tself.password = password\n\t\tsuper.init(username: username, gender: false)\n\t}\n\t\n\tclass func sharedInstance(username: String, password: String) -> User{\n\t\tif User.instance == nil {\n\t\t\tUser.instance = User(username: username, password: password)\n\t\t}\n\t\t\n\t\treturn User.instance!\n\t}\n\t\n\toverride func toString() -> String {\n\t\treturn  super.toString() + self.password\n\t}\n\t\n\t//下标\n\tsubscript(index: Int) -> Int {\n\t\tget {\n\t\t\treturn 1\n\t\t}\n\t\t\n\t\tset {\n\t\t\tprint(newValue)\n\t\t}\n\t}\n\t\n\tsubscript(row: Int, column: Int) -> Int {\n\t\tget {\n\t\t\treturn 1\n\t\t}\n\t\t\n\t\tset {\n\t\t\t\n\t\t}\n\t}\n\t\n\t//运算符\n}\n\nvar user = User(username: \"sam\", password: \"123\")\nuser.password = \"456\"\nuser.toString()"
+    },
+    {
+      "type": "text",
+      "data": "协议"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "泛型"
+    },
+    {
+      "type": "text",
+      "data": "全局函数"
+    }
+  ]
+}

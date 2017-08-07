@@ -1,0 +1,17 @@
+{
+  "title": "HTTP Module",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<font color=\"#000000\">整个Http模块设计非常小心的避免去缓存整个请求和响应，而是使用流进行数据传输。</font><div><font color=\"#000000\"><br></font></div><div><font color=\"#000000\">Http的头部消息会被解析成如下对象，所以的Key都是小写的，所以值都是原始未被修改过的值。</font></div><div><pre class=\"sh_sourceCode\" style=\"line-height: 1.5em; font-family: Monaco, Consolas, 'Lucida Console', monospace; margin: 0.166666em -4em 1em 0em; padding: 1em 1.5em; overflow-x: auto; font-size: 18px; widows: 1;\"><code style=\"line-height: 1.5em; font-family: Monaco, Consolas, 'Lucida Console', monospace; font-size: 0.8em;\"><font color=\"#000000\"><span class=\"sh_cbracket\">{</span> <span class=\"sh_string\">'content-length'</span><span class=\"sh_symbol\">:</span> <span class=\"sh_string\">'123'</span><span class=\"sh_symbol\">,</span>\n  <span class=\"sh_string\">'content-type'</span><span class=\"sh_symbol\">:</span> <span class=\"sh_string\">'text/plain'</span><span class=\"sh_symbol\">,</span>\n  <span class=\"sh_string\">'connection'</span><span class=\"sh_symbol\">:</span> <span class=\"sh_string\">'keep-alive'</span><span class=\"sh_symbol\">,</span>\n  <span class=\"sh_string\">'host'</span><span class=\"sh_symbol\">:</span> <span class=\"sh_string\">'mysite.com'</span><span class=\"sh_symbol\">,</span>\n  <span class=\"sh_string\">'accept'</span><span class=\"sh_symbol\">:</span> <span class=\"sh_string\">'*/*'</span> <span class=\"sh_cbracket\">}</span></font></code></pre></div><div><font color=\"#000000\">为了让HTTP适用的范围更广，Node的HTTP API都是非常低级的，它只处理了流和消息的解析，它将消息解析到headers和body中，但是没有解析确定的headers和body。Http协议原始的头部消息被放在<span style=\"font-size: 16.2px; font-family: Monaco, Consolas, 'Lucida Console', monospace; line-height: 24.3px; widows: 1;\">rawHeaders属性中，它的数据格式如下：</span></font></div><div><span style=\"font-size: 16.2px; font-family: Monaco, Consolas, 'Lucida Console', monospace; line-height: 24.3px; widows: 1;\"><pre class=\"sh_sourceCode\" style=\"line-height: 1.5em; font-family: Monaco, Consolas, 'Lucida Console', monospace; margin: 0.166666em -4em 1em 0em; padding: 1em 1.5em; overflow-x: auto; font-size: 18px;\"><code style=\"line-height: 1.5em; font-family: Monaco, Consolas, 'Lucida Console', monospace; font-size: 0.8em;\"><font color=\"#000000\"><span class=\"sh_symbol\">[</span> <span class=\"sh_string\">'ConTent-Length'</span><span class=\"sh_symbol\">,</span> <span class=\"sh_string\">'123456'</span><span class=\"sh_symbol\">,</span>\n  <span class=\"sh_string\">'content-LENGTH'</span><span class=\"sh_symbol\">,</span> <span class=\"sh_string\">'123'</span><span class=\"sh_symbol\">,</span>\n  <span class=\"sh_string\">'content-type'</span><span class=\"sh_symbol\">,</span> <span class=\"sh_string\">'text/plain'</span><span class=\"sh_symbol\">,</span>\n  <span class=\"sh_string\">'CONNECTION'</span><span class=\"sh_symbol\">,</span> <span class=\"sh_string\">'keep-alive'</span><span class=\"sh_symbol\">,</span>\n  <span class=\"sh_string\">'Host'</span><span class=\"sh_symbol\">,</span> <span class=\"sh_string\">'mysite.com'</span><span class=\"sh_symbol\">,</span>\n  <span class=\"sh_string\">'accepT'</span><span class=\"sh_symbol\">,</span> <span class=\"sh_string\">'*/*'</span> <span class=\"sh_symbol\">]</span></font></code></pre></span></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>http.Agent (Class)：</b><div>该Agent用于Http客户端请求socket连接池</div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>http.Server (Class):</b><div><br></div>"
+    }
+  ]
+}

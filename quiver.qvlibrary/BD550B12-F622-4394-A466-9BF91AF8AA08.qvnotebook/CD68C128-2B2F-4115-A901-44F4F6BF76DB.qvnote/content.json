@@ -1,0 +1,9 @@
+{
+  "title": "用户默认设置",
+  "cells": [
+    {
+      "type": "text",
+      "data": "在iOS中，默认设置由NSUserDefaults类来实现。NSUserDefaults会将数据持久化到 /Documents/"
+    }
+  ]
+}

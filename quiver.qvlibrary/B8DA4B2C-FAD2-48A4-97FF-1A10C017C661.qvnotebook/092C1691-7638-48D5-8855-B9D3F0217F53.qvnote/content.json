@@ -1,0 +1,27 @@
+{
+  "title": "UIControl-UISegmentControl",
+  "cells": [
+    {
+      "type": "text",
+      "data": "外观"
+    },
+    {
+      "type": "text",
+      "data": "<img src=\"quiver-image-url/58672BB022D503F0925A86F684F07DB5.jpg\">"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "//valueChange 事件\n@IBAction func segmentValueChange(sender: AnyObject) {\n    let segment = sender as! UISegmentedControl\n    \n    switch segment.selectedSegmentIndex {\n    case 0:\n        self.view.backgroundColor = UIColor.whiteColor()\n    case 1:\n        self.view.backgroundColor = UIColor.greenColor()\n    case 2:\n        self.view.backgroundColor = UIColor.redColor()\n    default:\n        self.view.backgroundColor = UIColor.blueColor();\n    }\n    \n    NSLog(String(segment.selectedSegmentIndex));\n}"
+    },
+    {
+      "type": "text",
+      "data": "删除和添加节点"
+    },
+    {
+      "type": "code",
+      "language": "swift",
+      "data": "let segment = sender as! UISegmentedControl\n\nsegment.insertSegmentWithTitle(title: String?, atIndex: Index, animated:Bool)\nsegment.removeSegmentAtIndex(segment: Int, animated: Bool)"
+    }
+  ]
+}

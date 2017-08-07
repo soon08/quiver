@@ -1,0 +1,13 @@
+{
+  "title": "linux性能检测工具",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ol><li>top 进程检测</li><li>vmstat 虚拟内存统计</li><li>lost 打开文件列表</li><li>tcpdump 网络数据包分析器vm</li><li>netstat 网络统计</li><li>htop 进程监控</li><li>iota 磁盘IO监控</li><li>instate 输入输出统计</li><li>IPTraf 实时IP局域网监控&nbsp;</li><li>Psacct/Acct 监视用户活动 (<span style=\"font-family: 'Courier New', monospace; font-size: 12px; widows: 1; background-color: rgb(230, 230, 230);\">yum install psacct/</span><span style=\"font-family: 'Courier New', monospace; font-size: 12px; widows: 1; background-color: rgb(230, 230, 230);\"> sudo apt-get install acct</span>)</li><li>NetHogs 监视每个进程的网络带宽</li><li>iftop 网络带宽监控</li><li>Monitorix 系统和网络监控</li><li>Arpwatch 以太网活动监视器</li><li>Suricate &nbsp;网络安全监控</li><li>Nagios 网络服务监控</li><li>Nmon 监控Linux系统性能</li></ol>"
+    },
+    {
+      "type": "text",
+      "data": "<br>"
+    }
+  ]
+}

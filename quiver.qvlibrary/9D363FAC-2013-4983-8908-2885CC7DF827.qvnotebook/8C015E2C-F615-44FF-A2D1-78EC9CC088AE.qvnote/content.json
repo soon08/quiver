@@ -1,0 +1,9 @@
+{
+  "title": "ubuntu默认root密码修改",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Ubuntu默认的Root密码是随机的，所以要修改默认的root密码只能通过普通sudoer用户来修改<div><ol><li>sudo passwd</li><li>输入当前用户密码</li><li>输入新的root密码</li><li>确认root密码</li><li>修改成功</li></ol></div>"
+    }
+  ]
+}

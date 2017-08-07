@@ -1,0 +1,97 @@
+{
+  "title": "常用第三方包",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li><a href=\"https://github.com/sindresorhus/awesome-nodejs\">https://github.com/sindresorhus/awesome-nodejs</a>&nbsp; 一些流行Node库整理<br></li></ul>"
+    },
+    {
+      "type": "text",
+      "data": "常用<div><ol><li><a href=\"https://github.com/visionmedia/debug\">https://github.com/visionmedia/debug</a><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "跨平台<div><ol><li><a href=\"http://electron.atom.io/\">http://electron.atom.io/</a>&nbsp; 开发跨平台APP<br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "权限验证<div><ol><li><a href=\"https://github.com/simov/grant\">https://github.com/simov/grant</a><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "前端处理<div><ol><li><a href=\"https://github.com/jakubpawlowicz/clean-css\">https://github.com/jakubpawlowicz/clean-css</a>&nbsp; css压缩<br></li><li><a href=\"http://lisperator.net/uglifyjs/\">http://lisperator.net/uglifyjs/</a>&nbsp; js压缩<br></li><li><a href=\"https://github.com/imagemin/imagemin\">https://github.com/imagemin/imagemin</a>&nbsp;图片压缩<br></li><li><a href=\"https://github.com/Swaagie/minimize\">https://github.com/Swaagie/minimize</a>&nbsp; html压缩<br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "作业库<div><ol><li><a href=\"http://mesos.github.io/chronos/\">http://mesos.github.io/chronos/</a>&nbsp; 类似于cron<br></li><li><a href=\"https://github.com/Automattic/kue\">https://github.com/Automattic/kue</a>&nbsp;<br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "开发工具<div><ol><li><a href=\"https://github.com/remy/nodemon\">https://github.com/remy/nodemon</a>&nbsp; 检测代码变化并重启应用<br></li><li><a href=\"https://github.com/firehol/netdata/wiki/Installation\">https://github.com/firehol/netdata/wiki/Installation</a>&nbsp; 基于C的实时监控软件<br></li></ol></div>常用库<br><div><ol><li><a href=\"https://github.com/jaredhanson/passport\">https://github.com/jaredhanson/passport</a><br></li><li><a href=\"https://github.com/koajs/koa\">https://github.com/koajs/koa</a><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "WEB框架<div><ol><li><a href=\"http://sailsjs.org/\">http://sailsjs.org/</a><br></li><li><a href=\"http://hapijs.com/\">http://hapijs.com/</a><br></li><li><a href=\"https://github.com/NetEase/pomelo\">https://github.com/NetEase/pomelo</a><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "硬件操作<div><ol><li><a href=\"https://store.arduino.cc/\">https://store.arduino.cc/</a><br></li><li><a href=\"https://cylonjs.com/documentation/platforms/\">https://cylonjs.com/documentation/platforms/</a><br></li><li><a href=\"https://github.com/nonolith/node-usb\">https://github.com/nonolith/node-usb</a><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "流操作<div><ol><li><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\"><a href=\"https://github.com/rvagg/through2\">https://github.com/rvagg/through2</a></font><br></li><li><a href=\"http://highlandjs.org/\">http://highlandjs.org</a><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "流程控制<div><ol><li><a href=\"https://github.com/jlongster/js-csp\">https://github.com/jlongster/js-csp</a><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "自动化框架<div><ol><li><a href=\"https://github.com/octalmage/robotjs\">https://github.com/octalmage/robotjs</a>&nbsp; &nbsp;自动控制<br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "自然语言处理<div><ol><li><a href=\"https://github.com/sindresorhus/leven\">https://github.com/sindresorhus/leven</a>&nbsp; 比较像个字符串差异<br></li><li><a href=\"https://github.com/wooorm/franc\">https://github.com/wooorm/franc</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 自动探测语言类型<br></li><li><a href=\"https://github.com/wooorm/retext\">https://github.com/wooorm/retext</a><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "node管理<div><ol><li><a href=\"https://github.com/tj/n\">https://github.com/tj/n</a>&nbsp; node版本管理<br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "测试<div><ol><li><a href=\"https://github.com/logicalparadox/matcha\">https://github.com/logicalparadox/matcha</a>&nbsp; 基准性能测试<br></li><li><a href=\"https://benchmarkjs.com/\">https://benchmarkjs.com/</a>&nbsp; &nbsp;基准性能测试<br></li><li><a href=\"https://github.com/assaf/zombie\">https://github.com/assaf/zombie</a>&nbsp; &nbsp;页面测试<br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "数据库操作<div><ol><li><a href=\"http://knexjs.org/#Builder-select\">http://knexjs.org/#Builder-select</a>&nbsp; 生成SQL语句<br></li><li><a href=\"https://github.com/sequelize/sequelize\">https://github.com/sequelize/sequelize</a>&nbsp; ORM框架<br></li><li><a href=\"https://github.com/dscape/nano\">https://github.com/dscape/nano</a>&nbsp; &nbsp; CouchDB<br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "网络<div><ol><li><a href=\"https://github.com/sindresorhus/ipify\">https://github.com/sindresorhus/ipify</a>&nbsp;获取你的公网IP</li><li><a href=\"https://github.com/bevry/getmac\">https://github.com/bevry/getmac</a>&nbsp; &nbsp; &nbsp; &nbsp;获取你的Mac地址<br></li><li><a href=\"https://github.com/dominictarr/reconnect\">https://github.com/dominictarr/reconnect</a>&nbsp; 重连网络<br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "压缩<div><ol><li><a href=\"https://github.com/archiverjs/node-archiver\">https://github.com/archiverjs/node-archiver</a><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "解析<div><ol><li><a href=\"https://github.com/Leonidas-from-XIV/node-xml2js\">https://github.com/Leonidas-from-XIV/node-xml2js</a><br></li><li><a href=\"https://github.com/nodeca/js-yaml\">https://github.com/nodeca/js-yaml</a><br></li><li><a href=\"https://github.com/wooorm/remark\">https://github.com/wooorm/remark</a><br></li><li><a href=\"https://github.com/mathiasbynens/he\">https://github.com/mathiasbynens/he</a>&nbsp; &nbsp;编码html<br></li><li><a href=\"https://github.com/millermedeiros/rocambole\">https://github.com/millermedeiros/rocambole</a>&nbsp; js语法解析</li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "验证<div><ol><li><a href=\"https://github.com/hapijs/joi\">https://github.com/hapijs/joi</a><br></li><li><a href=\"https://github.com/sindresorhus/matcher\">https://github.com/sindresorhus/matcher</a><br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "桌面操作<div><ol><li><a href=\"https://github.com/sindresorhus/opn\">https://github.com/sindresorhus/opn</a>&nbsp; 使用node.js 打开app<br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "命令行<div><ol><li><a href=\"https://github.com/tj/commander.js\">https://github.com/tj/commander.js</a><br></li><li><a href=\"https://github.com/shelljs/shelljs\">https://github.com/shelljs/shelljs</a>&nbsp; 执行shell命令<br></li><li><a href=\"https://github.com/dthree/vantage\">https://github.com/dthree/vantage</a>&nbsp; web的shell窗口<br></li></ol></div>"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"https://github.com/ksky521/nodePPT\">https://github.com/ksky521/nodePPT</a>&nbsp; 网页版PPT<div><a href=\"https://github.com/tjanczuk/edge\">https://github.com/tjanczuk/edge</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;node中运行.net代码<br></div><div><a href=\"https://github.com/substack/dnode\">https://github.com/substack/dnode</a>&nbsp; &nbsp; &nbsp; RPC调用<br></div><div><a href=\"https://github.com/grpc/grpc\">https://github.com/grpc/grpc</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RPC调用<br></div><div><font color=\"#323232\" style=\"background-color: rgb(254, 250, 0);\"><a href=\"https://github.com/louischatriot/nedb\">https://github.com/louischatriot/nedb</a>&nbsp; &nbsp;JS写的数据库</font><br></div><div><a href=\"https://github.com/Javascipt/Jsome\">https://github.com/Javascipt/Jsome</a>&nbsp; &nbsp; 美化JSON输出<br></div><div><a href=\"https://github.com/rauchg/ms.js\">https://github.com/rauchg/ms.js</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 秒与时间转换<br></div><div><a href=\"https://github.com/h2non/rocky\">https://github.com/h2non/rocky</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; http代理<br></div><div><a href=\"https://github.com/koichik/node-tunnel\">https://github.com/koichik/node-tunnel</a>&nbsp;http代理中间价<br></div><div><a href=\"https://github.com/sindresorhus/got\">https://github.com/sindresorhus/got</a>&nbsp; &nbsp; http请求<br></div><div><a href=\"https://github.com/ternjs/acorn\">https://github.com/ternjs/acorn</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 语法解析器<br></div><div><br></div><div><a href=\"https://github.com/lovell/sharp\">https://github.com/lovell/sharp</a><br></div><div><a href=\"https://github.com/aheckmann/gm\">https://github.com/aheckmann/gm</a>&nbsp;<br></div><div><a href=\"https://github.com/josdejong/mathjs\">https://github.com/josdejong/mathjs</a><br></div><div><a href=\"https://github.com/websockets/ws\">https://github.com/websockets/ws</a><br></div>"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "前端框架",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<ul><li>angular.js&nbsp;<a href=\"https://github.com/angular/angular.js\">https://github.com/angular/angular.js</a></li><li>react.js&nbsp;<a href=\"https://facebook.github.io/react/\">https://facebook.github.io/react/</a></li><li>FileApi &nbsp; &nbsp;&nbsp;<a href=\"http://mailru.github.io/FileAPI/\">http://mailru.github.io/FileAPI/</a>&nbsp; &nbsp;封装了HTML5文件操作的一些功能<br></li><li>device.js &nbsp;<a href=\"https://github.com/matthewhudson/device.js\">https://github.com/matthewhudson/device.js</a>&nbsp; 可以查询设备属性,方便书写一些根据设备不同的CSS和JS</li></ul>"
+    }
+  ]
+}
